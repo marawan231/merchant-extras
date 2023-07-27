@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/widgets/custom_network_image.dart';
-import 'package:merchant_extras/features/search/business_logic/cubit/search_cubit.dart';
+import '../../../../core/widgets/custom_network_image.dart';
+import '../../business_logic/cubit/search_cubit.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';

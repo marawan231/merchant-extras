@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/route_manager.dart';
-import 'package:merchant_extras/features/payment/business_logic/cubit/payment_cubit.dart';
-import 'package:merchant_extras/features/payment/business_logic/cubit/payment_state.dart';
+import '../../../../core/resources/route_manager.dart';
+import '../../business_logic/cubit/payment_cubit.dart';
+import '../../business_logic/cubit/payment_state.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';

@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-
 class CustomNetworkCachedImage extends StatelessWidget {
   const CustomNetworkCachedImage(
       {super.key,
@@ -45,7 +44,8 @@ class CustomNetworkCachedImage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      errorWidget: (context, url, error) => const Icon(Icons.error),
+      errorWidget: (context, url, error) =>
+          const Center(child: Icon(Icons.error)),
     );
   }
 }

@@ -2,7 +2,7 @@ const String imagePath = "assets/images";
 const String svgPath = "assets/images/svg";
 
 class ImageAssets {
-  static const String splashLogo = "$imagePath/splash_logo.png";
+  static const String splashLogo = "$imagePath/Group 24376.png";
   static const String mainAuthLogo = "$imagePath/main_auth_logo.png";
   static const String google = "$imagePath/google.png";
   static const String phoneCall = "$imagePath/phone_call.png";

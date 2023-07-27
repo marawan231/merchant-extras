@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/features/deals/business_logic/cubit/deals_cubit.dart';
-import 'package:merchant_extras/features/deals/business_logic/cubit/deals_state.dart';
+import '../../../deals/business_logic/cubit/deals_cubit.dart';
+import '../../../deals/business_logic/cubit/deals_state.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/default_button.dart';
 

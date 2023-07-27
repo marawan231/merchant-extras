@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
+
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../../notification/presentation/widgets/clock_date.dart';
 
 class TransactionItem extends StatelessWidget {
   final String amount;

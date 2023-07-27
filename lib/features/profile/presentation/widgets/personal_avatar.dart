@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_cubit.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_state.dart';
+import '../../business_logic/cubit/profile_cubit.dart';
+import '../../business_logic/cubit/profile_state.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 

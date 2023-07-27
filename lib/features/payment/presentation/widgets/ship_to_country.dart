@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/style_manager.dart';
+import '../../../../core/resources/style_manager.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/widgets/custom_textfield.dart';

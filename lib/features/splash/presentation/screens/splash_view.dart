@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:merchant_extras/core/resources/shared_prefrences.dart';
+import '../../../../core/resources/shared_prefrences.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';

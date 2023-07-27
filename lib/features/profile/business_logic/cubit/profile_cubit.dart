@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:merchant_extras/core/resources/constants.dart';
-import 'package:merchant_extras/core/resources/shared_prefrences.dart';
-import 'package:merchant_extras/core/web_services/network_exceptions.dart';
-import 'package:merchant_extras/features/auth/data/models/auth_model.dart';
+import '../../../../core/resources/constants.dart';
+import '../../../../core/resources/shared_prefrences.dart';
+import '../../../../core/web_services/network_exceptions.dart';
+import '../../../auth/data/models/auth_model.dart';
 
 import '../../data/repository/profile_repository.dart';
 import 'profile_state.dart';

@@ -5,7 +5,7 @@ import 'constants.dart';
 class ColorManager {
   static Color seconadary = const Color(0xff016064);
   static Color primary =
-      switchToBuyerVersion! ? const Color(0xff7F090B) : const Color(0xff016064);
+      switchToBuyerVersion! ? const Color(0xff009688) : const Color(0xff016064);
 
   //7F090B
   static Color orange = const Color(0xffFF0000);

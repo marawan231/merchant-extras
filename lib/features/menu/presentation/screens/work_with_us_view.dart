@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/commons.dart';
-import 'package:merchant_extras/core/resources/constants.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
 
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';

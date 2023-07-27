@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:merchant_extras/features/payment/business_logic/cubit/payment_state.dart';
-import 'package:merchant_extras/features/payment/data/repository/payment_repository.dart';
+import 'payment_state.dart';
+import '../../data/repository/payment_repository.dart';
 
 import '../../../../core/web_services/error_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';

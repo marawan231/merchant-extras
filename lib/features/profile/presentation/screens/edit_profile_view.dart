@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/color_manager.dart';
-import 'package:merchant_extras/core/resources/commons.dart';
-import 'package:merchant_extras/core/resources/shared_prefrences.dart';
-import 'package:merchant_extras/core/resources/utils.dart';
-import 'package:merchant_extras/core/web_services/network_exceptions.dart';
-import 'package:merchant_extras/features/auth/data/models/auth_model.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_cubit.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_state.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/shared_prefrences.dart';
+import '../../../../core/resources/utils.dart';
+import '../../../../core/web_services/network_exceptions.dart';
+import '../../../auth/data/models/auth_model.dart';
+import '../../business_logic/cubit/profile_cubit.dart';
+import '../../business_logic/cubit/profile_state.dart';
 
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/constants.dart';
