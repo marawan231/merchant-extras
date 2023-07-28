@@ -4,6 +4,8 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
+  static const String enterPhoneNumber = 'ادخل رقم الجوال';
   static const String theRate = 'التقيم';
   static const String paymentSuccess = 'تم الدفع بنجاح';
   static const String quantityNotAvailable = 'حاول تحديد الكمية غير متوفرة';

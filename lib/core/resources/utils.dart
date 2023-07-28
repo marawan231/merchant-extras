@@ -134,11 +134,11 @@ buildEmptyDeals() {
 
 void getRoute(int index, BuildContext context) {
   if (index == 0) {
-    BlocProvider.of<AuthCubit>(context).signInWithGoogle(context);
-  } else if (index == 1) {
     Navigator.of(context).pushNamed(Routes.phoneAuthViewRoute);
-  } else if (index == 2) {
+  } else if (index == 1) {
     Navigator.of(context).pushNamed(Routes.faceAuthViewRoute);
+  } else if (index == 2) {
+    BlocProvider.of<AuthCubit>(context).signInWithGoogle(context);
   }
 }
 

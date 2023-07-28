@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
 
     // globalCubit.startNotificationsStream();
 
-    BlocProvider.of<NotificationCubit>(context).getAllNotifications();
+    // BlocProvider.of<NotificationCubit>(context).getAllNotifications();
   }
 
   _buildHomeViewBody(BuildContext context) {

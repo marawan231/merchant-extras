@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import '../../../../core/web_services/api_result.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -36,12 +37,14 @@ class AuthRepoistry {
       var response = await webServices.login(uid);
       return ApiResult.success(response);
     } catch (error) {
+      log('error in getAllCountriesCurrencies $error');
+
       return ApiResult.failure(DioExceptionType.getDioException(error));
     }
   }
 
-
-   Future<ApiResult<List<CountriesCurrencies>>> getAllCountriesCurrencies() async {
+  Future<ApiResult<List<CountriesCurrencies>>>
+      getAllCountriesCurrencies() async {
     try {
       var response = await webServices.getAllCountriesCurrencies();
       return ApiResult.success(response);

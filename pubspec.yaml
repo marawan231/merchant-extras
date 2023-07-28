@@ -55,7 +55,7 @@ dependencies:
   json_annotation: ^4.8.1
   json_serializable: ^6.7.1
   pin_code_fields: ^8.0.1
-  rename: ^2.0.1
+  rename: ^2.1.1
   retrofit: ^4.0.1
   retrofit_generator: ^7.0.8
   shared_preferences: ^2.2.0

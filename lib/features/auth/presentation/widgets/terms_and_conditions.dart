@@ -4,22 +4,48 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
-class TermsAndConditions extends StatelessWidget {
+class TermsAndConditions extends StatefulWidget {
   const TermsAndConditions({super.key});
 
   @override
+  State<TermsAndConditions> createState() => _TermsAndConditionsState();
+}
+
+class _TermsAndConditionsState extends State<TermsAndConditions> {
+  bool isCheck = true;
+  _buildCheckBox() {
+    return Checkbox(
+      value: isCheck,
+      onChanged: (value) {
+        setState(() {
+          isCheck = value!;
+        });
+      },
+      activeColor: ColorManager.green,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(2.r),
+      ),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(children: [
-        TextSpan(
-            text: AppStrings.agreeTo,
-            style:
-                getRegularStyle(color: ColorManager.darkGrey, fontSize: 14.sp)),
-        TextSpan(
-            text: AppStrings.termsAndConditions,
-            style: getRegularStyle(
-                color: Theme.of(context).primaryColor, fontSize: 14.sp)),
-      ]),
+    return Row(
+      children: [
+        _buildCheckBox(),
+        RichText(
+          text: TextSpan(children: [
+            TextSpan(
+                text: AppStrings.agreeTo,
+                style: getRegularStyle(
+                    color: ColorManager.darkGrey, fontSize: 14.sp)),
+            TextSpan(
+                text: AppStrings.termsAndConditions,
+                style: getRegularStyle(
+                    color: Theme.of(context).primaryColor, fontSize: 14.sp)),
+          ]),
+        ),
+      ],
     );
   }
 }

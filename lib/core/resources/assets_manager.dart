@@ -3,14 +3,16 @@ const String svgPath = "assets/images/svg";
 
 class ImageAssets {
   static const String splashLogo = "$imagePath/Group 24376.png";
-  static const String mainAuthLogo = "$imagePath/main_auth_logo.png";
+  static const String mainAuthLogo = "$imagePath/Privacy policy-rafiki.png";
   static const String google = "$imagePath/google.png";
   static const String phoneCall = "$imagePath/phone_call.png";
   static const String faceId = "$imagePath/face-id (1).png";
   static const String viber = "$imagePath/viber.png";
+  static const String phoneAuth = "$imagePath/Enter OTP-bro.png";
   static const String success = "$imagePath/success.png";
   static const String time = "$imagePath/time.png";
   static const String apple = "$imagePath/apple.png";
+  static const String phone = "$imagePath/phone-in-talk-outline-sharp.png";
 
   static const String bell = "$imagePath/bell.png";
   static const String visa = "$imagePath/visa.png";

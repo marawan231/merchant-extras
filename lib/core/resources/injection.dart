@@ -96,7 +96,7 @@ Dio createAndSetupDio() {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'accept-language': 'ar',
-      'Authorization': 'Bearer $token',
+      'Authorization': 'Bearer 123',
     };
   // dio.options.headers.update('accept-language', (value) => defaultLang);
 
@@ -126,11 +126,11 @@ Dio createAndSetupDio() {
       //   print(object);
       // },
       requestBody: true,
-      // error: true,
+      error: true,
       requestHeader: true,
       responseHeader: true,
       responseBody: true,
-      // request: true,
+      request: true,
     ),
   );
   return dio;

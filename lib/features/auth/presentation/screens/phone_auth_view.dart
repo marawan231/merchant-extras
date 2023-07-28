@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/assets_manager.dart';
+import 'package:merchant_extras/core/resources/color_manager.dart';
+import 'package:merchant_extras/core/resources/style_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../widgets/phone_auth_textfiield.dart';
 
@@ -36,25 +39,37 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
   _buildPhoneAuthBody(BuildContext context) {
     return Form(
       key: _phoneFormKey,
-      child: Padding(
-        padding:
-            EdgeInsets.only(top: 20.h, left: 20.w, right: 20.w, bottom: 30.h),
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            const AuthLogo(),
-            SizedBox(height: 42.h),
-            _buildPhoneAuthTitle(context),
-            SizedBox(height: 12.h),
-            _buildPhoneAuthSubTitle(context),
-            SizedBox(height: 42.h),
-            _buildPhoneTextField(),
-            SizedBox(height: 138.h),
-            _buildBottomButton(context),
-            SizedBox(height: 13.h),
-            const Center(child: TermsAndConditions()),
-            _buildPhoneNumberSubmitedBloc(),
-          ],
+      child: SingleChildScrollView(
+        child: Padding(
+          padding:
+              EdgeInsets.only(top: 20.h, left: 24.w, right: 24.w, bottom: 30.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            // shrinkWrap: true,
+            children: [
+              Center(
+                  child: AuthLogo(image: ImageAssets.phoneAuth, height: 274.h)),
+              SizedBox(height: 42.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _buildPhoneAuthTitle(context),
+                    SizedBox(height: 8.h),
+                    _buildPhoneAuthSubTitle(context),
+                  ],
+                ),
+              ),
+              SizedBox(height: 19.h),
+              _buildPhoneTextField(),
+              SizedBox(height: 12.h),
+              const TermsAndConditions(),
+              SizedBox(height: 15.h),
+              _buildBottomButton(context),
+              _buildPhoneNumberSubmitedBloc(),
+            ],
+          ),
         ),
       ),
     );
@@ -65,17 +80,15 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
   }
 
   _buildPhoneAuthTitle(BuildContext context) {
-    return Center(
-      child: Text(AppStrings.authWithPhone,
-          style: Theme.of(context).textTheme.titleMedium),
-    );
+    return Text(AppStrings.authWithPhone,
+        style: getBoldStyle(fontSize: 30.sp, color: ColorManager.black));
   }
 
   _buildPhoneAuthSubTitle(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 35.w, right: 35.w),
+      padding: EdgeInsets.only(left: 23.w),
       child: Text(
-          textAlign: TextAlign.center,
+          // textAlign: TextAlign.center,
           AppStrings.phoneAuthSubtitle,
           style: Theme.of(context).textTheme.bodySmall),
     );

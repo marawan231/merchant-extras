@@ -6,8 +6,7 @@ import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class CustomPinCodeFields extends StatelessWidget {
-  const CustomPinCodeFields(
-      {super.key, this.onCompleted,  this.onChanged});
+  const CustomPinCodeFields({super.key, this.onCompleted, this.onChanged});
 
   final void Function(String)? onCompleted;
   final void Function(String)? onChanged;
@@ -18,25 +17,25 @@ class CustomPinCodeFields extends StatelessWidget {
       child: PinCodeTextField(
         backgroundColor: ColorManager.transparent,
         length: 6,
-        textStyle:
-            getBoldStyle(color: ColorManager.darkGrey, fontSize: 25.sp),
+        textStyle: getBoldStyle(color: ColorManager.white, fontSize: 25.sp),
         cursorColor: ColorManager.black,
         obscureText: false,
         animationType: AnimationType.fade,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         keyboardType: TextInputType.number,
         pinTheme: PinTheme(
-          shape: PinCodeFieldShape.box,
-          borderRadius: BorderRadius.circular(15.r),
-          fieldHeight: 55.h,
-          fieldWidth: 52.w,
+          shape: PinCodeFieldShape.circle,
+          fieldHeight: 50.h,
+          fieldWidth: 50.w,
+          // borderRadius: BorderRadius.circular(100.r),
+
           // fieldOuterPadding: EdgeInsets.only(left: 1.w, right: 5.w),
-          selectedColor: ColorManager.transparent,
+          selectedColor: ColorManager.borderInInputTextFiefld,
           disabledColor: ColorManager.transparent,
           activeColor: ColorManager.transparent,
-          activeFillColor: ColorManager.lightWhite,
+          activeFillColor: ColorManager.primary,
           selectedFillColor: ColorManager.lightWhite,
-          inactiveColor: ColorManager.transparent,
+          inactiveColor: ColorManager.borderInInputTextFiefld,
           inactiveFillColor: ColorManager.lightWhite,
         ),
         animationDuration: const Duration(milliseconds: 300),

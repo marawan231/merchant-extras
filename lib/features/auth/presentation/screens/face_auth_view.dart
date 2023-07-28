@@ -71,6 +71,7 @@ class _FaceAuthViewState extends State<FaceAuthView> {
         ImageAssets.faceId,
         width: 50.w,
         height: 50.h,
+        color: ColorManager.primary,
         fit: BoxFit.fill,
       ),
     );

@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             onGenerateRoute: routeGenerator.getRoute,
             theme: buyerTheme,
+            // initialRoute: Routes.mainhomeviewRoute,
             // home: BlocProvider(
             //   create: (context) => AuthCubit(getIt()),
             //   child: PhoneAuthView(),
