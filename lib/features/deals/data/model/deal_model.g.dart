@@ -10,20 +10,20 @@ DealModel _$DealModelFromJson(Map<String, dynamic> json) => DealModel(
       id: json['id'] as int?,
       name: json['name'] as String?,
       description: json['description'] as String?,
-      categoryId: json['category_id'] as String?,
-      productId: json['product_id'] as String?,
-      amount: json['amount'] as String?,
-      price: json['price'] as String?,
+      categoryId: json['category_id'] as int?,
+      productId: json['product_id'] as int?,
+      amount: json['amount'] as int?,
+      price: (json['price'] as num?)?.toDouble(),
       shape: json['shape'] as String?,
       type: json['type'] as String?,
       status: json['status'] as String?,
-      userId: json['user_id'] as String?,
-      acceptNegotiation: json['accept_negotiation'] as String?,
-      sendSample: json['send_sample'] as String?,
+      userId: json['user_id'] as int?,
+      acceptNegotiation: json['accept_negotiation'] as int?,
+      sendSample: json['send_sample'] as int?,
       geography: json['geography'] as String?,
       createdAt: json['created_at'] as String?,
       countryId: json['country_id'] as String?,
-      accountVerified: json['account_verified'] as String?,
+      accountVerified: json['account_verified'] as int?,
       time: json['time'] as String?,
       category: json['category'] == null
           ? null
@@ -37,19 +37,21 @@ DealModel _$DealModelFromJson(Map<String, dynamic> json) => DealModel(
       images: (json['images'] as List<dynamic>?)
           ?.map((e) => Images.fromJson(e as Map<String, dynamic>))
           .toList(),
-    )
-      ..buyInformation = json['buy_information'] == null
+      buyInformation: json['buy_information'] == null
           ? null
           : BuyInformation.fromJson(
-              json['buy_information'] as Map<String, dynamic>)
-      ..currentUserOrder = json['current_user_order'] == null
-          ? null
-          : CurrentUserOrder.fromJson(
-              json['current_user_order'] as Map<String, dynamic>)
-      ..currentUserRate = json['current_user_rate'] == null
+              json['buy_information'] as Map<String, dynamic>),
+      currentUserRate: json['current_user_rate'] == null
           ? null
           : CurrentUserRate.fromJson(
-              json['current_user_rate'] as Map<String, dynamic>);
+              json['current_user_rate'] as Map<String, dynamic>),
+      cities: (json['cities'] as List<dynamic>?)
+          ?.map((e) => CountryModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    )..currentUserOrder = json['current_user_order'] == null
+        ? null
+        : CurrentUserOrder.fromJson(
+            json['current_user_order'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DealModelToJson(DealModel instance) => <String, dynamic>{
       'id': instance.id,
@@ -75,22 +77,23 @@ Map<String, dynamic> _$DealModelToJson(DealModel instance) => <String, dynamic>{
       'user': instance.user?.toJson(),
       'images': instance.images?.map((e) => e.toJson()).toList(),
       'buy_information': instance.buyInformation?.toJson(),
-      'current_user_order': instance.currentUserOrder?.toJson(),
       'current_user_rate': instance.currentUserRate?.toJson(),
+      'current_user_order': instance.currentUserOrder?.toJson(),
+      'cities': instance.cities?.map((e) => e.toJson()).toList(),
     };
 
-BuyInformation _$BuyInformationFromJson(Map<String, dynamic> json) =>
-    BuyInformation(
-      totalAmount: json['total_amount'] as num?,
-      currentAmount: json['current_amount'] as num?,
-      price: json['price'] as num?,
+CurrentUserOrder _$CurrentUserOrderFromJson(Map<String, dynamic> json) =>
+    CurrentUserOrder(
+      amount: json['amount'] as int?,
+      country: json['country'] == null
+          ? null
+          : Country.fromJson(json['country'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$BuyInformationToJson(BuyInformation instance) =>
+Map<String, dynamic> _$CurrentUserOrderToJson(CurrentUserOrder instance) =>
     <String, dynamic>{
-      'total_amount': instance.totalAmount,
-      'current_amount': instance.currentAmount,
-      'price': instance.price,
+      'amount': instance.amount,
+      'country': instance.country?.toJson(),
     };
 
 Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
@@ -127,30 +130,30 @@ Map<String, dynamic> _$ImagesToJson(Images instance) => <String, dynamic>{
       'attachment_url': instance.attachmentUrl,
     };
 
-CurrentUserOrder _$CurrentUserOrderFromJson(Map<String, dynamic> json) =>
-    CurrentUserOrder(
-      amount: json['amount'] as int?,
-      country: json['country'] == null
-          ? null
-          : Country.fromJson(json['country'] as Map<String, dynamic>),
+BuyInformation _$BuyInformationFromJson(Map<String, dynamic> json) =>
+    BuyInformation(
+      totalAmount: json['total_amount'] as int?,
+      currentAmount: json['current_amount'] as int?,
+      price: (json['price'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$CurrentUserOrderToJson(CurrentUserOrder instance) =>
+Map<String, dynamic> _$BuyInformationToJson(BuyInformation instance) =>
     <String, dynamic>{
-      'amount': instance.amount,
-      'country': instance.country?.toJson(),
+      'total_amount': instance.totalAmount,
+      'current_amount': instance.currentAmount,
+      'price': instance.price,
     };
 
 CurrentUserRate _$CurrentUserRateFromJson(Map<String, dynamic> json) =>
     CurrentUserRate(
-      id: json['id'] as int?,
-      professionlStars: json['professionl_stars'] as String?,
-      communicationStars: json['communication_stars'] as String?,
-      qualityStars: json['quality_stars'] as String?,
-      experienceStars: json['experience_stars'] as String?,
-      timeStars: json['time_stars'] as String?,
-      futureDealsStars: json['future_deals_stars'] as String?,
-      comment: json['comment'] as String?,
+      json['id'] as num?,
+      json['professionl_stars'] as num?,
+      json['communication_stars'] as num?,
+      json['quality_stars'] as num?,
+      json['experience_stars'] as num?,
+      json['time_stars'] as num?,
+      json['future_deals_stars'] as num?,
+      json['comment'] as String?,
     );
 
 Map<String, dynamic> _$CurrentUserRateToJson(CurrentUserRate instance) =>
@@ -163,4 +166,17 @@ Map<String, dynamic> _$CurrentUserRateToJson(CurrentUserRate instance) =>
       'time_stars': instance.timeStars,
       'future_deals_stars': instance.futureDealsStars,
       'comment': instance.comment,
+    };
+
+CountryModel _$CountryModelFromJson(Map<String, dynamic> json) => CountryModel(
+      name: json['name'] as String?,
+      flagUrl: json['flag_url'] as String?,
+      id: json['id'] as int?,
+    );
+
+Map<String, dynamic> _$CountryModelToJson(CountryModel instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'flag_url': instance.flagUrl,
+      'id': instance.id,
     };

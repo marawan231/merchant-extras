@@ -5,7 +5,7 @@ import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class ClockDate extends StatelessWidget {
-  const ClockDate({super.key, required this.color,  this.date});
+  const ClockDate({super.key, required this.color, this.date});
   final Color color;
   final String? date;
   @override

@@ -1,14 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/route_manager.dart';
+import 'package:merchant_extras/core/resources/style_manager.dart';
+import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
 import '../../../../core/resources/color_manager.dart';
 
-// ignore: depend_on_referenced_packages
-import 'package:intl/intl.dart';
 import '../../../deals/data/model/deal_model.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
 
 class WorldDealsItem extends StatelessWidget {
   const WorldDealsItem({super.key, required this.deals, required this.index});
@@ -16,107 +16,98 @@ class WorldDealsItem extends StatelessWidget {
   final List<DealModel> deals;
   final int index;
 
-  _buildImage(double height) {
-    return SizedBox(
-      height: height,
-      child: ShaderMask(
-          shaderCallback: (Rect bounds) {
-            return LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  ColorManager.transparent,
-                  ColorManager.black.withOpacity(.7),
-                ]).createShader(bounds);
-          },
-          blendMode: BlendMode.multiply,
-          child: CustomNetworkCachedImage(
-            url: deals[index].images![0].attachmentUrl!,
-            fit: BoxFit.fill,
-            filter: ColorFilter.mode(
-                ColorManager.black.withOpacity(.2), BlendMode.darken),
-          )),
+  _buildDetails() {
+    // DateTime dateTime = DateTime.parse(deals[index].createdAt!);
+    // String formattedDateTime = DateFormat('MM/dd/yyyy').format(dateTime);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // ClockDate(
+        //   color: ColorManager.grey,
+        //   date: formattedDateTime,
+        // ),
+        // SizedBox(height: 2.h),
+        Text(
+          deals[index].name!,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: getMediumStyle(fontSize: 12.sp, color: ColorManager.boldGrey),
+        )
+      ],
     );
   }
 
-  /*
-  Image.asset(
-      ImageAssets.cherry,
-      height: 100.h,
-      width: 193.w,
-      fit: BoxFit.fill,
-      colorBlendMode: BlendMode.darken,
-      color: ColorManager.black.withOpacity(.2),
-    );
-   */
+  _buildItem() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _buildImage(),
+        4.verticalSpace,
 
-  _buildDetails(BuildContext context, double height) {
-    DateTime dateTime = DateTime.parse(deals[index].createdAt!);
-    String formattedDateTime = DateFormat('MM/dd/yyyy').format(dateTime);
-
-    return Padding(
-      padding: EdgeInsets.only(top: height, right: 15.w),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ClockDate(
-            color: ColorManager.grey,
-            date: formattedDateTime,
+        Padding(
+          padding: EdgeInsetsDirectional.only(start: 11.w, end: 4.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildDetails(),
+              4.verticalSpace,
+              _buildPrice(),
+            ],
           ),
-          SizedBox(height: 2.h),
-          Text(
-            deals[index].name!,
-            style: Theme.of(context).textTheme.displayMedium,
-          )
-        ],
-      ),
+        )
+        // _buildButton(context, 10.h),
+      ],
     );
   }
 
-  _buildButton(BuildContext context, double height) {
-    return Padding(
-      padding: EdgeInsets.only(left: 20.w, top: height),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, Routes.searchResultDealItemDetails,
-                arguments: {
-                  'deal': deals[index],
-                });
-          },
-          child: CircleAvatar(
-            backgroundColor: ColorManager.white,
-            child: Icon(
-              Icons.arrow_back_ios_new,
-              color: Theme.of(context).primaryColor,
-              size: 12.sp,
-            ),
+  _buildPrice() {
+    return Row(
+      // mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          '${deals[index].price!} ${'\$'}',
+          style: getMediumStyle(fontSize: 12.sp, color: ColorManager.primary),
+        ),
+        Padding(
+          padding: EdgeInsetsDirectional.only(end: 5.w),
+          child: Text(
+            '${AppStrings.theQuantity} : ${deals[index].amount!}',
+            style:
+                getLightStyle(fontSize: 12.sp, color: ColorManager.lightGrey2),
           ),
         ),
+      ],
+    );
+  }
+
+  Widget _buildImage() {
+    log('${deals.length} ${deals[index].images![0].attachmentUrl!}');
+    return ClipRRect(
+      borderRadius: BorderRadius.all(Radius.circular(10.r)),
+      child: CustomNetworkCachedImage(
+        height: 129.h,
+        width: 138.w,
+        url: deals[index].images![0].attachmentUrl!,
+        fit: BoxFit.cover,
+        // filter: ColorFilter.mode(
+        //     ColorManager.black.withOpacity(.45), BlendMode.darken),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-      return Container(
-        height: constraints.maxHeight,
-        width: constraints.maxHeight,
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(5.r)),
-            color: ColorManager.grey.withOpacity(.10)),
-        child: Stack(
-          children: [
-            _buildImage(constraints.maxHeight * 0.55),
-            _buildDetails(context, constraints.maxHeight * 0.65),
-            _buildButton(context, constraints.maxHeight * 0.10),
-          ],
-        ),
-      );
-    });
+    return Container(
+      width: 125.w,
+      // padding: EdgeInsets.only(bottom: 10.h, right: 8.w, left: 6.w),
+      decoration: BoxDecoration(
+        color: ColorManager.backGrey,
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: _buildItem(),
+    );
   }
 }

@@ -5,8 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/commons.dart';
 
-
-
 import '../../business_logic/cubit/search_state.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../business_logic/cubit/search_cubit.dart';
@@ -95,7 +93,9 @@ class _SearchResultViewState extends State<SearchResultView> {
   }
 
   _buildSearchBar() {
-    return const CustomSearchBar();
+    return const CustomSearchBar(
+      filterVisible: true,
+    );
   }
 
   _buildSearchProducts() {

@@ -10,8 +10,7 @@ import '../../../profile/business_logic/cubit/profile_cubit.dart';
 import '../../../search/business_logic/cubit/search_cubit.dart';
 import '../../business_logic/home_cubit.dart';
 import '../widgets/company_features.dart';
-import '../widgets/home_search_bar.dart';
-import '../widgets/local_deals.dart';
+import '../widgets/home_categories.dart';
 import '../widgets/world_deals.dart';
 
 class HomeView extends StatefulWidget {
@@ -31,11 +30,12 @@ class _HomeViewState extends State<HomeView> {
     context.read<GlobalCubit>().getAllCountriesCurrencies();
     BlocProvider.of<DealsCubit>(context).getDeals();
     BlocProvider.of<MenuCubit>(context).getWalletInfo();
-
     BlocProvider.of<ProfileCubit>(context).getUserInfo();
-    BlocProvider.of<HomeCubit>(context).localDeals != null
-        ? null
-        : BlocProvider.of<HomeCubit>(context).getLocalTopDeals();
+    BlocProvider.of<SearchCubit>(context).filter();
+
+    // BlocProvider.of<HomeCubit>(context).localDeals != null
+    //     ? null
+    //     : BlocProvider.of<HomeCubit>(context).getLocalTopDeals();
     BlocProvider.of<HomeCubit>(context).internationalDeals != null
         ? null
         : BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
 
     // globalCubit.startNotificationsStream();
 
-    // BlocProvider.of<NotificationCubit>(context).getAllNotifications();
+    BlocProvider.of<NotificationCubit>(context).getAllNotifications();
   }
 
   _buildHomeViewBody(BuildContext context) {
@@ -56,9 +56,9 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           children: [
             CompanyFeatures(),
-            HomeSearchBar(),
+            HomeCategories(),
             WorldDeals(),
-            LocalDeals(),
+            // LocalDeals(),
           ],
         ),
       ),

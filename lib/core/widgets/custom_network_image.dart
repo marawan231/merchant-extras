@@ -9,19 +9,22 @@ class CustomNetworkCachedImage extends StatelessWidget {
       this.fit,
       this.filter,
       this.width,
-      this.height});
+      this.height,
+      this.color});
 
   final String url;
   final BoxFit? fit;
   final ColorFilter? filter;
   final double? width;
   final double? height;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       width: width,
-      // height: height,
+      height: height,
+      color: color,
       // color: ColorManager.amber,
       imageUrl: url,
       imageBuilder: (context, imageProvider) => Container(

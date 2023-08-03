@@ -113,7 +113,7 @@ class _SearchResultItemDealDetailsState
             arguments: {
               'unitPrice': widget.deal!.price,
               'quantityFieldVisible': false,
-              'total': num.parse(widget.deal!.price!) *
+              'total': num.parse(widget.deal!.price!.toString()) *
                   widget.deal!.buyInformation!.currentAmount!,
               'dealId': widget.deal!.id.toString(),
               'quantity': widget.deal!.buyInformation!.currentAmount.toString(),
@@ -137,7 +137,7 @@ class _SearchResultItemDealDetailsState
                       arguments: {
                         'unitPrice': widget.deal!.price,
                         'quantityFieldVisible': false,
-                        'total': num.parse(widget.deal!.price!) *
+                        'total': num.parse(widget.deal!.price!.toString()) *
                             widget.deal!.buyInformation!.currentAmount!,
                         'dealId': widget.deal!.id.toString(),
                         'quantity': widget.deal!.buyInformation!.currentAmount
@@ -207,7 +207,7 @@ class _SearchResultItemDealDetailsState
         value: RichText(
             text: TextSpan(children: [
           TextSpan(
-              text: widget.deal?.price,
+              text: widget.deal?.price.toString(),
               style: getBoldStyle(
                   color: Theme.of(context).primaryColor, fontSize: 20.sp)),
           TextSpan(
@@ -324,13 +324,16 @@ class _SearchResultItemDealDetailsState
 
   double calculateRate() {
     if (widget.deal!.currentUserRate != null) {
-      double total =
-          double.parse(widget.deal!.currentUserRate!.professionlStars!) +
-              double.parse(widget.deal!.currentUserRate!.communicationStars!) +
-              double.parse(widget.deal!.currentUserRate!.qualityStars!) +
-              double.parse(widget.deal!.currentUserRate!.experienceStars!) +
-              double.parse(widget.deal!.currentUserRate!.timeStars!) +
-              double.parse(widget.deal!.currentUserRate!.futureDealsStars!);
+      double total = double.parse(
+              widget.deal!.currentUserRate!.professionlStars!.toString()) +
+          double.parse(
+              widget.deal!.currentUserRate!.communicationStars!.toString()) +
+          double.parse(widget.deal!.currentUserRate!.qualityStars!.toString()) +
+          double.parse(
+              widget.deal!.currentUserRate!.experienceStars!.toString()) +
+          double.parse(widget.deal!.currentUserRate!.timeStars!.toString()) +
+          double.parse(
+              widget.deal!.currentUserRate!.futureDealsStars!.toString());
 
       double maximumPossibleValue = 6 * 5; // 6 categories with a scale of 5
       double rate = (total / maximumPossibleValue) * 5;

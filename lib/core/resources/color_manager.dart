@@ -6,10 +6,14 @@ class ColorManager {
   static Color seconadary = const Color(0xff016064);
   static Color primary =
       switchToBuyerVersion! ? const Color(0xff009688) : const Color(0xff016064);
+  static Color lightPrimary = const Color(0xffF2FEFD);
 
   //7F090B
   static Color orange = const Color(0xffFF0000);
+  static Color boldGrey = const Color(0xff646464);
+  static Color lightGrey2 = const Color(0xff9A9A9A);
   static Color lightWhite = const Color(0xFFF7F7F7);
+  static Color backGrey = const Color(0xffF9F9F9);
   static Color darkGrey = const Color(0xff858585);
   static Color grey = const Color(0xffB1B1B1);
   static Color black = const Color(0xff000000);

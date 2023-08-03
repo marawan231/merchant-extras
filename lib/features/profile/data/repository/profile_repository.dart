@@ -27,7 +27,7 @@ class ProfileRepository {
       var response = await webServices.updateProfile(
         phone: user.phone,
         currency: user.currency,
-        countryId: user.countryId,
+        countryId: user.countryId.toString(),
         name: user.name,
         image: image,
       );

@@ -1,12 +1,17 @@
 class AppStrings {
   static const noRouteFound = "noRouteFound";
   static const String locale = 'locale';
+  static const String topDeals = 'أفضل الصفقات';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String categories = 'التصنيفات';
   static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
   static const String enterPhoneNumber = 'ادخل رقم الجوال';
   static const String theRate = 'التقيم';
+  static const String searchForCategory = 'البحث عن تصنيف';
+  static const String discover = 'اكتشف';
+  static const String theQuantity = 'الكمية';
   static const String paymentSuccess = 'تم الدفع بنجاح';
   static const String quantityNotAvailable = 'حاول تحديد الكمية غير متوفرة';
 
@@ -92,7 +97,7 @@ class AppStrings {
   static const String switchAccount = 'تبديل الحساب';
   static const String buyer = 'مارشنت مشتري';
   static const String seller = 'مارشنت بائع';
-  static const String bestWorldDeals = 'أفضل الصفقات العالمية :';
+  static const String bestWorldDeals = 'أفضل الصفقات';
   static const String bestLocalDeals = 'أفضل الصفقات المحلية :';
 
   static const String orangeQuantity = 'خمسة طن من البرتقال';

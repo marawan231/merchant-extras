@@ -132,7 +132,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       myUser?.phone = _phoneController.text;
       myUser?.name = _nameController.text;
       myUser?.currency = '1';
-      myUser?.countryId = '1';
+      myUser?.countryId = 1;
       profileCubit.updateProfile(myUser!);
       await CacheHelper.saveData(key: 'countryCode', value: countryCode);
     }

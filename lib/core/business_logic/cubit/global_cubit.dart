@@ -140,7 +140,7 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
 
   changeSelectedIndex(int index) {
     screenIndex = index;
-    selectedTab = index;
+    (index == 10 || index == 11) ? selectedTab = 0 : selectedTab = index;
     emit(GlobalState.selectedIndexChanged(index));
   }
 }

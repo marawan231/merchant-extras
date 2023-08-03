@@ -14,7 +14,6 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../business_logic/cubit/auth_cubit.dart';
 import '../../business_logic/cubit/auth_state.dart';
-import '../widgets/counter_down.dart';
 import '../widgets/pin_code_fields.dart';
 import '../widgets/resend_code.dart';
 
@@ -71,16 +70,16 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
     );
   }
 
-  Widget _buildRemainingTime() {
-    return CountDownTimer(
-      secondsRemaining: AppConstants.timeOut,
-      whenTimeExpires: () {
-        Commons.showToast(message: AppStrings.timeOut);
-      },
-      countDownTimerStyle:
-          getRegularStyle(color: ColorManager.darkGrey, fontSize: 16.sp),
-    );
-  }
+  // Widget _buildRemainingTime() {
+  //   return CountDownTimer(
+  //     secondsRemaining: AppConstants.timeOut,
+  //     whenTimeExpires: () {
+  //       Commons.showToast(message: AppStrings.timeOut);
+  //     },
+  //     countDownTimerStyle:
+  //         getRegularStyle(color: ColorManager.darkGrey, fontSize: 16.sp),
+  //   );
+  // }
 
   Widget _buildConfirmPhoneViewHeadline(BuildContext context) {
     return Padding(
