@@ -12,7 +12,6 @@ import '../../../search/business_logic/cubit/search_cubit.dart';
 import '../../../search/business_logic/cubit/search_state.dart';
 import '../../../search/data/models/category_model.dart';
 import '../../../search/presentation/widgets/search_bar.dart';
-import '../../../search/presentation/widgets/search_results.dart';
 // import '../widgets/search_categories.dart';
 
 class AllCategoriesView extends StatefulWidget {
@@ -103,12 +102,9 @@ class _AllCategoriesViewState extends State<AllCategoriesView> {
       ),
       itemBuilder: (context, index) {
         return Container(
-            // width: 61.w,
-            // height: 61.w,
             decoration: BoxDecoration(
                 color: ColorManager.lightPrimary,
                 borderRadius: BorderRadius.all(Radius.circular(10.r))),
-            // padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 19.h),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -150,9 +146,9 @@ class _AllCategoriesViewState extends State<AllCategoriesView> {
     );
   }
 
-  _buildBody() {
-    return const SearchResults();
-  }
+  // _buildBody() {
+  //   return const SearchResults();
+  // }
 
   // _buildSearchCategories() {
   //   return const SearchCategories();
