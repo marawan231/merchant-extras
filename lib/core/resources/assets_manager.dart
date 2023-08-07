@@ -1,5 +1,6 @@
 const String imagePath = "assets/images";
 const String svgPath = "assets/images/svg";
+const String lottiePath = "assets/lottie";
 
 class ImageAssets {
   static const String splashLogo = "$imagePath/Group 24376.png";
@@ -81,58 +82,75 @@ class ImageAssets {
   static const String noNotification = "$imagePath/no-notification.png";
   static const String close = "$imagePath/close.png";
 
+  static var contactMail = "$imagePath/round-contact-mail.png";
+  static var information = "$imagePath/information.png";
+  static var star = "$imagePath/stars-minimalistic-bold.png";
+  static var about = "$imagePath/about.png";
+  static var fileDocumentBox = "$imagePath/file-document-box.png";
+
+  static var signOut = "$imagePath/logout.png";
+  static var arrowBackIos = "$imagePath/arrow-back-ios.png";
+  static var contentCopyRounded = "$imagePath/content-copy-rounded.png";
+  static var ambassadorPana = "$imagePath/Ambassador-pana.png";
+
+  static var pencilCircle = "$imagePath/pencil_circle.png";
+
+  static var onlineReviewCuate = "$imagePath/Online Review-cuate.png";
+  static var doneIcon = "$imagePath/done-icon.png";
+
+  static var walletAnimation  = "$lottiePath/wallet_animation.json";
 // static const String clock = "$imagePath/clock.svg";
-  // static const String personName = "$imagePath/person_name.svg";
-  // static const String phone = "$imagePath/phone.svg";
-  // static const String confirmReserve = "$imagePath/confirm_reserve.svg";
-  // static const String quickReserve = "$imagePath/quick_reserve.png";
-  // static const String danger = "$imagePath/danger.svg";
-  // static const String whatsapp = "$imagePath/whatsapp.svg";
-  // static const String twitter = "$imagePath/twitter.svg";
-  // static const String star = "$imagePath/star.svg";
-  // static const String doctor = "$imagePath/doctor.png";
-  // static const String whiteWater = "$imagePath/white_water.png";
-  // static const String blueWater = "$imagePath/blue_water.png";
-  // static const String babyEyes = "$imagePath/baby_eyes.png";
-  // static const String offer = "$imagePath/offer.png";
-  // static const String standingOffer = "$imagePath/standing_offer.png";
-  // static const String mainArticle = "$imagePath/main_article.png";
-  // static const String subArticle = "$imagePath/sub_article.png";
-  // static const String doctorDetailsImage = "$imagePath/doctor_details.png";
-  // static const String technique1 = "$imagePath/tech1.png";
-  // static const String technique2 = "$imagePath/tech2.png";
-  // static const String aboutUsMainImage = "$imagePath/about_us_main_image.png";
+// static const String personName = "$imagePath/person_name.svg";
+// static const String phone = "$imagePath/phone.svg";
+// static const String confirmReserve = "$imagePath/confirm_reserve.svg";
+// static const String quickReserve = "$imagePath/quick_reserve.png";
+// static const String danger = "$imagePath/danger.svg";
+// static const String whatsapp = "$imagePath/whatsapp.svg";
+// static const String twitter = "$imagePath/twitter.svg";
+// static const String star = "$imagePath/star.svg";
+// static const String doctor = "$imagePath/doctor.png";
+// static const String whiteWater = "$imagePath/white_water.png";
+// static const String blueWater = "$imagePath/blue_water.png";
+// static const String babyEyes = "$imagePath/baby_eyes.png";
+// static const String offer = "$imagePath/offer.png";
+// static const String standingOffer = "$imagePath/standing_offer.png";
+// static const String mainArticle = "$imagePath/main_article.png";
+// static const String subArticle = "$imagePath/sub_article.png";
+// static const String doctorDetailsImage = "$imagePath/doctor_details.png";
+// static const String technique1 = "$imagePath/tech1.png";
+// static const String technique2 = "$imagePath/tech2.png";
+// static const String aboutUsMainImage = "$imagePath/about_us_main_image.png";
 
-  // static const String call = "$imagePath/call.svg";
-  // static const String email = "$imagePath/email.svg";
-  // static const String location = "$imagePath/location.svg";
-  // static const String contactPhone = "$imagePath/contact_phone.svg";
-  // static const String headphone = "$imagePath/headphone.svg";
-  // // static const String map = "$imagePath/map.png";
-  // static const map = '$imagePath/map.png';
-  // static const String moreArrow = "$imagePath/more_arrow.svg";
-  // static const String redMarker = "$imagePath/red_marker.svg";
+// static const String call = "$imagePath/call.svg";
+// static const String email = "$imagePath/email.svg";
+// static const String location = "$imagePath/location.svg";
+// static const String contactPhone = "$imagePath/contact_phone.svg";
+// static const String headphone = "$imagePath/headphone.svg";
+// // static const String map = "$imagePath/map.png";
+// static const map = '$imagePath/map.png';
+// static const String moreArrow = "$imagePath/more_arrow.svg";
+// static const String redMarker = "$imagePath/red_marker.svg";
 
-  // static const String icon1 = "$imagePath/icon1.png";
-  // static const String icon2 = "$imagePath/icon2.png";
-  // static const String icon3 = "$imagePath/icon3.png";
-  // static const String manImage = "$imagePath/man_image.png";
-  // static const String manImage2 = "$imagePath/man_image2.png";
-  // static const String homeDoctor = "$imagePath/home_doctor.png";
-  // static const String phonePhoto = "$imagePath/phone_photo.png";
-  // static const String adDoctor = "$imagePath/ad_doctor.png";
+// static const String icon1 = "$imagePath/icon1.png";
+// static const String icon2 = "$imagePath/icon2.png";
+// static const String icon3 = "$imagePath/icon3.png";
+// static const String manImage = "$imagePath/man_image.png";
+// static const String manImage2 = "$imagePath/man_image2.png";
+// static const String homeDoctor = "$imagePath/home_doctor.png";
+// static const String phonePhoto = "$imagePath/phone_photo.png";
+// static const String adDoctor = "$imagePath/ad_doctor.png";
 
-  // static const String menu = "$imagePath/menu.svg";
-  // static const String service = "$imagePath/service.svg";
-  // static const String aboutUs = "$imagePath/about_us.svg";
-  // static const String doctors = "$imagePath/doctors.svg";
-  // static const String offers = "$imagePath/offers.svg";
-  // static const String reserveAppointmet = "$imagePath/reserve_appointment.svg";
-  // static const String language = "$imagePath/language.svg";
-  // static const String reachUs = "$imagePath/reach_us.svg";
-  // static const String menuDownArrow = "$imagePath/menu_down_arrow.svg";
+// static const String menu = "$imagePath/menu.svg";
+// static const String service = "$imagePath/service.svg";
+// static const String aboutUs = "$imagePath/about_us.svg";
+// static const String doctors = "$imagePath/doctors.svg";
+// static const String offers = "$imagePath/offers.svg";
+// static const String reserveAppointmet = "$imagePath/reserve_appointment.svg";
+// static const String language = "$imagePath/language.svg";
+// static const String reachUs = "$imagePath/reach_us.svg";
+// static const String menuDownArrow = "$imagePath/menu_down_arrow.svg";
 
-  // static const String co = "$imagePath/reserve_appointment.svg";
+// static const String co = "$imagePath/reserve_appointment.svg";
 }
 //   static const String onboardingLogo2 = "$imagePath/onboarding_logo2.svg";
 //   static const String onboardingLogo3 = "$imagePath/onboarding_logo3.svg";

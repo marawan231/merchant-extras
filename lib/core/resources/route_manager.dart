@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:merchant_extras/features/home/presentation/screens/all_deals_view.dart';
+import 'package:merchant_extras/features/menu/presentation/screens/message_view.dart';
+import 'package:merchant_extras/features/menu/presentation/screens/terms_view.dart';
 import '../../features/home/presentation/screens/all_categories_view.dart';
 import '../../features/payment/business_logic/cubit/payment_cubit.dart';
 import '../../features/profile/business_logic/cubit/profile_cubit.dart';
@@ -29,7 +31,6 @@ import '../../features/deals/presentation/screens/my_deals_main_view.dart';
 import '../../features/home/business_logic/home_cubit.dart';
 import '../../features/home/presentation/screens/home_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
-import '../../features/menu/presentation/screens/contact_success_view.dart';
 import '../../features/menu/presentation/screens/contact_us_view.dart';
 import '../../features/menu/presentation/screens/menu_view.dart';
 import '../../features/menu/presentation/screens/rate_us_view.dart';
@@ -73,8 +74,10 @@ class Routes {
       "/pickDealTypeToSearchInViewRoute";
   static const String mainhomeviewRoute = "/mainhomeviewRoute";
   static const String homeviewRoute = "/homeviewRoute";
+
   //AllCategoriesView
   static const String allCategoriesViewRoute = "/allCategoriesViewRoute";
+
   //AllDealsView
   static const String allDealsRoute = "/allDealsViewRoute";
 
@@ -82,7 +85,6 @@ class Routes {
   static const String tamweelPayViewRoute = "/tamweelPayViewRoute";
 
   static const String contactUsRoute = "/contactUsRoute";
-  static const String contactSuccessRoute = "/contactSuccessRoute";
   static const String whoAreUsRoute = "/whoAreUsRoute";
   static const String menuViewRoute = "/menuViewRoute";
   static const String workWithUsRoute = "/workWithUsRoute";
@@ -113,6 +115,10 @@ class Routes {
       "/tamweelItemDetailsViewRoute";
   static const String buySelectedQuantityViewRoute =
       "/buySelectedQuantityViewRoute";
+
+  static const String messageViewRoute = "/messageViewRoute";
+
+  static const String termsAndConditionsRoute = "/termsAndConditionsRoute";
 }
 
 class RouteGenerator {
@@ -314,8 +320,7 @@ class RouteGenerator {
                   value: menuCubit,
                   child: const ContactUsView(),
                 ));
-      case Routes.contactSuccessRoute:
-        return MaterialPageRoute(builder: (_) => const ContactSuccessView());
+
       case Routes.whoAreUsRoute:
         return MaterialPageRoute(builder: (_) => const WhoAreUsView());
       case Routes.menuViewRoute:
@@ -431,6 +436,25 @@ class RouteGenerator {
       //   return MaterialPageRoute(
       //       builder: (_) => const TamweelItemDetailsView());
 
+      case Routes.termsAndConditionsRoute:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider.value(
+                  value: menuCubit,
+                  child: const TermsView(),
+                ));
+      case Routes.messageViewRoute:
+        final arguments = settings.arguments as Map;
+
+        final String image = arguments['image'];
+        final String title = arguments['title'];
+        final String description = arguments['description'];
+
+        return MaterialPageRoute(
+            builder: (_) => MessageView(
+                  image: image,
+                  title: title,
+                  description: description,
+                ));
       default:
         return unDefinedRoute();
     }

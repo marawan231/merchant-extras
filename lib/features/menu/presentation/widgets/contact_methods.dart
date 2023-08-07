@@ -25,8 +25,9 @@ class ContactMethods extends StatefulWidget {
 
 class _ContactMethodsState extends State<ContactMethods> {
   late GlobalCubit _globalCubit;
-  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
   final TextEditingController _notesController = TextEditingController();
+
   //form key
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -37,13 +38,14 @@ class _ContactMethodsState extends State<ContactMethods> {
   }
 
   _buildMainMethods() {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         ContactItem(
             iconData: ImageAssets.email,
             title: AppStrings.email,
             subTitle: _globalCubit.settingEmail),
-        SizedBox(width: 5.w),
+        SizedBox(height: 24.w),
         ContactItem(
             iconData: ImageAssets.viber,
             title: AppStrings.phoneNumber.replaceAll(':', ''),
@@ -55,12 +57,12 @@ class _ContactMethodsState extends State<ContactMethods> {
   _buildSocialContactMethods() {
     return Center(
       child: SizedBox(
-        width: 215.w,
-        height: 35.h,
+        height: 50.h,
         child: ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             shrinkWrap: true,
+            primary: false,
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
@@ -69,7 +71,6 @@ class _ContactMethodsState extends State<ContactMethods> {
                       Commons.openUrl(_globalCubit.settingInstagram);
                       break;
                     case 1:
-
                       // add the [https]
                       Commons.openUrl(
                           "https://wa.me/${_globalCubit.settingsWhatsApp}"); // new line
@@ -83,10 +84,13 @@ class _ContactMethodsState extends State<ContactMethods> {
                       break;
                   }
                 },
-                child: Image.asset(
-                  socialMedia[index],
-                  width: 35.w,
-                  height: 35.h,
+                child: Center(
+                  child: Image.asset(
+                    socialMedia[index],
+                    width: 35.w,
+                    height: 35.w,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               );
             },
@@ -105,6 +109,23 @@ class _ContactMethodsState extends State<ContactMethods> {
     );
   }
 
+  _buildTitleField() {
+    return CustomTextField(
+        validator: (p0) {
+          if (p0!.isEmpty) {
+            return 'من فضلك ادخل البيانات المطلوبة ';
+          }
+          return null;
+        },
+        onSaved: (p0) {
+          _titleController.text = p0!;
+        },
+        controller: _titleController,
+        title: AppStrings.messageTitle,
+        suffix: const Text(''),
+        hint: AppStrings.enterMessageTitle);
+  }
+
   _buildNotesArea() {
     return CustomTextField(
         validator: (p0) {
@@ -121,10 +142,9 @@ class _ContactMethodsState extends State<ContactMethods> {
           top: 70.h,
           right: 20.w,
         ),
-        icon: ImageAssets.title,
-        title: AppStrings.notes,
+        title: AppStrings.messages,
         suffix: const Text(''),
-        hint: AppStrings.orange);
+        hint: AppStrings.typeYourMessage);
   }
 
   _buildBloc() {
@@ -132,9 +152,13 @@ class _ContactMethodsState extends State<ContactMethods> {
       listener: (context, state) {
         state.whenOrNull(
           sendComplainSuccedded: () {
-            Navigator.pushReplacementNamed(context, Routes.contactSuccessRoute);
-            Commons.showToast(
-                message: 'تم ارسال الشكوى بنجاح', color: ColorManager.active);
+            Navigator.pushNamed(context, Routes.messageViewRoute, arguments: {
+              'image': ImageAssets.doneIcon,
+              'title': AppStrings.thanksForContactingUs,
+              'description': AppStrings.willContactYouSoon,
+            });
+            _notesController.clear();
+            _titleController.clear();
           },
         );
       },
@@ -149,30 +173,16 @@ class _ContactMethodsState extends State<ContactMethods> {
       child: SingleChildScrollView(
         child: Padding(
           padding:
-              EdgeInsets.only(left: 20.w, right: 20.w, top: 50.h, bottom: 80.h),
+              EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h, bottom: 80.h),
           child: Column(children: [
             _buildBloc(),
             _buildMainMethods(),
-            SizedBox(height: 40.h),
+            SizedBox(height: 20.h),
             _buildSocialContactMethods(),
-            SizedBox(height: 30.h),
+            SizedBox(height: 20.h),
             _buildDivider(),
             SizedBox(height: 45.h),
-            PhoneAuthTextField(
-              controller: _phoneController,
-              validator: (p0) {
-                if (p0!.isEmpty) {
-                  return 'من فضلك ادخل رقم الهاتف';
-                }
-                return null;
-              },
-              // validator: (p0) {
-              //   if (p0!.isEmpty) {
-              //     return 'من فضلك ادخل رقم الهاتف';
-              //   }
-              //   return '';
-              // },
-            ),
+            _buildTitleField(),
             SizedBox(height: 30.h),
             _buildNotesArea(),
             SizedBox(height: 80.h),
@@ -185,7 +195,7 @@ class _ContactMethodsState extends State<ContactMethods> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       BlocProvider.of<MenuCubit>(context).sendComplain(
-                          phone: _phoneController.text,
+                          title: _titleController.text,
                           notes: _notesController.text);
                     } else {
                       Commons.showToast(

@@ -60,8 +60,14 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
         onSaved: widget.onSaved,
         validator: widget.validator,
         decoration: InputDecoration(
+          focusedErrorBorder: getInputBorder(),
+          disabledBorder: getInputBorder(),
+          enabledBorder: getInputBorder(),
+          focusedBorder: getInputBorder(),
+          border: getInputBorder(),
+          errorBorder: getInputBorder(),
           contentPadding: widget.contentPadding ??
-              EdgeInsets.only(top: 14.h, bottom: 13.h, right: 20.w),
+              EdgeInsets.only(top: 18.h, bottom: 18.h, right: 20.w),
           hintText: widget.hint,
           hintStyle: widget.hintStyle ??
               getLightStyle(
@@ -78,5 +84,14 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
         ),
       ),
     );
+  }
+
+  InputBorder getInputBorder() {
+    InputBorder inputBorder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(10.r),
+      borderSide:
+          BorderSide(color: ColorManager.borderInInputTextFiefld, width: 1.w),
+    );
+    return inputBorder;
   }
 }

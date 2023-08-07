@@ -116,6 +116,17 @@ abstract class WebServices {
     @Field("experience_stars") String? experienceStars,
     @Field("comment") String? comment,
   );
+
+  @POST("deals/ratings/create")
+  Future<ErrorModel> rateUs(
+    @Field("deal_id") String? dealId,
+    @Field("professionl_stars") String? profissionalStars,
+    @Field("communication_stars") String? communicationStars,
+    @Field("quality_stars") String? qualityStars,
+    @Field("experience_stars") String? experienceStars,
+    @Field("comment") String? comment,
+  );
+
   //buy quantity  by deal id and quantity and country id
   @POST("deals/buy")
   Future<ErrorModel> buyQuantity(
@@ -123,15 +134,18 @@ abstract class WebServices {
     @Field("qty") String? quantity,
     @Field("country_id") String? countryId,
   );
+
   //buy all quantity
   @POST("buy/request")
   Future<ErrorModel> buyAllQuantity(
     @Field("deal_id") String? dealId,
     @Field("country_id") String? countryId,
   );
+
   //get all app settings
   @GET("app/settings")
   Future<List<SettingsModel>> getAllSettings();
+
 //send complain by phone and notes
   @POST("support/tickets/create")
   Future<ErrorModel> sendComplain(

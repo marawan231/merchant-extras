@@ -14,26 +14,14 @@ class ContactItem extends StatelessWidget {
   final String iconData;
   final String title;
   final String subTitle;
-  _buildHeadline() {
-    return Row(
-      children: [
-        _buildIcon(),
-        SizedBox(width: 12.w),
-        _buildTitle(),
-      ],
-    );
-  }
 
   _buildIcon() {
-    return SizedBox(
-      width: 15.w,
-      height: 15.h,
-      child: Image.asset(
-        iconData,
-        color: ColorManager.darkGrey,
-        height: 15.h,
-        width: 15.w,
-      ),
+    return Image.asset(
+      iconData,
+      color: ColorManager.primary,
+      height: 18.h,
+      width: 18.w,
+      fit: BoxFit.cover,
     );
   }
 
@@ -47,29 +35,24 @@ class ContactItem extends StatelessWidget {
   _buildSubTitle(BuildContext context) {
     return Text(
       subTitle,
-      style:
-          getBoldStyle(color: Theme.of(context).primaryColor, fontSize: 15.sp),
+      style: getRegularStyle(color: ColorManager.black, fontSize: 15.sp),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 165.w,
-      height: 86.h,
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 17.h),
       decoration: BoxDecoration(
           color: ColorManager.lightWhite,
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
-      child: Padding(
-        padding: EdgeInsets.only(right: 15.w, top: 15.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildHeadline(),
-            SizedBox(height: 8.h),
-            _buildSubTitle(context),
-          ],
-        ),
+          borderRadius: BorderRadius.circular(10.r)),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildIcon(),
+          SizedBox(width: 18.w),
+          _buildSubTitle(context),
+        ],
       ),
     );
   }

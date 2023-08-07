@@ -31,9 +31,9 @@ class WorkWithUsView extends StatelessWidget {
 
   _buildLogo() {
     return Image.asset(
-      ImageAssets.mainAuthLogo,
-      width: 160.w,
-      height: 203.h,
+      ImageAssets.ambassadorPana,
+      width: 312.w,
+      height: 338.h,
     );
   }
 
@@ -92,8 +92,8 @@ class WorkWithUsView extends StatelessWidget {
                   message: AppStrings.copiedSuccessufully,
                   color: ColorManager.green));
         },
-        child: Icon(
-          Icons.copy,
+        child: Image.asset(
+          ImageAssets.contentCopyRounded,
           color: Theme.of(context).primaryColor,
         ),
       ),

@@ -10,7 +10,7 @@ TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color,
       fontFamily: FontConstants.defaultFontFamily,
       color: color,
       fontWeight: fontWeight,
-      height: height);
+      height: height ?? 1);
 }
 
 // regular style

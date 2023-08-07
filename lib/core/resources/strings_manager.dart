@@ -35,7 +35,7 @@ class AppStrings {
   static const String notificationEmptyMessage = 'لا يوجد اشعارات';
   static const String login = 'تسجيل الدخول';
   static const String agreeTo = 'أوافق على';
-  static const String termsAndConditions = ' الشروط والأحكام وسياسة الخصوصية';
+  static const String termsAndConditions = 'سياسة الخصوصية';
   static const String zeros = '0000000000';
   static const String phoneNumber = 'رقم الجوال :';
   static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
@@ -114,11 +114,11 @@ class AppStrings {
   static const String defaultEmail = 'aaaa@gmail.com';
 
   static const String defaultPhoneNumber = '0595935907';
-  static const String notes = 'ملاحظات :';
+  static const String notes = 'ملاحظات';
   static const String orange = 'برتقال ابو سرة فرز اول';
   static const String approve = 'موافق';
   static const String whoAreUs = 'من نحن';
-  static const String workAs = 'اعمل كمندوب معنا';
+  static const String workAs = 'اعمل كمندوب تسويق';
   static const String myWallet = 'محفظتي';
   static const String logOut = 'تسجيل الخروج';
   static const String welcomeAs = 'مرحبا بك كمندوب تسويق';
@@ -165,7 +165,7 @@ class AppStrings {
   static const String orderCancel = 'الغاء الطلب';
   static const String cancel = 'إلغاء';
   static const String editProfile = 'تعديل البيانات الشخصية';
-  static const String name = 'الاسم :';
+  static const String name = 'الاسم';
   static const String aboutMe = 'نبذة عني :';
   static const String fruitExpert = 'خبير في الفواكه';
   static const String myDiplomas = 'شهاداتي :';
@@ -271,6 +271,33 @@ class AppStrings {
   static const String noData = 'لا يوجد بيانات';
   static const String theDataHasBeenModifiedSuccessfully =
       'تم تعديل البيانات بنجاح';
+
+  static String editAccount = 'تعديل الحساب';
+
+  static var edit = 'تعديل';
+
+  static var back = 'العودة';
+
+  static var typeYourNotes = 'أكتب ملاحظاتك';
+
+  static var thanksForYourReview = 'شكرا لتقييمك';
+
+  static var yourRateIsVeryImportantToUs =
+      "تساعدنا التقييمات على تحسين تجربة\nالمستخدم";
+
+  static var messageTitle = 'عنوان الرسالة';
+
+  static var enterMessageTitle = 'ادخل عنوان الرسالة';
+
+  static var typeYourMessage = 'اكتب رسالتك';
+
+  static var thanksForContactingUs = 'شكرا لتواصلك معنا';
+
+  static var willContactYouSoon = 'سيتم التواصل معك في اقرب وقت';
+
+  static var thereIsNoDataCurrently = 'لا يوجد بيانات حاليا';
+
+  static var thereIsNoTransctions = 'لا يوجد معاملات حاليا';
 
 // static const reserve = 'احجز موعدك';
 // static const doctors = 'الطاقم الطبي';

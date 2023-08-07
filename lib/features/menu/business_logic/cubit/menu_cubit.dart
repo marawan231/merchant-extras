@@ -28,11 +28,11 @@ class MenuCubit extends Cubit<MenuState> {
 
 //send complain by phone and notes
   void sendComplain({
-    required String phone,
+    required String title,
     required String notes,
   }) async {
     emit(const MenuState.sendComplainLoading());
-    var result = await menuRepository.sendComplain(phone, notes);
+    var result = await menuRepository.sendComplain(title, notes);
     result.when(
       success: (ErrorModel errorModel) {
         emit(const MenuState.sendComplainSuccedded());
@@ -131,10 +131,28 @@ class MenuCubit extends Cubit<MenuState> {
         responsiveRateing, supportRateing, updatesRateing, comment);
     result.when(
       success: (ErrorModel errorModel) {
+        clearRating();
         emit(const MenuState.rateSuccedded());
       },
       failure: (DioExceptionType networkExceptions) {
         emit(MenuState.rateError(networkExceptions));
+      },
+    );
+  }
+
+  void rateUs({
+    required String comment,
+  }) async {
+    emit(const MenuState.rateUsLoading());
+    var result = await menuRepository.rateUs(easyToUseRateing,
+        responsiveRateing, supportRateing, updatesRateing, comment);
+    result.when(
+      success: (ErrorModel errorModel) {
+        clearRating();
+        emit(const MenuState.rateUsSuccedded());
+      },
+      failure: (DioExceptionType networkExceptions) {
+        emit(MenuState.rateUsError(networkExceptions));
       },
     );
   }
@@ -184,4 +202,6 @@ class MenuCubit extends Cubit<MenuState> {
                   )),
             ));
   }
+
+
 }

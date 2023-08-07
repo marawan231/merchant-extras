@@ -79,6 +79,7 @@ dependencies:
   uuid: ^3.0.7
   device_info_plus: ^9.0.2
   smooth_page_indicator: ^1.1.0
+  lottie: ^2.5.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -96,6 +97,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/lottie/
+
   fonts:
     - family: DINNextLTArabic
       fonts:
