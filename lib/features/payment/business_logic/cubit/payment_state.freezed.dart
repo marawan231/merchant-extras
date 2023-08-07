@@ -27,6 +27,10 @@ mixin _$PaymentState<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,10 @@ mixin _$PaymentState<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,6 +57,9 @@ mixin _$PaymentState<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +75,12 @@ mixin _$PaymentState<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +93,11 @@ mixin _$PaymentState<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,6 +109,10 @@ mixin _$PaymentState<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +181,10 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return idle();
   }
@@ -169,6 +199,10 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return idle?.call();
   }
@@ -183,6 +217,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -204,6 +241,12 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return idle(this);
   }
@@ -219,6 +262,11 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return idle?.call(this);
   }
@@ -233,6 +281,10 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -293,6 +345,10 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyQuantityLoading();
   }
@@ -307,6 +363,10 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyQuantityLoading?.call();
   }
@@ -321,6 +381,9 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantityLoading != null) {
@@ -342,6 +405,12 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyQuantityLoading(this);
   }
@@ -357,6 +426,11 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyQuantityLoading?.call(this);
   }
@@ -371,6 +445,10 @@ class _$BuyQuantityLoading<T> implements BuyQuantityLoading<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantityLoading != null) {
@@ -432,6 +510,10 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyQuantitySuccedded();
   }
@@ -446,6 +528,10 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyQuantitySuccedded?.call();
   }
@@ -460,6 +546,9 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantitySuccedded != null) {
@@ -481,6 +570,12 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyQuantitySuccedded(this);
   }
@@ -496,6 +591,11 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyQuantitySuccedded?.call(this);
   }
@@ -510,6 +610,10 @@ class _$BuyQuantitySuccedded<T> implements BuyQuantitySuccedded<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantitySuccedded != null) {
@@ -608,6 +712,10 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyQuantityError(networkExceptions);
   }
@@ -622,6 +730,10 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyQuantityError?.call(networkExceptions);
   }
@@ -636,6 +748,9 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantityError != null) {
@@ -657,6 +772,12 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyQuantityError(this);
   }
@@ -672,6 +793,11 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyQuantityError?.call(this);
   }
@@ -686,6 +812,10 @@ class _$BuyQuantityError<T> implements BuyQuantityError<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyQuantityError != null) {
@@ -753,6 +883,10 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyAllQuantityLoading();
   }
@@ -767,6 +901,10 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyAllQuantityLoading?.call();
   }
@@ -781,6 +919,9 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantityLoading != null) {
@@ -802,6 +943,12 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyAllQuantityLoading(this);
   }
@@ -817,6 +964,11 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyAllQuantityLoading?.call(this);
   }
@@ -831,6 +983,10 @@ class _$BuyAllQuantityLoading<T> implements BuyAllQuantityLoading<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantityLoading != null) {
@@ -892,6 +1048,10 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyAllQuantitySuccedded();
   }
@@ -906,6 +1066,10 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyAllQuantitySuccedded?.call();
   }
@@ -920,6 +1084,9 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantitySuccedded != null) {
@@ -941,6 +1108,12 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyAllQuantitySuccedded(this);
   }
@@ -956,6 +1129,11 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyAllQuantitySuccedded?.call(this);
   }
@@ -970,6 +1148,10 @@ class _$BuyAllQuantitySuccedded<T> implements BuyAllQuantitySuccedded<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantitySuccedded != null) {
@@ -1068,6 +1250,10 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     required TResult Function() buyAllQuantitySuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
   }) {
     return buyAllQuantityError(networkExceptions);
   }
@@ -1082,6 +1268,10 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     TResult? Function()? buyAllQuantityLoading,
     TResult? Function()? buyAllQuantitySuccedded,
     TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
   }) {
     return buyAllQuantityError?.call(networkExceptions);
   }
@@ -1096,6 +1286,9 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     TResult Function()? buyAllQuantityLoading,
     TResult Function()? buyAllQuantitySuccedded,
     TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantityError != null) {
@@ -1117,6 +1310,12 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     required TResult Function(BuyAllQuantitySuccedded<T> value)
         buyAllQuantitySuccedded,
     required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
   }) {
     return buyAllQuantityError(this);
   }
@@ -1132,6 +1331,11 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     TResult? Function(BuyAllQuantitySuccedded<T> value)?
         buyAllQuantitySuccedded,
     TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
   }) {
     return buyAllQuantityError?.call(this);
   }
@@ -1146,6 +1350,10 @@ class _$BuyAllQuantityError<T> implements BuyAllQuantityError<T> {
     TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
     TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
     TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
     required TResult orElse(),
   }) {
     if (buyAllQuantityError != null) {
@@ -1163,4 +1371,578 @@ abstract class BuyAllQuantityError<T> implements PaymentState<T> {
   @JsonKey(ignore: true)
   _$$BuyAllQuantityErrorCopyWith<T, _$BuyAllQuantityError<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTotalToPayLoadingCopyWith<T, $Res> {
+  factory _$$ChangeTotalToPayLoadingCopyWith(_$ChangeTotalToPayLoading<T> value,
+          $Res Function(_$ChangeTotalToPayLoading<T>) then) =
+      __$$ChangeTotalToPayLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ChangeTotalToPayLoadingCopyWithImpl<T, $Res>
+    extends _$PaymentStateCopyWithImpl<T, $Res, _$ChangeTotalToPayLoading<T>>
+    implements _$$ChangeTotalToPayLoadingCopyWith<T, $Res> {
+  __$$ChangeTotalToPayLoadingCopyWithImpl(_$ChangeTotalToPayLoading<T> _value,
+      $Res Function(_$ChangeTotalToPayLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChangeTotalToPayLoading<T> implements ChangeTotalToPayLoading<T> {
+  const _$ChangeTotalToPayLoading();
+
+  @override
+  String toString() {
+    return 'PaymentState<$T>.changeTotalToPayLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTotalToPayLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() buyQuantityLoading,
+    required TResult Function() buyQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyQuantityError,
+    required TResult Function() buyAllQuantityLoading,
+    required TResult Function() buyAllQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? buyQuantityLoading,
+    TResult? Function()? buyQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult? Function()? buyAllQuantityLoading,
+    TResult? Function()? buyAllQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? buyQuantityLoading,
+    TResult Function()? buyQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult Function()? buyAllQuantityLoading,
+    TResult Function()? buyAllQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPayLoading != null) {
+      return changeTotalToPayLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(BuyQuantityLoading<T> value) buyQuantityLoading,
+    required TResult Function(BuyQuantitySuccedded<T> value)
+        buyQuantitySuccedded,
+    required TResult Function(BuyQuantityError<T> value) buyQuantityError,
+    required TResult Function(BuyAllQuantityLoading<T> value)
+        buyAllQuantityLoading,
+    required TResult Function(BuyAllQuantitySuccedded<T> value)
+        buyAllQuantitySuccedded,
+    required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult? Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult? Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult? Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult? Function(BuyAllQuantitySuccedded<T> value)?
+        buyAllQuantitySuccedded,
+    TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+  }) {
+    return changeTotalToPayLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
+    TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPayLoading != null) {
+      return changeTotalToPayLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTotalToPayLoading<T> implements PaymentState<T> {
+  const factory ChangeTotalToPayLoading() = _$ChangeTotalToPayLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$ChangeTotalToPaySucceddedCopyWith<T, $Res> {
+  factory _$$ChangeTotalToPaySucceddedCopyWith(
+          _$ChangeTotalToPaySuccedded<T> value,
+          $Res Function(_$ChangeTotalToPaySuccedded<T>) then) =
+      __$$ChangeTotalToPaySucceddedCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String totalToPay});
+}
+
+/// @nodoc
+class __$$ChangeTotalToPaySucceddedCopyWithImpl<T, $Res>
+    extends _$PaymentStateCopyWithImpl<T, $Res, _$ChangeTotalToPaySuccedded<T>>
+    implements _$$ChangeTotalToPaySucceddedCopyWith<T, $Res> {
+  __$$ChangeTotalToPaySucceddedCopyWithImpl(
+      _$ChangeTotalToPaySuccedded<T> _value,
+      $Res Function(_$ChangeTotalToPaySuccedded<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? totalToPay = null,
+  }) {
+    return _then(_$ChangeTotalToPaySuccedded<T>(
+      null == totalToPay
+          ? _value.totalToPay
+          : totalToPay // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTotalToPaySuccedded<T> implements ChangeTotalToPaySuccedded<T> {
+  const _$ChangeTotalToPaySuccedded(this.totalToPay);
+
+  @override
+  final String totalToPay;
+
+  @override
+  String toString() {
+    return 'PaymentState<$T>.changeTotalToPaySuccedded(totalToPay: $totalToPay)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTotalToPaySuccedded<T> &&
+            (identical(other.totalToPay, totalToPay) ||
+                other.totalToPay == totalToPay));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, totalToPay);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTotalToPaySucceddedCopyWith<T, _$ChangeTotalToPaySuccedded<T>>
+      get copyWith => __$$ChangeTotalToPaySucceddedCopyWithImpl<T,
+          _$ChangeTotalToPaySuccedded<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() buyQuantityLoading,
+    required TResult Function() buyQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyQuantityError,
+    required TResult Function() buyAllQuantityLoading,
+    required TResult Function() buyAllQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPaySuccedded(totalToPay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? buyQuantityLoading,
+    TResult? Function()? buyQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult? Function()? buyAllQuantityLoading,
+    TResult? Function()? buyAllQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPaySuccedded?.call(totalToPay);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? buyQuantityLoading,
+    TResult Function()? buyQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult Function()? buyAllQuantityLoading,
+    TResult Function()? buyAllQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPaySuccedded != null) {
+      return changeTotalToPaySuccedded(totalToPay);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(BuyQuantityLoading<T> value) buyQuantityLoading,
+    required TResult Function(BuyQuantitySuccedded<T> value)
+        buyQuantitySuccedded,
+    required TResult Function(BuyQuantityError<T> value) buyQuantityError,
+    required TResult Function(BuyAllQuantityLoading<T> value)
+        buyAllQuantityLoading,
+    required TResult Function(BuyAllQuantitySuccedded<T> value)
+        buyAllQuantitySuccedded,
+    required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPaySuccedded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult? Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult? Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult? Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult? Function(BuyAllQuantitySuccedded<T> value)?
+        buyAllQuantitySuccedded,
+    TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+  }) {
+    return changeTotalToPaySuccedded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
+    TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPaySuccedded != null) {
+      return changeTotalToPaySuccedded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTotalToPaySuccedded<T> implements PaymentState<T> {
+  const factory ChangeTotalToPaySuccedded(final String totalToPay) =
+      _$ChangeTotalToPaySuccedded<T>;
+
+  String get totalToPay;
+  @JsonKey(ignore: true)
+  _$$ChangeTotalToPaySucceddedCopyWith<T, _$ChangeTotalToPaySuccedded<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChangeTotalToPayErrorCopyWith<T, $Res> {
+  factory _$$ChangeTotalToPayErrorCopyWith(_$ChangeTotalToPayError<T> value,
+          $Res Function(_$ChangeTotalToPayError<T>) then) =
+      __$$ChangeTotalToPayErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({DioExceptionType networkExceptions});
+
+  $DioExceptionTypeCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$ChangeTotalToPayErrorCopyWithImpl<T, $Res>
+    extends _$PaymentStateCopyWithImpl<T, $Res, _$ChangeTotalToPayError<T>>
+    implements _$$ChangeTotalToPayErrorCopyWith<T, $Res> {
+  __$$ChangeTotalToPayErrorCopyWithImpl(_$ChangeTotalToPayError<T> _value,
+      $Res Function(_$ChangeTotalToPayError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$ChangeTotalToPayError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as DioExceptionType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DioExceptionTypeCopyWith<$Res> get networkExceptions {
+    return $DioExceptionTypeCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$ChangeTotalToPayError<T> implements ChangeTotalToPayError<T> {
+  const _$ChangeTotalToPayError(this.networkExceptions);
+
+  @override
+  final DioExceptionType networkExceptions;
+
+  @override
+  String toString() {
+    return 'PaymentState<$T>.changeTotalToPayError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChangeTotalToPayError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChangeTotalToPayErrorCopyWith<T, _$ChangeTotalToPayError<T>>
+      get copyWith =>
+          __$$ChangeTotalToPayErrorCopyWithImpl<T, _$ChangeTotalToPayError<T>>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() buyQuantityLoading,
+    required TResult Function() buyQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyQuantityError,
+    required TResult Function() buyAllQuantityLoading,
+    required TResult Function() buyAllQuantitySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        buyAllQuantityError,
+    required TResult Function() changeTotalToPayLoading,
+    required TResult Function(String totalToPay) changeTotalToPaySuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? buyQuantityLoading,
+    TResult? Function()? buyQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult? Function()? buyAllQuantityLoading,
+    TResult? Function()? buyAllQuantitySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult? Function()? changeTotalToPayLoading,
+    TResult? Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? buyQuantityLoading,
+    TResult Function()? buyQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyQuantityError,
+    TResult Function()? buyAllQuantityLoading,
+    TResult Function()? buyAllQuantitySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? buyAllQuantityError,
+    TResult Function()? changeTotalToPayLoading,
+    TResult Function(String totalToPay)? changeTotalToPaySuccedded,
+    TResult Function(DioExceptionType networkExceptions)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPayError != null) {
+      return changeTotalToPayError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(BuyQuantityLoading<T> value) buyQuantityLoading,
+    required TResult Function(BuyQuantitySuccedded<T> value)
+        buyQuantitySuccedded,
+    required TResult Function(BuyQuantityError<T> value) buyQuantityError,
+    required TResult Function(BuyAllQuantityLoading<T> value)
+        buyAllQuantityLoading,
+    required TResult Function(BuyAllQuantitySuccedded<T> value)
+        buyAllQuantitySuccedded,
+    required TResult Function(BuyAllQuantityError<T> value) buyAllQuantityError,
+    required TResult Function(ChangeTotalToPayLoading<T> value)
+        changeTotalToPayLoading,
+    required TResult Function(ChangeTotalToPaySuccedded<T> value)
+        changeTotalToPaySuccedded,
+    required TResult Function(ChangeTotalToPayError<T> value)
+        changeTotalToPayError,
+  }) {
+    return changeTotalToPayError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult? Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult? Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult? Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult? Function(BuyAllQuantitySuccedded<T> value)?
+        buyAllQuantitySuccedded,
+    TResult? Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult? Function(ChangeTotalToPayLoading<T> value)?
+        changeTotalToPayLoading,
+    TResult? Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult? Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+  }) {
+    return changeTotalToPayError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(BuyQuantityLoading<T> value)? buyQuantityLoading,
+    TResult Function(BuyQuantitySuccedded<T> value)? buyQuantitySuccedded,
+    TResult Function(BuyQuantityError<T> value)? buyQuantityError,
+    TResult Function(BuyAllQuantityLoading<T> value)? buyAllQuantityLoading,
+    TResult Function(BuyAllQuantitySuccedded<T> value)? buyAllQuantitySuccedded,
+    TResult Function(BuyAllQuantityError<T> value)? buyAllQuantityError,
+    TResult Function(ChangeTotalToPayLoading<T> value)? changeTotalToPayLoading,
+    TResult Function(ChangeTotalToPaySuccedded<T> value)?
+        changeTotalToPaySuccedded,
+    TResult Function(ChangeTotalToPayError<T> value)? changeTotalToPayError,
+    required TResult orElse(),
+  }) {
+    if (changeTotalToPayError != null) {
+      return changeTotalToPayError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChangeTotalToPayError<T> implements PaymentState<T> {
+  const factory ChangeTotalToPayError(
+      final DioExceptionType networkExceptions) = _$ChangeTotalToPayError<T>;
+
+  DioExceptionType get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$ChangeTotalToPayErrorCopyWith<T, _$ChangeTotalToPayError<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -3,11 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/commons.dart';
+import '../../../../core/resources/commons.dart';
 
-
-
-import 'package:merchant_extras/features/search/business_logic/cubit/search_state.dart';
+import '../../business_logic/cubit/search_state.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../business_logic/cubit/search_cubit.dart';
 import '../widgets/search_categories.dart';
@@ -95,7 +93,9 @@ class _SearchResultViewState extends State<SearchResultView> {
   }
 
   _buildSearchBar() {
-    return const CustomSearchBar();
+    return const CustomSearchBar(
+      filterVisible: true,
+    );
   }
 
   _buildSearchProducts() {

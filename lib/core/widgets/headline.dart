@@ -8,14 +8,16 @@ class Headline extends StatelessWidget {
   const Headline(
       {super.key,
       required this.title,
-      required this.icon,
+      this.icon,
       this.iconHeight,
-      this.iconWidth});
+      this.iconWidth,
+      this.textColor});
 
   final String title;
-  final String icon;
+  final String? icon;
   final double? iconHeight;
   final double? iconWidth;
+  final Color? textColor;
 
   _buildHeadlineOfTextField() {
     return Row(
@@ -28,18 +30,21 @@ class Headline extends StatelessWidget {
   }
 
   _buildIcon() {
-    return Image.asset(
-      icon,
-      width: iconWidth,
-      height: iconHeight,
-      fit: BoxFit.fill,
-    );
+    return icon == null
+        ? const SizedBox.shrink()
+        : Image.asset(
+            icon!,
+            width: iconWidth,
+            height: iconHeight,
+            fit: BoxFit.fill,
+          );
   }
 
   _buildText() {
     return Text(
       title,
-      style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp),
+      style: getBoldStyle(
+          color: textColor ?? ColorManager.darkGrey, fontSize: 17.sp),
     );
   }
 

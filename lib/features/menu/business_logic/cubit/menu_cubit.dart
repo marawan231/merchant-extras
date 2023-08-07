@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/strings_manager.dart';
-import 'package:merchant_extras/core/web_services/error_model.dart';
+import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/web_services/error_model.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';

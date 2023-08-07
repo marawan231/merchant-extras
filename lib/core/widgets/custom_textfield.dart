@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/color_manager.dart';
 
 import 'default_textfield.dart';
 import 'headline.dart';
@@ -7,7 +8,7 @@ import 'headline.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {super.key,
-      required this.icon,
+      this.icon,
       required this.title,
       this.suffix,
       required this.hint,
@@ -19,9 +20,10 @@ class CustomTextField extends StatelessWidget {
       this.controller,
       this.onTap,
       this.readOnly,
-      this.onChanged, this.keyboardType});
+      this.onChanged,
+      this.keyboardType});
 
-  final String icon;
+  final String? icon;
   final String title;
   final Widget? suffix;
   final String hint;
@@ -37,11 +39,11 @@ class CustomTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
 
-
   _buildPhoneTextField() {
     return Column(
       children: [
         Headline(
+          textColor: ColorManager.black,
           title: title,
           icon: icon,
           iconHeight: iconHeight,
@@ -55,14 +57,15 @@ class CustomTextField extends StatelessWidget {
 
   _buildInputField() {
     return DefaultTextField(
+    
       keyboardType: keyboardType,
-      
       onChanged: onChanged,
       readOnly: readOnly ?? false,
       controller: controller,
       onSaved: onSaved,
       suffix: suffix,
       hint: hint,
+    
       onTap: onTap,
       contentPadding: contentPadding,
       validator: validator,

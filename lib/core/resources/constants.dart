@@ -13,7 +13,7 @@ class AppConstants {
   static const double appBarHeight = 55;
   static const int sliderAnimationTime = 300;
   static const int timeOut = 60;
-  static const String baseUrl = 'http://merchant-plaftorm.com/api/';
+  static const String baseUrl = 'https://merchant-plaftorm.com/api/';
 }
 
 String localPlaceHolder = ImageAssets.androidArrow;
@@ -27,7 +27,7 @@ List<String> rateTitles = [
 ];
 String defaultUId = '0';
 String userName = 'اسم المستخدم';
-String? token;
+String? token = '123';
 String? uid;
 String dialCode = '+20';
 String? countryCode = 'SA';
@@ -101,9 +101,9 @@ List<String> socialMedia = [
   ImageAssets.snapchat,
 ];
 List<AuthMethod> authMethods = [
-  AuthMethod(ImageAssets.google, AppStrings.authWithGoogle),
-  AuthMethod(ImageAssets.phoneCall, AppStrings.authWithPhone),
+  AuthMethod(ImageAssets.phone, AppStrings.authWithPhone),
   AuthMethod(ImageAssets.faceId, AppStrings.authWithFace),
+  AuthMethod(ImageAssets.google, AppStrings.authWithGoogle),
 ];
 
 List<AuthMethod> worldViewCategories = [
@@ -163,14 +163,14 @@ List<IconData> menuViewItemIcons = [
 
 List<String> buyDetailesTitles = [
   AppStrings.theWallet,
-  '',
+  // '',
   AppStrings.paypal,
   AppStrings.visa,
 ];
 
 List<String> buyDetailesIcons = [
-  '',
-  '',
+  // '',
+  ImageAssets.wallet,
   ImageAssets.paypal,
   ImageAssets.visa,
 ];

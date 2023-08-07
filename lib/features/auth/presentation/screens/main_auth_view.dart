@@ -40,17 +40,16 @@ class _MainAuthViewState extends State<MainAuthView> {
 
   Widget _builMainAuthBody(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h, bottom: 30.h),
+      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 0.h, bottom: 42.h),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const AuthLogo(),
-          SizedBox(height: 32.h),
+          SizedBox(height: 35.h),
           _buildMainAuthTitle(context),
-          SizedBox(height: 14.h),
+          SizedBox(height: 6.h),
           _buildMainAuthSubTitle(context),
-          SizedBox(height: 62.h),
+          SizedBox(height: 41.h),
           _buildAuthMethods(),
         ],
       ),
@@ -60,7 +59,10 @@ class _MainAuthViewState extends State<MainAuthView> {
   Widget _buildMainAuthTitle(BuildContext context) {
     return Text(
       AppStrings.registerBy,
-      style: Theme.of(context).textTheme.titleMedium,
+      style: getBoldStyle(
+        fontSize: 30.sp,
+        color: ColorManager.black,
+      ),
     );
   }
 
@@ -147,7 +149,7 @@ class _MainAuthViewState extends State<MainAuthView> {
     return Expanded(
       child: ListView.separated(
         separatorBuilder: (context, index) {
-          return SizedBox(height: 15.h);
+          return _buildSeperatro(index);
         },
         itemCount: authMethods.length,
         itemBuilder: (context, index) {
@@ -159,6 +161,17 @@ class _MainAuthViewState extends State<MainAuthView> {
         },
       ),
     );
+  }
+
+  Widget _buildSeperatro(int index) {
+    return index == 1
+        ? Padding(
+            padding: EdgeInsets.only(top: 8.h, bottom: 8.h),
+            child: Divider(
+              color: ColorManager.dividerColorLight,
+            ),
+          )
+        : SizedBox(height: 16.h);
   }
 
   @override

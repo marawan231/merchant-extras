@@ -3,7 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/style_manager.dart';
+import 'package:merchant_extras/core/widgets/default_textfield.dart';
+import '../../../../core/resources/style_manager.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/widgets/custom_textfield.dart';
@@ -74,24 +75,33 @@ class _ShipToCountryState extends State<ShipToCountry> {
             ));
   }
 
+  _buildTitle() {
+    return Text(
+      AppStrings.shipTo,
+      style: getBoldStyle(fontSize: 17.sp, color: ColorManager.black),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return CustomTextField(
-        readOnly: true,
-        onTap: () {
-          chooseCountry(context);
-        },
-        onSaved: (p0) {},
-        icon: ImageAssets.location,
-        iconHeight: 16.sp,
-        iconWidth: 16.sp,
-        title: AppStrings.shipTo,
-        suffix: Icon(
-          Icons.arrow_forward_ios_rounded,
-          size: 16.sp,
-          color: ColorManager.primary,
-        ),
-        hint: BlocProvider.of<GlobalCubit>(context).chooseCountry ??
-            AppStrings.chooseCountry);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildTitle(),
+        14.verticalSpace,
+        DefaultTextField(
+            readOnly: true,
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+            onTap: () {
+              chooseCountry(context);
+            },
+            hintStyle:
+                getRegularStyle(fontSize: 15.sp, color: ColorManager.black),
+            onSaved: (p0) {},
+            hint: BlocProvider.of<GlobalCubit>(context).chooseCountry ??
+                AppStrings.saudiArabia),
+      ],
+    );
   }
 }

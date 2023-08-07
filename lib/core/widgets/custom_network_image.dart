@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-
 class CustomNetworkCachedImage extends StatelessWidget {
   const CustomNetworkCachedImage(
       {super.key,
@@ -10,19 +9,22 @@ class CustomNetworkCachedImage extends StatelessWidget {
       this.fit,
       this.filter,
       this.width,
-      this.height});
+      this.height,
+      this.color});
 
   final String url;
   final BoxFit? fit;
   final ColorFilter? filter;
   final double? width;
   final double? height;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
       width: width,
-      // height: height,
+      height: height,
+      color: color,
       // color: ColorManager.amber,
       imageUrl: url,
       imageBuilder: (context, imageProvider) => Container(
@@ -45,7 +47,8 @@ class CustomNetworkCachedImage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      errorWidget: (context, url, error) => const Icon(Icons.error),
+      errorWidget: (context, url, error) =>
+          const Center(child: Icon(Icons.error)),
     );
   }
 }

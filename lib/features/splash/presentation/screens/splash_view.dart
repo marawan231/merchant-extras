@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:merchant_extras/core/resources/shared_prefrences.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
+import '../../../../core/resources/shared_prefrences.dart';
 import '../widgets/splash_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -26,7 +26,7 @@ class _SplashViewState extends State<SplashView> {
     if (token == null) {
       Navigator.pushNamedAndRemoveUntil(
           context, Routes.mainAuthViewRoute, (route) => false);
-      // Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
+      //   // Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
       return;
     } else if (token != null) {
       refferNumber = CacheHelper.getData(key: 'refferNumber');

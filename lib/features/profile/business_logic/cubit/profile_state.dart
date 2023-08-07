@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:merchant_extras/core/web_services/error_model.dart';
-import 'package:merchant_extras/features/auth/data/models/auth_model.dart';
+import '../../../../core/web_services/error_model.dart';
+import '../../../auth/data/models/auth_model.dart';
 
 import '../../../../core/web_services/network_exceptions.dart';
 

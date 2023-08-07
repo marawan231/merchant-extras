@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/shared_prefrences.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_cubit.dart';
-import 'package:merchant_extras/features/profile/business_logic/cubit/profile_state.dart';
+import '../../../../core/resources/shared_prefrences.dart';
+import '../../../profile/business_logic/cubit/profile_cubit.dart';
+import '../../../profile/business_logic/cubit/profile_state.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
 import '../../../../core/business_logic/cubit/global_state.dart';
 import '../../../../core/resources/route_manager.dart';

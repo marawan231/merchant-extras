@@ -75,6 +75,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         emit(AuthResultState.loginSuccess(userData));
       },
       failure: (DioExceptionType networkExceptions) {
+        
         emit(AuthResultState.loginError(networkExceptions));
       },
     );

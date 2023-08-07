@@ -14,7 +14,6 @@ import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/default_button.dart';
 import '../../business_logic/cubit/auth_cubit.dart';
 import '../../business_logic/cubit/auth_state.dart';
-import '../widgets/counter_down.dart';
 import '../widgets/pin_code_fields.dart';
 import '../widgets/resend_code.dart';
 
@@ -37,24 +36,29 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
   final _formKey = GlobalKey<FormState>();
 
   Widget _buildConfirmPhoneViewBody(BuildContext context) {
-    return ListView(
-      physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
-      children: [
-        _buildConfirmPhoneViewHeadline(context),
-        SizedBox(height: 12.h),
-        _buildConfirmPhoneViewSubTitle(context),
-        SizedBox(height: 40.h),
-        _buildOtpCodeTextField(),
-        SizedBox(height: 82.h),
-        _buildRemainingTime(),
-        SizedBox(height: 82.h),
-        const ResendCode(),
-        SizedBox(height: 202.h),
-        _buildConfirmButton(),
-        _buildPhoneVerificationBloc(),
-      ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 137.h),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // physics: const NeverScrollableScrollPhysics(),
+          // shrinkWrap: true,
+          children: [
+            _buildConfirmPhoneViewHeadline(context),
+            SizedBox(height: 6.h),
+            _buildConfirmPhoneViewSubTitle(context),
+            SizedBox(height: 54.h),
+            _buildOtpCodeTextField(),
+            SizedBox(height: 40.h),
+            // _buildRemainingTime(),
+            // SizedBox(height: 82.h),
+            const Center(child: ResendCode()),
+            SizedBox(height: 175.h),
+            _buildConfirmButton(),
+            _buildPhoneVerificationBloc(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -66,32 +70,32 @@ class _ConfirmPhoneViewState extends State<ConfirmPhoneView> {
     );
   }
 
-  Widget _buildRemainingTime() {
-    return CountDownTimer(
-      secondsRemaining: AppConstants.timeOut,
-      whenTimeExpires: () {
-        Commons.showToast(message: AppStrings.timeOut);
-      },
-      countDownTimerStyle:
-          getRegularStyle(color: ColorManager.darkGrey, fontSize: 16.sp),
-    );
-  }
+  // Widget _buildRemainingTime() {
+  //   return CountDownTimer(
+  //     secondsRemaining: AppConstants.timeOut,
+  //     whenTimeExpires: () {
+  //       Commons.showToast(message: AppStrings.timeOut);
+  //     },
+  //     countDownTimerStyle:
+  //         getRegularStyle(color: ColorManager.darkGrey, fontSize: 16.sp),
+  //   );
+  // }
 
   Widget _buildConfirmPhoneViewHeadline(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 95.w),
+      padding: EdgeInsets.only(right: 7.w),
       child: Text(AppStrings.confirmPhoneNumber,
-          style: Theme.of(context).textTheme.titleMedium),
+          style: getBoldStyle(color: ColorManager.black, fontSize: 30.sp)),
     );
   }
 
   Widget _buildConfirmPhoneViewSubTitle(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 70.w, right: 70.w),
+      padding: EdgeInsets.only(left: 83.w, right: 7.w),
       child: Text(
-          textAlign: TextAlign.center,
-          AppStrings.confirmPhoneHint,
-          style: Theme.of(context).textTheme.bodySmall),
+        AppStrings.confirmPhoneHint,
+        style: Theme.of(context).textTheme.bodySmall,
+      ),
     );
   }
 

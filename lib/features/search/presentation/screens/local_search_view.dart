@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:merchant_extras/core/business_logic/cubit/global_cubit.dart';
+import '../../../../core/business_logic/cubit/global_cubit.dart';
 
 class LocalSearchView extends StatelessWidget {
   const LocalSearchView({super.key});

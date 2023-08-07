@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/business_logic/cubit/global_cubit.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/resources/utils.dart';
 import '../../business_logic/home_cubit.dart';
@@ -14,7 +17,7 @@ class WorldDeals extends StatelessWidget {
 
   _buildWorldDeals(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 20.w),
+      padding: EdgeInsets.only(right: 24.w, left: 24.w, top: 10.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -27,9 +30,29 @@ class WorldDeals extends StatelessWidget {
   }
 
   _buildTitle(BuildContext context) {
-    return Text(
-      AppStrings.bestWorldDeals,
-      style: Theme.of(context).textTheme.headlineSmall,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          AppStrings.bestWorldDeals,
+          style: getMediumStyle(
+            color: ColorManager.black,
+            fontSize: 18.sp,
+          ),
+        ),
+        InkWell(
+          onTap: () {
+            BlocProvider.of<GlobalCubit>(context).changeSelectedIndex(11);
+          },
+          child: Text(
+            AppStrings.more,
+            style: getMediumStyle(
+              color: ColorManager.primary,
+              fontSize: 18.sp,
+            ),
+          ),
+        ),
+      ],
     );
   }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // ignore: depend_on_referenced_packages
-import 'package:intl/intl.dart' ;
+import 'package:intl/intl.dart';
 import 'package:merchant_extras/features/notification/data/models/notification_model.dart';
 
 import '../../../../core/resources/assets_manager.dart';
@@ -17,17 +17,19 @@ class NotificationItem extends StatelessWidget {
   _buildLeading(BuildContext context) {
     return Container(
       // alignment: Alignment.,
-      width: 50.w,
-      height: double.infinity,
-      decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+      width: 55.w,
+      height: 55.w,
+      decoration: const BoxDecoration(
+        // color: Theme.of(context).primaryColor,
         shape: BoxShape.circle,
       ),
       child: Center(
         child: Image.asset(
           ImageAssets.bell,
-          height: 18.w,
-          width: 18.w,
+          color: ColorManager.primary,
+          height: 22.w,
+          width: 22.w,
+          fit: BoxFit.cover,
         ),
       ),
     );
@@ -44,7 +46,7 @@ class NotificationItem extends StatelessWidget {
 
   _buildSubTitle() {
     return Padding(
-      padding: EdgeInsets.only(top: 6.h),
+      padding: EdgeInsets.only(bottom: 6.h),
       child: Text(
         model?.content ?? '',
         style: getRegularStyle(color: ColorManager.darkGrey, fontSize: 12.sp),
@@ -54,18 +56,23 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      tileColor:
-          model?.isRead == 1 ? ColorManager.white : ColorManager.lightWhite,
-      shape: RoundedRectangleBorder(
+    return Container(
+      decoration: BoxDecoration(
+        border: Border(bottom: BorderSide(color: ColorManager.cfGrey)),
+      ),
+      child: ListTile(
+        tileColor:
+            model?.isRead == 1 ? ColorManager.white : ColorManager.lightWhite,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(5.r)),
-          side: BorderSide(color: ColorManager.cfGrey)),
-      contentPadding:
-          EdgeInsets.only(top: 15.h, right: 20.w, left: 31.w, bottom: 15.h),
-      dense: true,
-      leading: _buildLeading(context),
-      title: _buildTitle(),
-      subtitle: _buildSubTitle(),
+        ),
+        contentPadding:
+            EdgeInsets.only(top: 15.h, right: 20.w, left: 31.w, bottom: 15.h),
+        dense: true,
+        leading: _buildLeading(context),
+        title: _buildSubTitle(),
+        subtitle: _buildTitle(),
+      ),
     );
   }
 }

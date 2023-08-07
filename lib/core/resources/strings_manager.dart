@@ -1,10 +1,17 @@
 class AppStrings {
   static const noRouteFound = "noRouteFound";
   static const String locale = 'locale';
+  static const String topDeals = 'أفضل الصفقات';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String categories = 'التصنيفات';
+  static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
+  static const String enterPhoneNumber = 'ادخل رقم الجوال';
   static const String theRate = 'التقيم';
+  static const String searchForCategory = 'البحث عن تصنيف';
+  static const String discover = 'اكتشف';
+  static const String theQuantity = 'الكمية';
   static const String paymentSuccess = 'تم الدفع بنجاح';
   static const String quantityNotAvailable = 'حاول تحديد الكمية غير متوفرة';
 
@@ -90,7 +97,7 @@ class AppStrings {
   static const String switchAccount = 'تبديل الحساب';
   static const String buyer = 'مارشنت مشتري';
   static const String seller = 'مارشنت بائع';
-  static const String bestWorldDeals = 'أفضل الصفقات العالمية :';
+  static const String bestWorldDeals = 'أفضل الصفقات';
   static const String bestLocalDeals = 'أفضل الصفقات المحلية :';
 
   static const String orangeQuantity = 'خمسة طن من البرتقال';
@@ -196,7 +203,7 @@ class AppStrings {
   static const String tamweel = 'تمويل تشاركي';
   static const String priceForUnit = 'للكيلو';
   static const String cannotSendSample = 'لا يمكن ارسال عينة';
-  static const String productRate = 'تقييم المنتج :';
+  static const String productRate = 'تقييم المنتج';
   static const String myLocation = 'موقعي';
 
   static const String availableQuantity = 'الكمية المتوفرة';
@@ -206,6 +213,7 @@ class AppStrings {
   static const String buy = 'شراء';
   static const String negotiate = 'تفاوض';
   static const String buyDetails = 'بيانات الشراء';
+  static const String buyAndPayDetails = 'تفاصيل الشراء';
   static const String currentMoneyInWallet = 'رصيدك الحالي في المحفظة :';
   static const String writeYourMessage = 'اكتب رسالتك';
   static const String showTranslate = 'عرض الترجمة';

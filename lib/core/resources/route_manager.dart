@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:merchant_extras/features/home/presentation/screens/all_deals_view.dart';
+import '../../features/home/presentation/screens/all_categories_view.dart';
 import '../../features/payment/business_logic/cubit/payment_cubit.dart';
 import '../../features/profile/business_logic/cubit/profile_cubit.dart';
 import '../business_logic/cubit/global_cubit.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
 import '../../features/auth/presentation/screens/face_auth_view.dart';
-import '../../features/deals/presentation/screens/deals_status_view.dart';
 import '../../features/deals/presentation/screens/world_deal_view.dart';
 import '../../features/menu/business_logic/cubit/menu_cubit.dart';
 import '../../features/notification/business_logic/cubit/notification_cubit.dart';
@@ -24,9 +25,7 @@ import '../../features/deals/presentation/screens/add_deal_view.dart';
 import '../../features/deals/presentation/screens/deal_deatils_view.dart';
 import '../../features/deals/presentation/screens/deal_owner_details_view.dart';
 import '../../features/deals/presentation/screens/deal_processing_view.dart';
-import '../../features/deals/presentation/screens/local_deal_view.dart';
 import '../../features/deals/presentation/screens/my_deals_main_view.dart';
-import '../../features/deals/presentation/screens/tamweel_deals_view.dart';
 import '../../features/home/business_logic/home_cubit.dart';
 import '../../features/home/presentation/screens/home_view.dart';
 import '../../features/home/presentation/screens/main_home_view.dart';
@@ -74,6 +73,10 @@ class Routes {
       "/pickDealTypeToSearchInViewRoute";
   static const String mainhomeviewRoute = "/mainhomeviewRoute";
   static const String homeviewRoute = "/homeviewRoute";
+  //AllCategoriesView
+  static const String allCategoriesViewRoute = "/allCategoriesViewRoute";
+  //AllDealsView
+  static const String allDealsRoute = "/allDealsViewRoute";
 
   static const String rateUsRoute = "/rateUsRoute";
   static const String tamweelPayViewRoute = "/tamweelPayViewRoute";
@@ -86,6 +89,7 @@ class Routes {
   static const String walletRoute = "/walletRoute";
   static const String messagesRoute = "/messagesRoute";
   static const String chatsRoute = "/chatsRoute";
+
   static const String myDealsMainViewRoute = "/myDealsViewRoute";
   static const String searchResultDealItemDetails =
       "/searchResultDealItemDetails";
@@ -163,8 +167,6 @@ class RouteGenerator {
       value: searchCubit,
       child: const WorldSearchView(),
     ),
-    const LocalSearchView(),
-    const LocalSearchView(),
     BlocProvider.value(
       value: searchCubit,
       child: const SearchResultView(),
@@ -179,16 +181,21 @@ class RouteGenerator {
     ),
     BlocProvider.value(
       value: dealsCubit,
-      child: const LocalDealsView(),
-    ),
-    const TamweelDealsView(),
-    BlocProvider.value(
-      value: dealsCubit,
-      child: const DealsStatusView(),
-    ),
-    BlocProvider.value(
-      value: dealsCubit,
       child: const MyDealsMainView(),
+    ),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: homeCubit),
+        BlocProvider.value(value: searchCubit),
+      ],
+      child: const AllCategoriesView(),
+    ),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider.value(value: homeCubit),
+        BlocProvider.value(value: searchCubit),
+      ],
+      child: const AllDealsView(),
     ),
   ];
 
@@ -262,6 +269,26 @@ class RouteGenerator {
                     value: notificationCubit,
                   ),
                 ], child: const MainHomeView()));
+      case Routes.allCategoriesViewRoute:
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(value: homeCubit),
+                    BlocProvider.value(value: searchCubit),
+                  ],
+                  child: const AllCategoriesView(),
+                ));
+      case Routes.allDealsRoute:
+        // final arguments = settings.arguments as Map;
+        // final List<DealModel> deals = arguments['deals'];
+        return MaterialPageRoute(
+            builder: (_) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(value: homeCubit),
+                    BlocProvider.value(value: searchCubit),
+                  ],
+                  child: const AllDealsView(),
+                ));
       case Routes.searchResultViewRoute:
         return MaterialPageRoute(
           builder: (_) => BlocProvider.value(
@@ -379,7 +406,7 @@ class RouteGenerator {
             builder: (_) => const AccountVerifySuccessView());
       case Routes.buySelectedQuantityViewRoute:
         final arguments = settings.arguments as Map;
-        final quantityFieldVisible = arguments['quantityFieldVisible'];
+        final bool quantityFieldVisible = arguments['quantityFieldVisible'];
         final num total = arguments['total'];
         final String dealId = arguments['dealId'];
         final String quantity = arguments['quantity'];

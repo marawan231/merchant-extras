@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:merchant_extras/features/deals/data/model/deal_model.dart';
+import '../../../deals/data/model/deal_model.dart';
 
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/web_services/network_exceptions.dart';

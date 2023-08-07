@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/resources/utils.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
+import '../../../../core/resources/utils.dart';
 
 class AuthMethodItem extends StatelessWidget {
   const AuthMethodItem({
@@ -27,13 +27,27 @@ class AuthMethodItem extends StatelessWidget {
       leading,
       width: 25.w,
       height: 25.h,
+      color: index == 1
+          ? ColorManager.primary
+          : index == 0
+              ? ColorManager.white
+              : null,
     );
   }
 
   Widget _buildTitle() {
-    return Text(
-      title,
-      style: getBoldStyle(color: ColorManager.grey, fontSize: 15.sp),
+    return Padding(
+      padding: EdgeInsets.only(bottom: 4.h),
+      child: Text(
+        title,
+        style: getBoldStyle(
+            color: (index == 0
+                ? Colors.white
+                : index == 1
+                    ? ColorManager.primary
+                    : ColorManager.darkGrey),
+            fontSize: 15.sp),
+      ),
     );
   }
 
@@ -41,22 +55,33 @@ class AuthMethodItem extends StatelessWidget {
     return Icon(
       Icons.arrow_back_ios_new,
       size: 20.sp,
-      color: Theme.of(context).primaryColor,
+      color: index == 1
+          ? ColorManager.primary
+          : index == 0
+              ? ColorManager.white
+              : ColorManager.darkGrey,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 75.h,
+      height: height ?? 54.h,
       child: ListTile(
         horizontalTitleGap: 0,
-        contentPadding: EdgeInsets.only(top: 10.h, right: 20.w, left: 20.w),
-        tileColor: tileColor ?? ColorManager.lightWhite,
+        // contentPadding: EdgeInsets.only(right: 20.w, bottom: 30.w),
+        tileColor: tileColor ??
+            (index == 0
+                ? ColorManager.primary
+                : index == 1
+                    ? ColorManager.transparent
+                    : ColorManager.lightWhite),
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5.r)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
             side: BorderSide(
-              color: ColorManager.cfGrey,
+              color: index != 2
+                  ? ColorManager.primary
+                  : ColorManager.cfGrey.withOpacity(.6),
               width: 1.sp,
             )),
         leading: _buildLeading(),

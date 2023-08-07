@@ -40,14 +40,15 @@ class _MainHomeViewState extends State<MainHomeView>
         listener: (context, state) {
           state.whenOrNull(
             selectedIndexChanged: (index) {
-              setState(() {
-                selectedTab = index;
-              });
+              // setState(() {
+              //   selectedTab = index;
+              // });
+              setState(() {});
             },
             backAfterBack: (index) {
-              setState(() {
-                selectedTab = index;
-              });
+              // setState(() {
+              //   selectedTab = index;
+              // });
             },
             getUnReadNotificationCount: (count) {
               setState(() => notificationCount = count);

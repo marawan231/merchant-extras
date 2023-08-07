@@ -7,9 +7,9 @@ part of 'wallet_info.dart';
 // **************************************************************************
 
 WalletInfo _$WalletInfoFromJson(Map<String, dynamic> json) => WalletInfo(
-      totalBalance: json['total_balance'] as int?,
-      availableBalance: json['available_balance'] as int?,
-      holdBalance: json['hold_balance'] as int?,
+      totalBalance: json['total_balance'] as num?,
+      availableBalance: json['available_balance'] as num?,
+      holdBalance: json['hold_balance'] as num?,
       transactions: (json['transactions'] as List<dynamic>?)
           ?.map((e) => Transactions.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -25,7 +25,7 @@ Map<String, dynamic> _$WalletInfoToJson(WalletInfo instance) =>
 
 Transactions _$TransactionsFromJson(Map<String, dynamic> json) => Transactions(
       id: json['id'] as int?,
-      amount: json['amount'] as String?,
+      amount: json['amount'] as num?,
       type: json['type'] as String?,
       status: json['status'] as String?,
       time: json['time'] as String?,

@@ -3,8 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/constants.dart';
-import 'package:merchant_extras/features/menu/business_logic/cubit/menu_cubit.dart';
+import '../../../../core/resources/constants.dart';
+import '../../business_logic/cubit/menu_cubit.dart';
 
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';

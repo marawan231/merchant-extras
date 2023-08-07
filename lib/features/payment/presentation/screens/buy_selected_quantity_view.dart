@@ -3,11 +3,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/color_manager.dart';
-import 'package:merchant_extras/core/resources/commons.dart';
-import 'package:merchant_extras/features/deals/business_logic/cubit/deals_cubit.dart';
-import 'package:merchant_extras/features/menu/business_logic/cubit/menu_cubit.dart';
-import 'package:merchant_extras/features/payment/business_logic/cubit/payment_state.dart';
+import '../../../../core/resources/color_manager.dart';
+import '../../../../core/resources/commons.dart';
+import '../../../deals/business_logic/cubit/deals_cubit.dart';
+import '../../../menu/business_logic/cubit/menu_cubit.dart';
+import '../../business_logic/cubit/payment_state.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../business_logic/cubit/payment_cubit.dart';
@@ -65,27 +65,34 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
       },
       builder: (context, state) {
         return ListView(
+          // shrinkWrap: true,
           padding:
               EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h, bottom: 30.h),
           children: [
             Visibility(
                 visible: widget.quantityFieldVisible ?? false,
                 child: QuantityToBuy(
+                  remainingAmount: widget.quantity,
                   onQuantityChanged: (p0) {
                     setState(() {
+                      BlocProvider.of<PaymentCubit>(context)
+                          .changeTotalToPay(widget.totalToPay!);
                       widget.quantity = p0;
                       widget.totalToPay = p0 * int.parse(widget.unitPrice!);
                     });
                   },
                 )),
-            SizedBox(height: 32.h),
+            // SizedBox(height: 32.h),
+            14.verticalSpace,
             const ShipToCountry(),
-            SizedBox(height: 36.h),
+            14.verticalSpace,
+
+            // SizedBox(height: 36.h),
             PaymentMethods(
               totalToPay: widget.totalToPay,
               onPayTap: () {
                 log('choosenCountryId: ${BlocProvider.of<GlobalCubit>(context).choosenCountryId ?? ''}');
-      
+
                 if (BlocProvider.of<GlobalCubit>(context).choosenCountryId !=
                         null &&
                     widget.totalToPay != '0') {

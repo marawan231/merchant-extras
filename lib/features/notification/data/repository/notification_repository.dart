@@ -1,4 +1,4 @@
-import 'package:merchant_extras/features/notification/data/models/unread_count_notifications_response.dart';
+import '../models/unread_count_notifications_response.dart';
 
 import '../../../../core/web_services/api_result.dart';
 import '../../../../core/web_services/network_exceptions.dart';

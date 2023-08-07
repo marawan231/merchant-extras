@@ -153,18 +153,18 @@ ThemeData buyerTheme = ThemeData(
       errorStyle: getRegularStyle(color: ColorManager.error),
       enabledBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: ColorManager.transparent, width: 1.5.sp),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+              BorderSide(color: ColorManager.borderInInputTextFiefld, width: 1.5.sp),
+          borderRadius: BorderRadius.all(Radius.circular(10.r))),
       focusedBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+              BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+          borderRadius: BorderRadius.all(Radius.circular(10.r))),
       errorBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
+              BorderSide(color: ColorManager.error, width: AppSize.s1_5),
+          borderRadius: BorderRadius.all(Radius.circular(10.r))),
       focusedErrorBorder: OutlineInputBorder(
           borderSide:
               BorderSide(color: ColorManager.transparent, width: AppSize.s1_5),
-          borderRadius: BorderRadius.all(Radius.circular(5.r)))),
+          borderRadius: BorderRadius.all(Radius.circular(10.r)))),
 );

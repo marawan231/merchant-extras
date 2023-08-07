@@ -25,7 +25,7 @@ class DefaultButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 15.h),
         decoration: BoxDecoration(
             color: color ?? Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.all(Radius.circular(5.r))),
+            borderRadius: BorderRadius.all(Radius.circular(10.r))),
         child: Center(
           child: isLoading == true
               ? SizedBox(

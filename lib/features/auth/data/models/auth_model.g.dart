@@ -26,12 +26,12 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       email: json['email'] as String?,
       phone: json['phone'] as String?,
       imageUrl: json['image_url'] as String?,
-      countryId: json['country_id'] as String?,
+      countryId: json['country_id'] as int?,
       currency: json['currency'] as String?,
       token: json['token'] as String?,
       status: json['status'] as String?,
       referrerCode: json['referrer_code'] as String?,
-      accountVerified: json['account_verified'] as String?,
+      accountVerified: json['account_verified'] as int?,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{

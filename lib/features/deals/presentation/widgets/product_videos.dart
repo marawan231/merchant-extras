@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../../core/resources/assets_manager.dart';
 import '../../../profile/presentation/widgets/add_button.dart';
 import '../../../profile/presentation/widgets/close_button.dart';

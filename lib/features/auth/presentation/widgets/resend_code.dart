@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class ResendCode extends StatelessWidget {
-
   const ResendCode({super.key});
 
-    Widget _buildResendCode(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: 125.w),
-      child: InkWell(
-          onTap: () {},
-          child: Text(
-            AppStrings.resendCode,
-            style: getBoldStyle(
-                    color: Theme.of(context).primaryColor, fontSize: 14.sp)
-                .copyWith(
-              decoration: TextDecoration.underline,
-            ),
-          )),
-    );
+  Widget _buildResendCode(BuildContext context) {
+    return InkWell(
+        onTap: () {},
+        child: RichText(
+          text: TextSpan(
+            text: AppStrings.resendCodeHint,
+            style:
+                getRegularStyle(color: ColorManager.darkGrey, fontSize: 16.sp),
+            children: [
+              WidgetSpan(child: SizedBox(width: 8.w)),
+              TextSpan(
+                text: AppStrings.resendCode,
+                style: getMediumStyle(
+                    color: ColorManager.primary, fontSize: 16.sp),
+              ),
+            ],
+          ),
+        ));
   }
 
   @override

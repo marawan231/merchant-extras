@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/features/search/business_logic/cubit/search_cubit.dart';
+import '../../business_logic/cubit/search_cubit.dart';
 import '../../../../core/resources/strings_manager.dart';
 import 'search_result_item.dart';
 

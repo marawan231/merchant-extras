@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:merchant_extras/features/payment/business_logic/cubit/payment_state.dart';
-import 'package:merchant_extras/features/payment/data/repository/payment_repository.dart';
+import 'payment_state.dart';
+import '../../data/repository/payment_repository.dart';
 
 import '../../../../core/web_services/error_model.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -8,7 +8,13 @@ import '../../../../core/web_services/network_exceptions.dart';
 class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this.paymentRepository) : super(const PaymentState.idle());
   final PaymentRepository paymentRepository;
+  String totalToPayV = '0.0';
 
+  void changeTotalToPay(String totalToPay) {
+    totalToPayV = totalToPay;
+
+    emit(PaymentState.changeTotalToPaySuccedded(totalToPay));
+  }
   // void getWalletInfo() async {
   // emit(const MenuState.walletInfoLoading());
   // // ignore: prefer_typing_uninitialized_variables

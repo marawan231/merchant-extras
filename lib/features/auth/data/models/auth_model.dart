@@ -23,7 +23,7 @@ class User {
   @JsonKey(name: 'image_url')
   String? imageUrl;
   @JsonKey(name: 'country_id')
-  String? countryId;
+  int? countryId;
 
   String? currency;
   String? token;
@@ -31,7 +31,7 @@ class User {
   @JsonKey(name: 'referrer_code')
   String? referrerCode;
   @JsonKey(name: 'account_verified')
-  String? accountVerified;
+  int? accountVerified;
 
   User(
       {this.id,

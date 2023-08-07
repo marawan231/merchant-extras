@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/utils.dart';
+import '../../../../core/resources/utils.dart';
 import '../../../../core/resources/route_manager.dart';
 
 import '../../../../core/resources/assets_manager.dart';
@@ -11,8 +11,11 @@ import '../../../../core/resources/style_manager.dart';
 import 'filter_form.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  const CustomSearchBar({super.key});
-
+  const CustomSearchBar(
+      {super.key, required this.filterVisible, this.hintText, this.onChanged});
+  final bool filterVisible;
+  final String? hintText;
+  final Function(String)? onChanged;
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
@@ -21,6 +24,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   _buildSearchField(BuildContext context) {
     return Expanded(
         child: TextFormField(
+      onChanged:widget. onChanged,
       style: Theme.of(context).textTheme.displaySmall,
       cursorColor: Theme.of(context).primaryColor,
       decoration: InputDecoration(
@@ -32,7 +36,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           height: 20.h,
         ),
 
-        hintText: AppStrings.search,
+        hintText: widget.hintText ?? AppStrings.search,
         // alignLabelWithHint: true,
         // isDense: true,
       ),
@@ -40,34 +44,37 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   }
 
   _buildFilter(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        showModalBottomSheet(
-          isScrollControlled: true,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10.r),
-                  topRight: Radius.circular(10.r))),
-          context: context,
-          constraints: BoxConstraints(
-            maxWidth: 600.h,
-            minWidth: 600.h,
+    return Visibility(
+      visible: widget.filterVisible,
+      child: InkWell(
+        onTap: () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10.r),
+                    topRight: Radius.circular(10.r))),
+            context: context,
+            constraints: BoxConstraints(
+              maxWidth: 600.h,
+              minWidth: 600.h,
+            ),
+            builder: (context) {
+              return _buildBottomSheet();
+            },
+          );
+        },
+        child: Container(
+          width: 55.w,
+          height: 45.h,
+          decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.all(Radius.circular(5.r))),
+          child: Image.asset(
+            ImageAssets.filter,
+            width: 20.w,
+            height: 20.h,
           ),
-          builder: (context) {
-            return _buildBottomSheet();
-          },
-        );
-      },
-      child: Container(
-        width: 55.w,
-        height: 45.h,
-        decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.all(Radius.circular(5.r))),
-        child: Image.asset(
-          ImageAssets.filter,
-          width: 20.w,
-          height: 20.h,
         ),
       ),
     );

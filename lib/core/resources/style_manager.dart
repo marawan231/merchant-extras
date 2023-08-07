@@ -3,23 +3,23 @@ import 'color_manager.dart';
 
 import 'font_manager.dart';
 
-TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color) {
+TextStyle _getTextStyle(double fontSize, FontWeight fontWeight, Color color,
+    {double? height}) {
   return TextStyle(
-    fontSize: fontSize,
-    fontFamily: FontConstants.defaultFontFamily,
-    color: color,
-    fontWeight: fontWeight,
-  );
+      fontSize: fontSize,
+      fontFamily: FontConstants.defaultFontFamily,
+      color: color,
+      fontWeight: fontWeight,
+      height: height);
 }
 
 // regular style
 
-TextStyle getRegularStyle({double fontSize = FontSize.s12, Color? color}) {
+TextStyle getRegularStyle(
+    {double fontSize = FontSize.s12, Color? color, double? height}) {
   return _getTextStyle(
-    fontSize,
-    FontWeightManager.regular,
-    color ?? ColorManager.primary,
-  );
+      fontSize, FontWeightManager.regular, color ?? ColorManager.primary,
+      height: height);
 }
 
 // medium style
@@ -34,22 +34,23 @@ TextStyle getMediumStyle({double fontSize = FontSize.s12, Color? color}) {
 
 // light style
 
-TextStyle getLightStyle({double fontSize = FontSize.s12, Color? color}) {
+TextStyle getLightStyle(
+    {double fontSize = FontSize.s12, Color? color, double? height}) {
   return _getTextStyle(
     fontSize,
     FontWeightManager.light,
     color ?? ColorManager.primary,
+    height: height,
   );
 }
 
 // bold style
 
-TextStyle getBoldStyle({double fontSize = FontSize.s12, Color? color}) {
+TextStyle getBoldStyle(
+    {double fontSize = FontSize.s12, Color? color, double? height}) {
   return _getTextStyle(
-    fontSize,
-    FontWeightManager.bold,
-    color ?? ColorManager.primary,
-  );
+      fontSize, FontWeightManager.bold, color ?? ColorManager.primary,
+      height: height);
 }
 
 // semibold style

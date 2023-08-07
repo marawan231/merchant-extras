@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'wallet_info.g.dart';
@@ -6,11 +5,11 @@ part 'wallet_info.g.dart';
 @JsonSerializable(explicitToJson: true)
 class WalletInfo {
   @JsonKey(name: 'total_balance')
-  int? totalBalance;
+  num? totalBalance;
   @JsonKey(name: 'available_balance')
-  int? availableBalance;
+  num? availableBalance;
   @JsonKey(name: 'hold_balance')
-  int? holdBalance;
+  num? holdBalance;
   List<Transactions>? transactions;
 
   WalletInfo(
@@ -19,17 +18,15 @@ class WalletInfo {
       this.holdBalance,
       this.transactions});
 
-  factory WalletInfo.fromJson(Map<String, dynamic> json) => _$WalletInfoFromJson(json);
+  factory WalletInfo.fromJson(Map<String, dynamic> json) =>
+      _$WalletInfoFromJson(json);
   Map<String, dynamic> toJson() => _$WalletInfoToJson(this);
-
-
-  }
+}
 
 @JsonSerializable(explicitToJson: true)
-
 class Transactions {
   int? id;
-  String? amount;
+  num? amount;
   String? type;
   String? status;
   String? time;
