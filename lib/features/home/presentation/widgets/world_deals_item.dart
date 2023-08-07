@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/resources/style_manager.dart';
+import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
@@ -54,6 +55,7 @@ class WorldDealsItem extends StatelessWidget {
               _buildDetails(),
               4.verticalSpace,
               _buildPrice(),
+              // 4.verticalSpace,
             ],
           ),
         )
@@ -72,7 +74,7 @@ class WorldDealsItem extends StatelessWidget {
           style: getMediumStyle(fontSize: 12.sp, color: ColorManager.primary),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.only(end: 5.w),
+          padding: EdgeInsetsDirectional.only(end: 20.w),
           child: Text(
             '${AppStrings.theQuantity} : ${deals[index].amount!}',
             style:
@@ -100,14 +102,22 @@ class WorldDealsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 125.w,
-      // padding: EdgeInsets.only(bottom: 10.h, right: 8.w, left: 6.w),
-      decoration: BoxDecoration(
-        color: ColorManager.backGrey,
-        borderRadius: BorderRadius.circular(10.r),
+    return InkWell(
+      onTap: () {
+        Navigator.of(context)
+            .pushNamed(Routes.searchResultDealItemDetails, arguments: {
+          'deal': deals[index],
+        });
+      },
+      child: Container(
+        width: 125.w,
+        // padding: EdgeInsets.only(bottom: 10.h, right: 8.w, left: 6.w),
+        decoration: BoxDecoration(
+          color: ColorManager.backGrey,
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+        child: _buildItem(),
       ),
-      child: _buildItem(),
     );
   }
 }

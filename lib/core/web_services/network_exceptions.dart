@@ -79,7 +79,7 @@ class DioExceptionType with _$DioExceptionType {
     }
   }
 
-  static DioExceptionType getDioException(error) {
+  static DioExceptionType getDioException(error, [ stacktrace]) {
     if (error is Exception) {
       try {
         DioExceptionType networkExceptions;
@@ -125,7 +125,7 @@ class DioExceptionType with _$DioExceptionType {
     } else {
       if (error.toString().contains("is not a subtype of")) {
         log("message $error ");
-
+      log("error $error $stacktrace");
         // print(error.toString());
         return const DioExceptionType.unableToProcess();
       } else {

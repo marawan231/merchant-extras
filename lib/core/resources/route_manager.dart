@@ -406,7 +406,7 @@ class RouteGenerator {
             builder: (_) => const AccountVerifySuccessView());
       case Routes.buySelectedQuantityViewRoute:
         final arguments = settings.arguments as Map;
-        final quantityFieldVisible = arguments['quantityFieldVisible'];
+        final bool quantityFieldVisible = arguments['quantityFieldVisible'];
         final num total = arguments['total'];
         final String dealId = arguments['dealId'];
         final String quantity = arguments['quantity'];

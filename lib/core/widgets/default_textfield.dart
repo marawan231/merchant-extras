@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/color_manager.dart';
 import 'package:merchant_extras/core/resources/style_manager.dart';
-
 
 class DefaultTextField extends StatefulWidget {
   const DefaultTextField(
@@ -15,7 +15,10 @@ class DefaultTextField extends StatefulWidget {
       this.onTap,
       this.readOnly,
       this.onChanged,
-      this.keyboardType});
+      this.keyboardType,
+      this.hintStyle,
+      this.style,
+      this.enabled});
 
   final Widget? suffix;
   final String hint;
@@ -28,6 +31,9 @@ class DefaultTextField extends StatefulWidget {
   final void Function(String?)? onSaved;
   final TextEditingController? controller;
   final void Function()? onTap;
+  final TextStyle? hintStyle;
+  final TextStyle? style;
+  final bool? enabled;
 
   @override
   State<DefaultTextField> createState() => _DefaultTextFieldState();
@@ -39,6 +45,12 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
     return SizedBox(
       // height: 54.h,
       child: TextFormField(
+        enabled: widget.enabled ?? true,
+        style: widget.style ??
+            getRegularStyle(
+              fontSize: 15.sp,
+              color: ColorManager.black,
+            ),
         onTapOutside: (event) => FocusScope.of(context).unfocus(),
         keyboardType: widget.keyboardType,
         onChanged: widget.onChanged,
@@ -51,11 +63,12 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
           contentPadding: widget.contentPadding ??
               EdgeInsets.only(top: 14.h, bottom: 13.h, right: 20.w),
           hintText: widget.hint,
-          hintStyle: getLightStyle(
-            // height: 1.h,
-            fontSize: 15.sp,
-            color: const Color(0xff919191).withOpacity(.6),
-          ),
+          hintStyle: widget.hintStyle ??
+              getLightStyle(
+                // height: 1.h,
+                fontSize: 15.sp,
+                color: const Color(0xff919191).withOpacity(.6),
+              ),
           suffixIcon: widget.suffix == null
               ? const SizedBox()
               : Padding(

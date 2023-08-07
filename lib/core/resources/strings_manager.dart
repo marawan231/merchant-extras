@@ -203,7 +203,7 @@ class AppStrings {
   static const String tamweel = 'تمويل تشاركي';
   static const String priceForUnit = 'للكيلو';
   static const String cannotSendSample = 'لا يمكن ارسال عينة';
-  static const String productRate = 'تقييم المنتج :';
+  static const String productRate = 'تقييم المنتج';
   static const String myLocation = 'موقعي';
 
   static const String availableQuantity = 'الكمية المتوفرة';
@@ -213,6 +213,7 @@ class AppStrings {
   static const String buy = 'شراء';
   static const String negotiate = 'تفاوض';
   static const String buyDetails = 'بيانات الشراء';
+  static const String buyAndPayDetails = 'تفاصيل الشراء';
   static const String currentMoneyInWallet = 'رصيدك الحالي في المحفظة :';
   static const String writeYourMessage = 'اكتب رسالتك';
   static const String showTranslate = 'عرض الترجمة';

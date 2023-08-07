@@ -23,10 +23,16 @@ class PaymentMethods extends StatefulWidget {
 }
 
 class _PaymentMethodsState extends State<PaymentMethods> {
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<PaymentCubit>(context).changeTotalToPay(widget.totalToPay!);
+  }
+
   _buildHeadline() {
     return Text(
-      AppStrings.paymentMethod,
-      style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp),
+      AppStrings.paymentMethod.replaceAll(':', ''),
+      style: getBoldStyle(color: ColorManager.black, fontSize: 17.sp),
     );
   }
 
@@ -35,65 +41,102 @@ class _PaymentMethodsState extends State<PaymentMethods> {
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemBuilder: (context, index) {
-          return index == 1
-              ? _buildCurrentFund()
-              : PayMethodItem(
-                  onTap: () {
-                    setState(() {
-                      payMethodDefaultIndex = index;
-                    });
-                  },
-                  leading: Image.asset(
-                    buyDetailesIcons[index],
-                    width: 50.w,
-                    height: 50.h,
-                  ),
-                  title: buyDetailesTitles[index],
-                  index: index,
-                  onArrowTap: (() {
-                    setState(() {
-                      payMethodDefaultIndex = index;
-                    });
-                  }));
+          return PayMethodItem(
+              onTap: () {
+                setState(() {
+                  payMethodDefaultIndex = index;
+                });
+              },
+              leading: Image.asset(
+                buyDetailesIcons[index],
+                width: 50.w,
+                height: 50.h,
+                // fit: BoxFit.contain,
+                // payMethodDefaultIndex = index;
+                color: index == 0
+                    ? payMethodDefaultIndex == index
+                        ? Theme.of(context).primaryColor
+                        : ColorManager.grey
+                    : null,
+              ),
+              title: buyDetailesTitles[index],
+              index: index,
+              onArrowTap: (() {
+                setState(() {
+                  payMethodDefaultIndex = index;
+                });
+              }));
         },
         separatorBuilder: (context, index) {
           return SizedBox(height: 15.h);
         },
-        itemCount: 4);
+        itemCount: buyDetailesTitles.length);
   }
 
-  Widget _buildCurrentFund() {
-    return BlocProvider.value(
-      value: RouteGenerator.menuCubit,
-      child: RichText(
-          text: TextSpan(
-        children: [
-          TextSpan(
-              text: AppStrings.currentMoneyInWallet,
-              style:
-                  getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp)),
-          TextSpan(
-              text: ' \$ ${BlocProvider.of<MenuCubit>(context).currentBalance}',
-              style: getBoldStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 15.sp))
-        ],
-      )),
-    );
-  }
+  // Widget _buildCurrentFund() {
+  //   return BlocProvider.value(
+  //     value: RouteGenerator.menuCubit,
+  //     child: RichText(
+  //         text: TextSpan(
+  //       children: [
+  //         TextSpan(
+  //             text: AppStrings.currentMoneyInWallet,
+  //             style:
+  //                 getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp)),
+  //         TextSpan(
+  //             text: ' \$ ${BlocProvider.of<MenuCubit>(context).currentBalance}',
+  //             style: getBoldStyle(
+  //                 color: Theme.of(context).primaryColor, fontSize: 15.sp))
+  //       ],
+  //     )),
+  //   );
+  // }
 
   _buildTotal() {
-    return RichText(
-        text: TextSpan(
+    return BlocConsumer<PaymentCubit, PaymentState>(
+      listener: (context, state) {
+        // TODO: implement listener
+      },
+      buildWhen: (previous, current) => current is ChangeTotalToPaySuccedded,
+      builder: (context, state) {
+        return state.maybeWhen(
+          orElse: () => _buildValuetTotal(),
+          changeTotalToPaySuccedded: (totalToPay) => _buildValuetTotal(),
+        );
+      },
+    );
+
+    // RichText(
+    //     text: TextSpan(
+    //   children: [
+    //     TextSpan(
+    //         text: AppStrings.totla,
+    //         style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 17.sp)),
+    //     TextSpan(
+    //         text: ' \$ ${widget.totalToPay}',
+    //         style: getBoldStyle(
+    //             color: Theme.of(context).primaryColor, fontSize: 25.sp))
+    //   ],
+    // ));
+  }
+
+  _buildValuetTotal() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        TextSpan(
-            text: AppStrings.totla,
-            style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 17.sp)),
-        TextSpan(
-            text: ' \$ ${widget.totalToPay}',
-            style: getBoldStyle(
-                color: Theme.of(context).primaryColor, fontSize: 25.sp))
+        Text(
+          AppStrings.totla.replaceAll(':', ''),
+          style: getMediumStyle(color: ColorManager.black, fontSize: 24.sp),
+        ),
+        // 10.horizontalSpace,
+
+        Text(
+          ' \$ ${BlocProvider.of<PaymentCubit>(context).totalToPayV}',
+          style: getMediumStyle(
+              color: Theme.of(context).primaryColor, fontSize: 24.sp),
+        )
       ],
-    ));
+    );
   }
 
   @override
@@ -107,16 +150,18 @@ class _PaymentMethodsState extends State<PaymentMethods> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildHeadline(),
-            SizedBox(height: 20.h),
+            14.verticalSpace,
+            // SizedBox(height: 20.h),
             _buildPayMethodList(),
           ],
         ),
-        SizedBox(height: 40.h),
+        // SizedBox(height: 0.h),
         Column(
-          mainAxisSize: MainAxisSize.max,
+          // mainAxisSize: MainAxisSize.min,
           children: [
+            8.verticalSpace,
             _buildTotal(),
-            SizedBox(height: 20.h),
+            SizedBox(height: 57.h),
             BlocBuilder<PaymentCubit, PaymentState>(
               builder: (context, state) {
                 return DefaultButton(

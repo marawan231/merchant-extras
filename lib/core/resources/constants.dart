@@ -163,14 +163,14 @@ List<IconData> menuViewItemIcons = [
 
 List<String> buyDetailesTitles = [
   AppStrings.theWallet,
-  '',
+  // '',
   AppStrings.paypal,
   AppStrings.visa,
 ];
 
 List<String> buyDetailesIcons = [
-  '',
-  '',
+  // '',
+  ImageAssets.wallet,
   ImageAssets.paypal,
   ImageAssets.visa,
 ];

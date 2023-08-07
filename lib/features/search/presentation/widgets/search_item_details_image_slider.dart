@@ -1,83 +1,86 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/color_manager.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
 import '../../../deals/data/model/deal_model.dart';
 
-class SearchItemDetailsImageSlider extends StatelessWidget {
+class SearchItemDetailsImageSlider extends StatefulWidget {
   const SearchItemDetailsImageSlider({super.key, required this.images});
   final List<Images> images;
 
+  @override
+  State<SearchItemDetailsImageSlider> createState() =>
+      _SearchItemDetailsImageSliderState();
+}
+
+class _SearchItemDetailsImageSliderState
+    extends State<SearchItemDetailsImageSlider> {
+  PageController _pageController = PageController();
   Widget _buildCompanyFeatures() {
-    return CarouselSlider(
-      options: CarouselOptions(
-        height: 200.h,
-        enlargeCenterPage: true,
-        disableCenter: true,
-        viewportFraction: .8,
-      ),
-      items: List.generate(
-        images.length,
-        (index) => Container(
-          decoration: BoxDecoration(
-              // color: ColorManager.error,
-              borderRadius: BorderRadius.all(Radius.circular(5.r))),
-          child: Stack(
-            children: [
-              _buildBackGroundImage(index),
-              // _buildFeatureDetails(index),
-            ],
-          ),
-        ),
+    return SizedBox(
+      height: 200.h,
+      child: PageView.builder(
+        controller: _pageController,
+        itemCount: widget.images.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5.r)),
+            ),
+            child: _buildBackGroundImage(index),
+          );
+        },
+        onPageChanged: (index) {
+          // Handle page change here if needed
+        },
       ),
     );
   }
 
   _buildBackGroundImage(int index) {
-    return CustomNetworkCachedImage(
-      url: images[index].attachmentUrl!,
-      filter: ColorFilter.mode(Colors.black.withOpacity(.4), BlendMode.darken),
-      fit: BoxFit.fill,
+    return ClipRRect(
+      borderRadius: BorderRadius.only(
+        bottomLeft: Radius.circular(10.r),
+        bottomRight: Radius.circular(10.r),
+      ),
+      child: CustomNetworkCachedImage(
+        url: widget.images[index].attachmentUrl!,
+        // filter: ColorFilter.mode(Colors.black.withOpacity(.4), BlendMode.darken),
+        fit: BoxFit.cover,
+      ),
     );
-
-    // Container(
-    //   decoration: BoxDecoration(
-    //     // color: ColorManager.white,
-    //     borderRadius: BorderRadius.all(Radius.circular(5.r)),
-    //     image: DecorationImage(
-    //       colorFilter:
-    //           ColorFilter.mode(Colors.black.withOpacity(.4), BlendMode.darken),
-    //       fit: BoxFit.fill,
-    //       image: const AssetImage(ImageAssets.cherry),
-    //     ),
-    //   ),
-    // );
   }
 
-  // _buildFeatureDetails(int index) {
-  //   return Padding(
-  //     padding: EdgeInsets.only(left: 35.w, right: 35.w, top: 40.h),
-  //     child: Column(
-  //       children: [
-  //         _buildFeaturetitle(),
-  //         SizedBox(height: 35.h),
-  //         // MoreButton(index: index),
-  //       ],
-  //     ),
-  //   );
-  // }
+  _buildIndicator() {
+    return SmoothPageIndicator(
+        controller: _pageController,
+        count: widget.images.length,
+        axisDirection: Axis.horizontal,
+        effect: ExpandingDotsEffect(
+            expansionFactor: 2.sp,
+            // spacing: 6.w,
+            // radius: 5.r,
+            dotWidth: 12.w,
+            dotHeight: 12.h,
+            // strokeWidth: 88,
 
-  // _buildFeaturetitle() {
-  //   return Text(
-  //     textAlign: TextAlign.center,
-  //     AppStrings.helpYou,
-  //     style: getBoldStyle(color: ColorManager.white, fontSize: 22.sp),
-  //   );
-  // }
+            // paintStyle: PaintingStyle.stroke,
+            // strokeWidth: 1,
+            dotColor: ColorManager.borderInInputTextFiefld,
+            activeDotColor: ColorManager.primary));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return _buildCompanyFeatures();
+    return Column(
+      children: [
+        _buildCompanyFeatures(),
+        12.verticalSpace,
+        _buildIndicator(),
+      ],
+    );
   }
 }

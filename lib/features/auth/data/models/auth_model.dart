@@ -31,7 +31,7 @@ class User {
   @JsonKey(name: 'referrer_code')
   String? referrerCode;
   @JsonKey(name: 'account_verified')
-  String? accountVerified;
+  int? accountVerified;
 
   User(
       {this.id,

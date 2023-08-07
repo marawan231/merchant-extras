@@ -1,4 +1,4 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import '../../../../core/web_services/api_result.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -37,7 +37,7 @@ class AuthRepoistry {
       var response = await webServices.login(uid);
       return ApiResult.success(response);
     } catch (error) {
-      log('error in getAllCountriesCurrencies $error');
+      // log('error in getAllCountriesCurrencies $error stackTrace: $stacktrace');
 
       return ApiResult.failure(DioExceptionType.getDioException(error));
     }

@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,7 +37,7 @@ class _AllDealsViewState extends State<AllDealsView> {
   }
 
   _buildDeals() {
-    log('deals ${BlocProvider.of<SearchCubit>(context).deals.length}');
+    // log('deals ${BlocProvider.of<SearchCubit>(context).deals.length}');
     return GridView.builder(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
       itemCount: BlocProvider.of<SearchCubit>(context).deals.length,

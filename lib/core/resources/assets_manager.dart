@@ -15,6 +15,7 @@ class ImageAssets {
   static const String phone = "$imagePath/phone-in-talk-outline-sharp.png";
 
   static const String bell = "$imagePath/bell.png";
+  static const String wallet = "$imagePath/account-balance-wallet.png";
   static const String visa = "$imagePath/visa.png";
   static const String paypal = "$imagePath/paypal.png";
 

@@ -27,7 +27,7 @@ class _HomeViewState extends State<HomeView> {
     BlocProvider.of<SearchCubit>(context).getAllCategories();
     BlocProvider.of<SearchCubit>(context).getAllProducts();
     context.read<GlobalCubit>().getAllSettings();
-    context.read<GlobalCubit>().getAllCountriesCurrencies();
+    // context.read<GlobalCubit>().getAllCountriesCurrencies();
     BlocProvider.of<DealsCubit>(context).getDeals();
     BlocProvider.of<MenuCubit>(context).getWalletInfo();
     BlocProvider.of<ProfileCubit>(context).getUserInfo();

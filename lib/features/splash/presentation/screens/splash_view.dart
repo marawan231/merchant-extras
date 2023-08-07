@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/route_manager.dart';
+import '../../../../core/resources/shared_prefrences.dart';
 import '../widgets/splash_body.dart';
 
 class SplashView extends StatefulWidget {
@@ -22,19 +23,19 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _goNext() {
-    // if (token == null) {
-    Navigator.pushNamedAndRemoveUntil(
-        context, Routes.mainhomeviewRoute, (route) => false);
-    //   // Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
-    //   return;
-    // } else if (token != null) {
-    //   refferNumber = CacheHelper.getData(key: 'refferNumber');
+    if (token == null) {
+      Navigator.pushNamedAndRemoveUntil(
+          context, Routes.mainAuthViewRoute, (route) => false);
+      //   // Navigator.pushReplacementNamed(context, Routes.mainAuthViewRoute);
+      return;
+    } else if (token != null) {
+      refferNumber = CacheHelper.getData(key: 'refferNumber');
 
-    //   Navigator.pushNamedAndRemoveUntil(
-    //       context, Routes.mainhomeviewRoute, (route) => false);
-    //   // Navigator.pushReplacementNamed(context, Routes.mainhomeviewRoute);
-    //   return;
-    // }
+      Navigator.pushNamedAndRemoveUntil(
+          context, Routes.mainhomeviewRoute, (route) => false);
+      // Navigator.pushReplacementNamed(context, Routes.mainhomeviewRoute);
+      return;
+    }
   }
 
   @override

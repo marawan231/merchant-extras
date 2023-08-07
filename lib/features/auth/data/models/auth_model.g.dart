@@ -31,7 +31,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       token: json['token'] as String?,
       status: json['status'] as String?,
       referrerCode: json['referrer_code'] as String?,
-      accountVerified: json['account_verified'] as String?,
+      accountVerified: json['account_verified'] as int?,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{

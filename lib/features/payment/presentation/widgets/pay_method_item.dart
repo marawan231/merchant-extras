@@ -23,22 +23,15 @@ class PayMethodItem extends StatelessWidget {
 
   Widget _buildLeading(BuildContext context) {
     return Container(
-        width: 50.w,
-        height: 50.h,
+        // width: 40.w,
+        // height: 40.h,
         decoration: BoxDecoration(
-            color: ColorManager.grey.withOpacity(.10),
+            // color: ColorManager.red,
             borderRadius: BorderRadius.all(Radius.circular(7.r))),
-        child: SizedBox(
-            width: 20.w,
-            height: 20.h,
-            child: index == 0
-                ? Icon(
-                    Icons.wallet,
-                    color: payMethodDefaultIndex == index
-                        ? Theme.of(context).primaryColor
-                        : ColorManager.grey,
-                  )
-                : leading));
+        child: Padding(
+          padding: EdgeInsets.only(top: 4.h),
+          child: SizedBox(width: 19.w, height: 19.h, child: leading),
+        ));
   }
 
   Widget _buildTitle(BuildContext context) {
@@ -66,7 +59,7 @@ class PayMethodItem extends StatelessWidget {
                 child: Icon(
                   Icons.check,
                   color: ColorManager.white,
-                  size: 10.sp,
+                  size: 15.sp,
                 ),
               )
             : Container(
@@ -83,23 +76,26 @@ class PayMethodItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 82.h,
+      // height: 54.h,
       width: double.infinity,
       child: ListTile(
+        
+        horizontalTitleGap: 0,
         // selectedTileColor: ColorManager.grey,
         selected: payMethodDefaultIndex == index ? true : false,
         onTap: onTap,
-        contentPadding: EdgeInsets.only(top: 15.h, right: 15.w, left: 30.w),
+        contentPadding:
+            EdgeInsets.only(top: 4.h, bottom: 4.h, right: 23.w, left: 23.w),
         dense: true,
-        horizontalTitleGap: 20.w,
+        // horizontalTitleGap: 20.w,
         tileColor: ColorManager.white,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(5.r)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
             side: BorderSide(
               color: payMethodDefaultIndex == index
                   ? Theme.of(context).primaryColor
                   : ColorManager.cfGrey,
-              width: 1.sp,
+              width: 2.sp,
             )),
         leading: _buildLeading(context),
         title: _buildTitle(context),
