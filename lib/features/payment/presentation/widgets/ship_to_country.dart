@@ -90,15 +90,17 @@ class _ShipToCountryState extends State<ShipToCountry> {
         _buildTitle(),
         14.verticalSpace,
         DefaultTextField(
+            enabled: false,
             readOnly: true,
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
             onTap: () {
-              chooseCountry(context);
+              // chooseCountry(context);
+              log('chooseCountry');
             },
             hintStyle:
                 getRegularStyle(fontSize: 15.sp, color: ColorManager.black),
-            onSaved: (p0) {},
+            // onSaved: (p0) {},
             hint: BlocProvider.of<GlobalCubit>(context).chooseCountry ??
                 AppStrings.saudiArabia),
       ],

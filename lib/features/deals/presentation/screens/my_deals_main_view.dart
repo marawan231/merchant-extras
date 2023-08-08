@@ -20,14 +20,17 @@ class _MyDealsMainViewState extends State<MyDealsMainView> {
   }
 
   _buildMyDealsViewBody() {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(height: 30.h),
-        const MyDealsCategories(),
-        SizedBox(height: 15.h),
-        _buildSelectedView(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(height: 16.h),
+          const MyDealsCategories(),
+          SizedBox(height: 15.h),
+          _buildSelectedView(),
+          90.horizontalSpace,
+        ],
+      ),
     );
   }
 
@@ -37,17 +40,6 @@ class _MyDealsMainViewState extends State<MyDealsMainView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.myDeals),
-        // leading: IconButton(
-        //   icon: const Icon(Icons.arrow_back_ios_rounded),
-        //   onPressed: () {
-        //     BlocProvider.of<GlobalCubit>(context).backToAfterBack(10);
-        //   },
-        // ),
-      ),
-      body: _buildMyDealsViewBody(),
-    );
+    return _buildMyDealsViewBody();
   }
 }

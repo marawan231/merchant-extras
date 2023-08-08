@@ -57,10 +57,8 @@ class _MyDealsCategoryItemState extends State<MyDealsCategoryItem> {
       shadowColor: ColorManager.transparent,
       selectedShadowColor: ColorManager.transparent,
       // disabledColor: ColorManager.transparent,
-
       elevation: 0,
-
-      labelPadding: EdgeInsets.only(right: 28.w, left: 28.w),
+      labelPadding: EdgeInsets.only(right: 8.w, left: 8.w),
 
       side: BorderSide(
         color: BlocProvider.of<DealsCubit>(context).defaultCategoryIndex ==
@@ -68,24 +66,24 @@ class _MyDealsCategoryItemState extends State<MyDealsCategoryItem> {
             ? Theme.of(context).primaryColor
             : ColorManager.transparent,
       ),
-      backgroundColor: ColorManager.grey.withOpacity(.10),
+      backgroundColor: ColorManager.lightPrimary,
 
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(5.r),
+          Radius.circular(10.r),
         ),
       ),
 
       label: SizedBox(
         // width: 165.w,
-        height: 40.h,
+        height: 31.h,
         child: Center(
           child: Text(
             getTitle(),
             style: BlocProvider.of<DealsCubit>(context).defaultCategoryIndex ==
                     widget.index
-                ? getRegularStyle(color: ColorManager.white, fontSize: 15.sp)
-                : getRegularStyle(color: ColorManager.grey, fontSize: 15.sp),
+                ? getMediumStyle(color: ColorManager.white, fontSize: 15.sp)
+                : getMediumStyle(color: ColorManager.primary, fontSize: 15.sp),
           ),
         ),
       ),

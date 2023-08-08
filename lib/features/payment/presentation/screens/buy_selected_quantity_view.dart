@@ -3,10 +3,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/features/home/business_logic/home_cubit.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../deals/business_logic/cubit/deals_cubit.dart';
 import '../../../menu/business_logic/cubit/menu_cubit.dart';
+import '../../../search/business_logic/cubit/search_cubit.dart';
 import '../../business_logic/cubit/payment_state.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
 import '../../../../core/resources/route_manager.dart';
@@ -42,6 +44,8 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
   void initState() {
     super.initState();
     log('BuySelectedQuantityView');
+    // BlocProvider.of<PaymentCubit>(context).changeTotalToPay(widget.totalToPay!);
+    BlocProvider.of<PaymentCubit>(context).quantityToBuy = widget.quantity;
   }
 
   _buildBody() {
@@ -57,9 +61,12 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
             BlocProvider.of<MenuCubit>(context).getWalletInfo();
             BlocProvider.of<GlobalCubit>(context).changeSelectedIndex(0);
             BlocProvider.of<DealsCubit>(context).getDeals();
+            BlocProvider.of<SearchCubit>(context).getAllProducts();
+            BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
 
-            Navigator.pushNamedAndRemoveUntil(
-                context, Routes.mainhomeviewRoute, (route) => false);
+            // BlocProvider.of<HomeCubit>(context).;
+
+            Navigator.pushReplacementNamed(context, Routes.successPayViewRoute);
           },
         );
       },
@@ -74,12 +81,17 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
                 child: QuantityToBuy(
                   remainingAmount: widget.quantity,
                   onQuantityChanged: (p0) {
-                    setState(() {
+                    if (p0 != '') {
+                      widget.totalToPay =
+                          (double.parse(p0) * double.parse(widget.unitPrice!))
+                              .toString();
                       BlocProvider.of<PaymentCubit>(context)
                           .changeTotalToPay(widget.totalToPay!);
-                      widget.quantity = p0;
-                      widget.totalToPay = p0 * int.parse(widget.unitPrice!);
-                    });
+                    } else {
+                      widget.totalToPay = '0';
+                      BlocProvider.of<PaymentCubit>(context)
+                          .changeTotalToPay(widget.totalToPay!);
+                    }
                   },
                 )),
             // SizedBox(height: 32.h),
@@ -93,14 +105,13 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
               onPayTap: () {
                 log('choosenCountryId: ${BlocProvider.of<GlobalCubit>(context).choosenCountryId ?? ''}');
 
-                if (BlocProvider.of<GlobalCubit>(context).choosenCountryId !=
-                        null &&
-                    widget.totalToPay != '0') {
+                if (widget.totalToPay != '0') {
                   BlocProvider.of<PaymentCubit>(context).buyQuantity(
                     countryId: BlocProvider.of<GlobalCubit>(context)
                             .choosenCountryId ??
                         '1',
-                    quantity: widget.quantity,
+                    quantity:
+                        BlocProvider.of<PaymentCubit>(context).quantityToBuy,
                     dealId: widget.dealId,
                   );
                 } else {
