@@ -69,8 +69,9 @@ class _PersonalDealsState extends State<PersonalDeals> {
             ),
           )
         : ListView.separated(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 90.h),
             shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               return PersonalBuyerDealItem(model: _dealsCubit.allDeals[index]);
             },

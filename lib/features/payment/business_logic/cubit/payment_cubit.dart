@@ -9,8 +9,10 @@ class PaymentCubit extends Cubit<PaymentState> {
   PaymentCubit(this.paymentRepository) : super(const PaymentState.idle());
   final PaymentRepository paymentRepository;
   String totalToPayV = '0.0';
+  String quantityToBuy = '0';
 
   void changeTotalToPay(String totalToPay) {
+    emit(const PaymentState.changeTotalToPayLoading());
     totalToPayV = totalToPay;
 
     emit(PaymentState.changeTotalToPaySuccedded(totalToPay));

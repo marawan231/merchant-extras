@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/color_manager.dart';
 import 'strings_manager.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -98,6 +99,26 @@ getTitle(String status) {
       return AppStrings.completed;
     case 'closed':
       return AppStrings.closed;
+
+    default:
+      '';
+  }
+}
+
+getStatusColor(String status) {
+  switch (status) {
+    case 'all':
+      return ColorManager.black;
+    case 'active':
+      return ColorManager.blue;
+    case 'processing':
+      return ColorManager.orangeDark;
+    case 'out_for_delivery':
+      return ColorManager.primary;
+    case 'complete':
+      return ColorManager.greenDark;
+    case 'closed':
+      return ColorManager.red;
 
     default:
       '';

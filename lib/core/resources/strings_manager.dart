@@ -5,6 +5,7 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String piece = 'قطعة';
   static const String categories = 'التصنيفات';
   static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
   static const String enterPhoneNumber = 'ادخل رقم الجوال';
