@@ -21,17 +21,21 @@ class PersonalBuyerDealItem extends StatelessWidget {
             arguments: {"deal": model});
       },
       child: Container(
-          padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
+          // padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
           decoration: BoxDecoration(
             color: ColorManager.lightWhite,
-            borderRadius: BorderRadius.all(Radius.circular(5.r)),
+            borderRadius: BorderRadius.all(Radius.circular(10.r)),
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: [
-              _buildItemImage(context),
-              17.widthSpace(),
-              _buildResultItemDetails(),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildItemImage(context),
+                  17.widthSpace(),
+                  _buildResultItemDetails(),
+                ],
+              ),
               _buildStatus(),
             ],
           )),
@@ -40,12 +44,16 @@ class PersonalBuyerDealItem extends StatelessWidget {
 
   _buildItemImage(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.all(Radius.circular(30.r)),
+      borderRadius: BorderRadius.only(
+        topRight: Radius.circular(10.r),
+        bottomRight: Radius.circular(10.r),
+      ),
       child: Container(
-        width: 60.w,
-        height: 60.w,
+        height: 96.h,
+        width: 103.w,
         color: ColorManager.transparent,
         child: CustomNetworkCachedImage(
+          fit: BoxFit.cover,
           url: model.images![0].attachmentUrl!,
         ),
       ),
@@ -53,22 +61,29 @@ class PersonalBuyerDealItem extends StatelessWidget {
   }
 
   _buildResultItemDetails() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _buildOrderNo(),
-        SizedBox(height: 6.h),
-        _buildSearchItemTitle(),
-        SizedBox(height: 11.h),
-        _buildQuantityAndAddress(),
-      ],
+    return Expanded(
+      child: Padding(
+        padding: EdgeInsets.only(top: 13.h, left: 21.w),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildOrderNo(),
+            SizedBox(height: 4.h),
+            _buildSearchItemTitle(),
+            SizedBox(height: 8.h),
+            _buildQuantityAndAddress(),
+          ],
+        ),
+      ),
     );
   }
 
   _buildSearchItemTitle() {
     return Text(
       model.name ?? '',
-      style: getBoldStyle(color: ColorManager.black, fontSize: 15.sp),
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: getMediumStyle(color: ColorManager.black, fontSize: 17.sp),
     );
   }
 
@@ -81,15 +96,18 @@ class PersonalBuyerDealItem extends StatelessWidget {
 
   _buildQuantityAndAddress() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.max,
       // crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        _buildKiloIcon(),
-        SizedBox(width: 8.w),
+        // _buildKiloIcon(),
+        // SizedBox(width: 8.w),
         _buildTotalAmount(),
-        SizedBox(width: 10.w),
+        // SizedBox(width: 76.w),
+        // Spacer(),
 
-        _buildPriceTagIcon(),
-        SizedBox(width: 8.w),
+        // _buildPriceTagIcon(),
+        // SizedBox(width: 8.w),
         _buildPriceForUnit(),
         // _buildLocationIcon(),
         // SizedBox(width: 8.w),
@@ -109,7 +127,7 @@ class PersonalBuyerDealItem extends StatelessWidget {
 
   _buildTotalAmount() {
     return Text(
-      '${model.amount} ${AppStrings.kilo}',
+      '${model.amount} ${AppStrings.piece}',
       style: getRegularStyle(color: ColorManager.darkGrey, fontSize: 12.sp),
     );
   }
@@ -124,8 +142,8 @@ class PersonalBuyerDealItem extends StatelessWidget {
 
   _buildPriceForUnit() {
     return Text(
-      '${model.price}${'\$'} ${AppStrings.priceForUnit}',
-      style: getRegularStyle(color: ColorManager.darkGrey, fontSize: 12.sp),
+      '${model.price} ${'\$'}',
+      style: getRegularStyle(color: ColorManager.primary, fontSize: 12.sp),
     );
   }
 
@@ -150,20 +168,15 @@ class PersonalBuyerDealItem extends StatelessWidget {
   }
 
   _buildStatus() {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text(
-            getTitle(model.status ?? ''),
-            style: getRegularStyle(
-                color: model.status == 'active'
-                    ? ColorManager.active
-                    : ColorManager.primary,
-                fontSize: 10.sp),
-          ),
-        ],
+    return Padding(
+      padding: EdgeInsets.only(top: 12.h, left: 21.w),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          getTitle(model.status ?? ''),
+          style: getRegularStyle(
+              color: getStatusColor(model.status ?? ''), fontSize: 12.sp),
+        ),
       ),
     );
   }

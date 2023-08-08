@@ -77,7 +77,7 @@ class ImageAssets {
   static const String emptyBox = "$imagePath/empty-box.png";
 
   static const String verifyLogo = "$imagePath/verify_logo.png";
-  static const String successLogo = "$imagePath/success_logo.png";
+  static const String successLogo = "$imagePath/done-icon.png";
   static const String noData = "$imagePath/no-data.png";
   static const String noNotification = "$imagePath/no-notification.png";
   static const String close = "$imagePath/close.png";

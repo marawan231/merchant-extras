@@ -84,8 +84,7 @@ class _MainHomeViewState extends State<MainHomeView>
           BlocProvider.of<GlobalCubit>(context).changeSelectedIndex(index);
         },
       ),
-      appBar:
-          screenIndex == 4 || screenIndex == 3 ? null : defaultAppBar(context),
+      appBar: screenIndex > 4 ? null : defaultAppBar(context),
       body: _buildMainHomeViewBody(context),
     );
   }

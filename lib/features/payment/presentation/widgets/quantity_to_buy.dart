@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/resources/color_manager.dart';
 import 'package:merchant_extras/core/resources/style_manager.dart';
@@ -6,6 +7,7 @@ import 'package:merchant_extras/features/payment/data/model/choice_model.dart';
 
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/default_textfield.dart';
+import '../../business_logic/cubit/payment_cubit.dart';
 
 class QuantityToBuy extends StatefulWidget {
   const QuantityToBuy(
@@ -103,14 +105,16 @@ class _QuantityToBuyState extends State<QuantityToBuy> {
     return Expanded(
       child: DefaultTextField(
         enabled: selectedChoice!.id == 1 ? false : true,
-        
 
         hintStyle: getMediumStyle(fontSize: 15.sp, color: ColorManager.black),
         controller: _quantityController,
         hint:
             selectedChoice!.id == 1 ? '${widget.remainingAmount!} قطعة' : '0.0',
         keyboardType: TextInputType.number,
-        onChanged: widget.onQuantityChanged,
+        onChanged: (value) {
+          widget.onQuantityChanged!(value);
+          BlocProvider.of<PaymentCubit>(context).quantityToBuy = value;
+        },
         // icon: ImageAssets.weight,
         // iconHeight: 16.sp,
         // iconWidth: 16.sp,

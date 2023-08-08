@@ -5,6 +5,7 @@ import 'package:merchant_extras/features/menu/presentation/screens/message_view.
 import 'package:merchant_extras/features/menu/presentation/screens/terms_view.dart';
 import '../../features/home/presentation/screens/all_categories_view.dart';
 import '../../features/payment/business_logic/cubit/payment_cubit.dart';
+import '../../features/payment/presentation/widgets/success_pay.dart';
 import '../../features/profile/business_logic/cubit/profile_cubit.dart';
 import '../business_logic/cubit/global_cubit.dart';
 import '../../features/auth/business_logic/cubit/auth_cubit.dart';
@@ -65,6 +66,9 @@ class Routes {
   static const String notificationViewRoute = "/notificationViewRoute";
   static const String worldSearchViewRoute = "/worldSearchViewRoute";
   static const String localSearchViewRoute = "/localSearchViewRoute";
+  static const String successPayViewRoute = "/successPayViewRoute";
+
+
 
   static const String searchResultViewRoute = "/searchResultViewRoute";
   static const String tamweelT4arkySearchViewRoute =
@@ -395,6 +399,10 @@ class RouteGenerator {
       case Routes.accountVerficationViewRoute:
         return MaterialPageRoute(
             builder: (_) => const AccountVerficationView());
+            case Routes.successPayViewRoute:
+        return MaterialPageRoute(
+            builder: (_) => const SuccessPay());
+            
 
       case Routes.payViewRoute:
         return MaterialPageRoute(builder: (_) => const PayView());
@@ -422,6 +430,8 @@ class RouteGenerator {
                     BlocProvider.value(value: menuCubit),
                     BlocProvider.value(value: paymentCubit),
                     BlocProvider.value(value: dealsCubit),
+                    BlocProvider.value(value: searchCubit),
+                    BlocProvider.value(value: homeCubit),
                   ],
                   child: BuySelectedQuantityView(
                     unitPrice: unitPrice,

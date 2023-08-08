@@ -94,10 +94,8 @@ class _PaymentMethodsState extends State<PaymentMethods> {
 
   _buildTotal() {
     return BlocConsumer<PaymentCubit, PaymentState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
-      buildWhen: (previous, current) => current is ChangeTotalToPaySuccedded,
+      listener: (context, state) {},
+      // buildWhen: (previous, current) => current is ChangeTotalToPaySuccedded,
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () => _buildValuetTotal(),

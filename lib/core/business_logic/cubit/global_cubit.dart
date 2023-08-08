@@ -22,7 +22,7 @@ class GlobalCubit extends Cubit<GlobalState<dynamic>> {
   MenuRepository menuRepository;
   AuthRepoistry authRepoistry;
   String? chooseCountry;
-  String? choosenCountryId;
+  String? choosenCountryId ='1';
 
   int notificationCount = 0;
   Stream<int>? notificationStream;
