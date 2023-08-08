@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:merchant_extras/features/menu/data/models/menu_model.dart';
 
 import '../../features/auth/data/models/auth_method.dart';
 import '../../features/deals/data/model/category_model.dart';
@@ -37,6 +38,7 @@ String userEmail = '';
 String refferNumber = '';
 int screenIndex = 0;
 int selectedTab = 0;
+
 final List<String> viewsTitles = [
   AppStrings.main,
   AppStrings.search,
@@ -152,13 +154,35 @@ List<String> menuViewItemRoutes = [
   Routes.whoAreUsRoute,
   // Routes.splashRoute,
 ];
-List<IconData> menuViewItemIcons = [
-  Icons.person,
-  Icons.account_balance_wallet_rounded,
-  Icons.star,
-  Icons.perm_phone_msg,
-  Icons.info,
-  Icons.logout_rounded,
+List<MenuModel> menuList = [
+  MenuModel(
+      title: AppStrings.workAs,
+      icon: ImageAssets.user,
+      route: Routes.workWithUsRoute),
+  MenuModel(
+      title: AppStrings.myWallet,
+      icon: ImageAssets.wallet,
+      route: Routes.walletRoute),
+  MenuModel(
+      title: AppStrings.rateUs,
+      icon: ImageAssets.star,
+      route: Routes.rateUsRoute),
+  MenuModel(
+      title: AppStrings.contactUs,
+      icon: ImageAssets.contactMail,
+      route: Routes.contactUsRoute),
+  MenuModel(
+      title: AppStrings.whoAreUs,
+      icon: ImageAssets.about,
+      route: Routes.whoAreUsRoute),
+  MenuModel(
+      title: AppStrings.termsAndConditions,
+      icon: ImageAssets.fileDocumentBox,
+      route: Routes.whoAreUsRoute),
+  MenuModel(
+      title: AppStrings.logOut,
+      icon: ImageAssets.signOut,
+      route: Routes.walletRoute),
 ];
 
 List<String> buyDetailesTitles = [

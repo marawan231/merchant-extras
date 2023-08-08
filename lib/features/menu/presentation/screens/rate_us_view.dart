@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/route_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
 import '../../../../core/web_services/network_exceptions.dart';
@@ -15,6 +16,7 @@ import '../widgets/rate_item.dart';
 
 class RateUsView extends StatefulWidget {
   const RateUsView({super.key, this.isDealRate = false, required this.dealId});
+
   final bool? isDealRate;
   final String? dealId;
 
@@ -24,6 +26,7 @@ class RateUsView extends StatefulWidget {
 
 class _RateUsViewState extends State<RateUsView> {
   final TextEditingController _commentController = TextEditingController();
+
   //create form key
   final _formKey = GlobalKey<FormState>();
 
@@ -57,10 +60,9 @@ class _RateUsViewState extends State<RateUsView> {
           top: 79.h,
           right: 20.w,
         ),
-        icon: ImageAssets.title,
         title: AppStrings.notes,
         suffix: const Text(''),
-        hint: 'من فضلك ادخل ملاحظاتك',
+        hint: AppStrings.typeYourNotes,
       ),
     );
   }
@@ -85,10 +87,16 @@ class _RateUsViewState extends State<RateUsView> {
       listener: (context, state) {
         state.whenOrNull(
           rateSuccedded: () {
-            BlocProvider.of<MenuCubit>(context).clearRating();
             Commons.showToast(
                 message: 'شكرا لتقييمك لنا', color: ColorManager.green);
             Navigator.pop(context);
+          },
+          rateUsSuccedded: () {
+            Navigator.pushNamed(context, Routes.messageViewRoute, arguments: {
+              'image': ImageAssets.onlineReviewCuate,
+              'title': AppStrings.thanksForYourReview,
+              'description': AppStrings.yourRateIsVeryImportantToUs,
+            });
           },
           rateError: (message) {
             Commons.showToast(
@@ -103,10 +111,16 @@ class _RateUsViewState extends State<RateUsView> {
           onTap: () {
             // _formKey.currentState!.validate();
             if (_formKey.currentState!.validate()) {
-              BlocProvider.of<MenuCubit>(context).rateDeal(
-                dealId: widget.dealId ?? '0',
-                comment: _commentController.text,
-              );
+              if (widget.isDealRate!) {
+                BlocProvider.of<MenuCubit>(context).rateDeal(
+                  dealId: widget.dealId ?? '0',
+                  comment: _commentController.text,
+                );
+              } else {
+                BlocProvider.of<MenuCubit>(context).rateUs(
+                  comment: _commentController.text,
+                );
+              }
             } else {
               Commons.showToast(message: 'من فضلك ادخل ملاحظاتك');
             }

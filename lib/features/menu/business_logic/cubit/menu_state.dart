@@ -39,5 +39,12 @@ class MenuState<T> with _$MenuState<T> {
   const factory MenuState.sendComplainError(
       DioExceptionType networkExceptions) = SendComplainError<T>;
 
+
+  const factory MenuState.rateUsLoading() = RateUsLoading<T>;
+
+  const factory MenuState.rateUsSuccedded() = RateUsSuccedded<T>;
+
+  const factory MenuState.rateUsError(DioExceptionType networkExceptions) =
+  RateUsError<T>;
   
 }

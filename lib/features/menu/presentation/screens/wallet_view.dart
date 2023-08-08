@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/assets_manager.dart';
+import 'package:merchant_extras/core/widgets/empty_lottie.dart';
 import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/menu_cubit.dart';
 import '../../business_logic/cubit/menu_state.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
 
@@ -94,13 +97,16 @@ class _WalletViewState extends State<WalletView> {
   _buildTransactionsHeadline() {
     return Text(
       AppStrings.latestTransactions,
-      style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp),
+      style: getBoldStyle(color: ColorManager.black, fontSize: 17.sp),
     );
   }
 
   _buildListOfTransactions(WalletInfo walletInfo) {
     return walletInfo.transactions!.isEmpty
-        ? const EmptyScreen()
+        ? EmptyLottie(
+            icon: ImageAssets.walletAnimation,
+            message: AppStrings.thereIsNoTransctions,
+          )
         : ListView.separated(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,

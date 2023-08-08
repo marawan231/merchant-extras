@@ -83,25 +83,14 @@ class _EditProfileViewState extends State<EditProfileView> {
           child: ListView(
             shrinkWrap: true,
             children: [
-              // const Warning(),
               SizedBox(height: 40.h),
-              const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [PersonalAvatar()]),
+              PersonalAvatar(),
               40.widthSpace(),
               _buildNameTextField(),
               SizedBox(height: 35.h),
               PhoneAuthTextField(controller: _phoneController),
               SizedBox(height: 150.h),
-              // _buildAboutMeTextfield(),
-              // const Spacer(), // const MyCertificates(),
-              // SizedBox(height: 32.h),
-              // const PersonalVideo(),
-              // SizedBox(height: 120.h),
-              DefaultButton(
-                  isLoading: loading,
-                  text: AppStrings.agree,
-                  onTap: _onPressed),
+
               // SizedBox(height: 32.h),
             ],
           ),
@@ -112,17 +101,16 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   _buildNameTextField() {
     return CustomTextField(
-        controller: _nameController,
-        icon: ImageAssets.user,
-        title: AppStrings.name,
-        hint: userName);
+        controller: _nameController, title: AppStrings.name, hint: userName);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text(AppStrings.editProfile)),
-        body: _buildProfileBlocBuilder());
+      appBar: AppBar(title: Text(AppStrings.editAccount)),
+      body: _buildProfileBlocBuilder(),
+      bottomNavigationBar: _buildBottomNavBar(),
+    );
   }
 
   Future<void> editProfile() async {
@@ -140,5 +128,19 @@ class _EditProfileViewState extends State<EditProfileView> {
 
   Future<void> _onPressed() async {
     editProfile();
+  }
+
+  _buildBottomNavBar() {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        DefaultButton(
+            isLoading: loading,
+            text: AppStrings.edit,
+            onTap: _onPressed,
+            widht: MediaQuery.of(context).size.width * 0.9),
+        42.heightSpace(),
+      ],
+    );
   }
 }

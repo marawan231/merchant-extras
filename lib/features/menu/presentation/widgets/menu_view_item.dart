@@ -1,89 +1,104 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:merchant_extras/core/resources/assets_manager.dart';
+import 'package:merchant_extras/core/resources/commons.dart';
+import 'package:merchant_extras/core/resources/route_manager.dart';
+import 'package:merchant_extras/core/resources/utils.dart';
+import 'package:merchant_extras/features/menu/data/models/menu_model.dart';
 import '../../../../core/business_logic/cubit/global_cubit.dart';
-import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';
+
+import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 
 class MenuViewItem extends StatelessWidget {
   const MenuViewItem({
     super.key,
-    required this.icon,
-    required this.title,
     required this.index,
+    required this.model,
     // this.onTap,
   });
 
-  final IconData icon;
-  final String title;
   final int index;
+  final MenuModel model;
 
   // final void Function()? onTap;
 
   Widget _buildLeading(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: Theme.of(context).primaryColor,
-      child: Center(
-        child: Icon(
-          icon,
-          color: ColorManager.white,
-          size: 16.sp,
-        ),
+    return Center(
+      child: Image.asset(
+        model.icon,
+        color: ColorManager.primary,
+        height: 20.w,
+        width: 24.w,
+        fit: BoxFit.contain,
       ),
     );
   }
 
   Widget _buildTitle() {
-    return Text(
-      title,
-      style: getBoldStyle(color: ColorManager.black, fontSize: 14.sp),
+    return Expanded(
+      child: Text(
+        model.title,
+        style: getRegularStyle(color: ColorManager.black, fontSize: 15.sp),
+      ),
     );
   }
 
   Widget _buildTrailing(BuildContext context) {
-    return Icon(
-      Icons.arrow_back_ios_new,
-      size: 20.sp,
-      color: index == menuViewItemIcons.length - 1
-          ? ColorManager.transparent
-          : Theme.of(context).primaryColor,
+    return Image.asset(
+      ImageAssets.arrowBackIos,
+      height: 16.w,
+      width: 9.w,
+      fit: BoxFit.cover,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        if (index == menuViewItemIcons.length - 1) {
-          BlocProvider.of<GlobalCubit>(context).signOut(context);
-        } else {
-          index == 2
-              ? Navigator.pushNamed(context, menuViewItemRoutes[index],
-                  arguments: {
-                      'isDealRate': false,
-                      'dealId' : '0',
-                    })
-              : Navigator.pushNamed(context, menuViewItemRoutes[index]);
-        }
-      },
-      child: ListTile(
-        // selectedTileColor: ColorManager.grey,
-        // selected: defaultIndex == index ? true : false,
-        // onTap: onTap,
-        contentPadding:
-            EdgeInsets.only(top: 15.h, right: 15.w, left: 30.w, bottom: 15.h),
-        dense: true,
-        horizontalTitleGap: 20.w,
-        tileColor: ColorManager.grey.withOpacity(.10),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(5.r)),
+      onTap: () => _onItemTap(context),
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 18.h),
+        decoration: BoxDecoration(
+          color: ColorManager.lightWhite,
+          borderRadius: BorderRadius.circular(10.r),
         ),
-        leading: _buildLeading(context),
-        title: _buildTitle(),
-        trailing: _buildTrailing(context),
+        child: Row(children: [
+          _buildLeading(context),
+          18.widthSpace(),
+          _buildTitle(),
+          _buildTrailing(context),
+        ]),
       ),
     );
+  }
+
+  void _onItemTap(context) {
+    switch (index) {
+      case 0:
+      case 1:
+        Navigator.pushNamed(context, menuList[index].route!);
+        break;
+      case 2:
+        Navigator.pushNamed(context, Routes.rateUsRoute, arguments: {
+          'isDealRate': false,
+          'dealId': '',
+        });
+        break;
+      case 3:
+        Navigator.pushNamed(context, Routes.contactUsRoute);
+        break;
+      case 4:
+        Navigator.pushNamed(context, Routes.whoAreUsRoute);
+        break;
+      case 5:
+        Navigator.pushNamed(context, Routes.termsAndConditionsRoute);
+        break;
+      case 6:
+        BlocProvider.of<GlobalCubit>(context).signOut(context);
+        break;
+    }
   }
 }

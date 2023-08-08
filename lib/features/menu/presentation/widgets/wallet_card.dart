@@ -12,6 +12,7 @@ class WalletCard extends StatelessWidget {
 
   final String totalBalance;
   final String date;
+
   _buildMainInfo() {
     return Padding(
       padding: EdgeInsets.only(right: 30.w, top: 40.h),
@@ -19,8 +20,9 @@ class WalletCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _buildHeadline(),
+          SizedBox(height: 12.h),
           _buildBalance(),
-          SizedBox(height: 8.h),
+          SizedBox(height: 12.h),
           _buildDate(),
         ],
       ),

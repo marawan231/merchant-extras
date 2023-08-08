@@ -34,6 +34,9 @@ mixin _$MenuState<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +55,9 @@ mixin _$MenuState<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +76,9 @@ mixin _$MenuState<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +101,9 @@ mixin _$MenuState<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,6 +124,9 @@ mixin _$MenuState<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -132,6 +147,9 @@ mixin _$MenuState<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -207,6 +225,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return idle();
   }
@@ -228,6 +249,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return idle?.call();
   }
@@ -249,6 +273,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -277,6 +304,9 @@ class _$Idle<T> implements Idle<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return idle(this);
   }
@@ -300,6 +330,9 @@ class _$Idle<T> implements Idle<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return idle?.call(this);
   }
@@ -323,6 +356,9 @@ class _$Idle<T> implements Idle<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -390,6 +426,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletInfoLoading();
   }
@@ -411,6 +450,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletInfoLoading?.call();
   }
@@ -432,6 +474,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoLoading != null) {
@@ -460,6 +505,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletInfoLoading(this);
   }
@@ -483,6 +531,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletInfoLoading?.call(this);
   }
@@ -506,6 +557,9 @@ class _$WalletInfoLoading<T> implements WalletInfoLoading<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoLoading != null) {
@@ -600,6 +654,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletInfoSuccedded(data);
   }
@@ -621,6 +678,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletInfoSuccedded?.call(data);
   }
@@ -642,6 +702,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoSuccedded != null) {
@@ -670,6 +733,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletInfoSuccedded(this);
   }
@@ -693,6 +759,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletInfoSuccedded?.call(this);
   }
@@ -716,6 +785,9 @@ class _$WalletInfoSuccedded<T> implements WalletInfoSuccedded<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoSuccedded != null) {
@@ -827,6 +899,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletInfoError(networkExceptions);
   }
@@ -848,6 +923,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletInfoError?.call(networkExceptions);
   }
@@ -869,6 +947,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoError != null) {
@@ -897,6 +978,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletInfoError(this);
   }
@@ -920,6 +1004,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletInfoError?.call(this);
   }
@@ -943,6 +1030,9 @@ class _$WalletInfoError<T> implements WalletInfoError<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletInfoError != null) {
@@ -1018,6 +1108,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletBlanceAddedLoading();
   }
@@ -1039,6 +1132,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletBlanceAddedLoading?.call();
   }
@@ -1060,6 +1156,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBlanceAddedLoading != null) {
@@ -1088,6 +1187,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletBlanceAddedLoading(this);
   }
@@ -1111,6 +1213,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletBlanceAddedLoading?.call(this);
   }
@@ -1134,6 +1239,9 @@ class _$WalletBlanceAddedLoading<T> implements WalletBlanceAddedLoading<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBlanceAddedLoading != null) {
@@ -1231,6 +1339,9 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletBalanceAddedSuccedded(data);
   }
@@ -1252,6 +1363,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletBalanceAddedSuccedded?.call(data);
   }
@@ -1273,6 +1387,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBalanceAddedSuccedded != null) {
@@ -1301,6 +1418,9 @@ class _$WalletBalanceAddedSuccedded<T>
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletBalanceAddedSuccedded(this);
   }
@@ -1324,6 +1444,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletBalanceAddedSuccedded?.call(this);
   }
@@ -1347,6 +1470,9 @@ class _$WalletBalanceAddedSuccedded<T>
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBalanceAddedSuccedded != null) {
@@ -1459,6 +1585,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return walletBalanceAdddedError(networkExceptions);
   }
@@ -1480,6 +1609,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return walletBalanceAdddedError?.call(networkExceptions);
   }
@@ -1501,6 +1633,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBalanceAdddedError != null) {
@@ -1529,6 +1664,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return walletBalanceAdddedError(this);
   }
@@ -1552,6 +1690,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return walletBalanceAdddedError?.call(this);
   }
@@ -1575,6 +1716,9 @@ class _$WalletBalanceAdddedError<T> implements WalletBalanceAdddedError<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (walletBalanceAdddedError != null) {
@@ -1648,6 +1792,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return rateLoading();
   }
@@ -1669,6 +1816,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return rateLoading?.call();
   }
@@ -1690,6 +1840,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateLoading != null) {
@@ -1718,6 +1871,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return rateLoading(this);
   }
@@ -1741,6 +1897,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return rateLoading?.call(this);
   }
@@ -1764,6 +1923,9 @@ class _$RateLoading<T> implements RateLoading<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateLoading != null) {
@@ -1831,6 +1993,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return rateSuccedded();
   }
@@ -1852,6 +2017,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return rateSuccedded?.call();
   }
@@ -1873,6 +2041,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateSuccedded != null) {
@@ -1901,6 +2072,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return rateSuccedded(this);
   }
@@ -1924,6 +2098,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return rateSuccedded?.call(this);
   }
@@ -1947,6 +2124,9 @@ class _$RateSuccedded<T> implements RateSuccedded<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateSuccedded != null) {
@@ -2051,6 +2231,9 @@ class _$RateError<T> implements RateError<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return rateError(networkExceptions);
   }
@@ -2072,6 +2255,9 @@ class _$RateError<T> implements RateError<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return rateError?.call(networkExceptions);
   }
@@ -2093,6 +2279,9 @@ class _$RateError<T> implements RateError<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateError != null) {
@@ -2121,6 +2310,9 @@ class _$RateError<T> implements RateError<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return rateError(this);
   }
@@ -2144,6 +2336,9 @@ class _$RateError<T> implements RateError<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return rateError?.call(this);
   }
@@ -2167,6 +2362,9 @@ class _$RateError<T> implements RateError<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (rateError != null) {
@@ -2240,6 +2438,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return sendComplainLoading();
   }
@@ -2261,6 +2462,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return sendComplainLoading?.call();
   }
@@ -2282,6 +2486,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainLoading != null) {
@@ -2310,6 +2517,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return sendComplainLoading(this);
   }
@@ -2333,6 +2543,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return sendComplainLoading?.call(this);
   }
@@ -2356,6 +2569,9 @@ class _$SendComplainLoading<T> implements SendComplainLoading<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainLoading != null) {
@@ -2424,6 +2640,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return sendComplainSuccedded();
   }
@@ -2445,6 +2664,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return sendComplainSuccedded?.call();
   }
@@ -2466,6 +2688,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainSuccedded != null) {
@@ -2494,6 +2719,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return sendComplainSuccedded(this);
   }
@@ -2517,6 +2745,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return sendComplainSuccedded?.call(this);
   }
@@ -2540,6 +2771,9 @@ class _$SendComplainSuccedded<T> implements SendComplainSuccedded<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainSuccedded != null) {
@@ -2645,6 +2879,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     required TResult Function() sendComplainSuccedded,
     required TResult Function(DioExceptionType networkExceptions)
         sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
   }) {
     return sendComplainError(networkExceptions);
   }
@@ -2666,6 +2903,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     TResult? Function()? sendComplainLoading,
     TResult? Function()? sendComplainSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
   }) {
     return sendComplainError?.call(networkExceptions);
   }
@@ -2687,6 +2927,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     TResult Function()? sendComplainLoading,
     TResult Function()? sendComplainSuccedded,
     TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainError != null) {
@@ -2715,6 +2958,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     required TResult Function(SendComplainSuccedded<T> value)
         sendComplainSuccedded,
     required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
   }) {
     return sendComplainError(this);
   }
@@ -2738,6 +2984,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
   }) {
     return sendComplainError?.call(this);
   }
@@ -2761,6 +3010,9 @@ class _$SendComplainError<T> implements SendComplainError<T> {
     TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
     TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
     TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
     required TResult orElse(),
   }) {
     if (sendComplainError != null) {
@@ -2777,5 +3029,651 @@ abstract class SendComplainError<T> implements MenuState<T> {
   DioExceptionType get networkExceptions;
   @JsonKey(ignore: true)
   _$$SendComplainErrorCopyWith<T, _$SendComplainError<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RateUsLoadingCopyWith<T, $Res> {
+  factory _$$RateUsLoadingCopyWith(
+          _$RateUsLoading<T> value, $Res Function(_$RateUsLoading<T>) then) =
+      __$$RateUsLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RateUsLoadingCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$RateUsLoading<T>>
+    implements _$$RateUsLoadingCopyWith<T, $Res> {
+  __$$RateUsLoadingCopyWithImpl(
+      _$RateUsLoading<T> _value, $Res Function(_$RateUsLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RateUsLoading<T> implements RateUsLoading<T> {
+  const _$RateUsLoading();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.rateUsLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RateUsLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletInfoError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() rateLoading,
+    required TResult Function() rateSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function() sendComplainSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
+  }) {
+    return rateUsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? rateLoading,
+    TResult? Function()? rateSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function()? sendComplainSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
+  }) {
+    return rateUsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? rateLoading,
+    TResult Function()? rateSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateError,
+    TResult Function()? sendComplainLoading,
+    TResult Function()? sendComplainSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsLoading != null) {
+      return rateUsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(RateLoading<T> value) rateLoading,
+    required TResult Function(RateSuccedded<T> value) rateSuccedded,
+    required TResult Function(RateError<T> value) rateError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccedded<T> value)
+        sendComplainSuccedded,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
+  }) {
+    return rateUsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(RateLoading<T> value)? rateLoading,
+    TResult? Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult? Function(RateError<T> value)? rateError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
+  }) {
+    return rateUsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(RateLoading<T> value)? rateLoading,
+    TResult Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult Function(RateError<T> value)? rateError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsLoading != null) {
+      return rateUsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateUsLoading<T> implements MenuState<T> {
+  const factory RateUsLoading() = _$RateUsLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$RateUsSucceddedCopyWith<T, $Res> {
+  factory _$$RateUsSucceddedCopyWith(_$RateUsSuccedded<T> value,
+          $Res Function(_$RateUsSuccedded<T>) then) =
+      __$$RateUsSucceddedCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$RateUsSucceddedCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$RateUsSuccedded<T>>
+    implements _$$RateUsSucceddedCopyWith<T, $Res> {
+  __$$RateUsSucceddedCopyWithImpl(
+      _$RateUsSuccedded<T> _value, $Res Function(_$RateUsSuccedded<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RateUsSuccedded<T> implements RateUsSuccedded<T> {
+  const _$RateUsSuccedded();
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.rateUsSuccedded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RateUsSuccedded<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletInfoError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() rateLoading,
+    required TResult Function() rateSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function() sendComplainSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
+  }) {
+    return rateUsSuccedded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? rateLoading,
+    TResult? Function()? rateSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function()? sendComplainSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
+  }) {
+    return rateUsSuccedded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? rateLoading,
+    TResult Function()? rateSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateError,
+    TResult Function()? sendComplainLoading,
+    TResult Function()? sendComplainSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsSuccedded != null) {
+      return rateUsSuccedded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(RateLoading<T> value) rateLoading,
+    required TResult Function(RateSuccedded<T> value) rateSuccedded,
+    required TResult Function(RateError<T> value) rateError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccedded<T> value)
+        sendComplainSuccedded,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
+  }) {
+    return rateUsSuccedded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(RateLoading<T> value)? rateLoading,
+    TResult? Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult? Function(RateError<T> value)? rateError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
+  }) {
+    return rateUsSuccedded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(RateLoading<T> value)? rateLoading,
+    TResult Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult Function(RateError<T> value)? rateError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsSuccedded != null) {
+      return rateUsSuccedded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateUsSuccedded<T> implements MenuState<T> {
+  const factory RateUsSuccedded() = _$RateUsSuccedded<T>;
+}
+
+/// @nodoc
+abstract class _$$RateUsErrorCopyWith<T, $Res> {
+  factory _$$RateUsErrorCopyWith(
+          _$RateUsError<T> value, $Res Function(_$RateUsError<T>) then) =
+      __$$RateUsErrorCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({DioExceptionType networkExceptions});
+
+  $DioExceptionTypeCopyWith<$Res> get networkExceptions;
+}
+
+/// @nodoc
+class __$$RateUsErrorCopyWithImpl<T, $Res>
+    extends _$MenuStateCopyWithImpl<T, $Res, _$RateUsError<T>>
+    implements _$$RateUsErrorCopyWith<T, $Res> {
+  __$$RateUsErrorCopyWithImpl(
+      _$RateUsError<T> _value, $Res Function(_$RateUsError<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? networkExceptions = null,
+  }) {
+    return _then(_$RateUsError<T>(
+      null == networkExceptions
+          ? _value.networkExceptions
+          : networkExceptions // ignore: cast_nullable_to_non_nullable
+              as DioExceptionType,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DioExceptionTypeCopyWith<$Res> get networkExceptions {
+    return $DioExceptionTypeCopyWith<$Res>(_value.networkExceptions, (value) {
+      return _then(_value.copyWith(networkExceptions: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$RateUsError<T> implements RateUsError<T> {
+  const _$RateUsError(this.networkExceptions);
+
+  @override
+  final DioExceptionType networkExceptions;
+
+  @override
+  String toString() {
+    return 'MenuState<$T>.rateUsError(networkExceptions: $networkExceptions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RateUsError<T> &&
+            (identical(other.networkExceptions, networkExceptions) ||
+                other.networkExceptions == networkExceptions));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, networkExceptions);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RateUsErrorCopyWith<T, _$RateUsError<T>> get copyWith =>
+      __$$RateUsErrorCopyWithImpl<T, _$RateUsError<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() walletInfoLoading,
+    required TResult Function(WalletInfo data) walletInfoSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletInfoError,
+    required TResult Function() walletBlanceAddedLoading,
+    required TResult Function(AddBalance data) walletBalanceAddedSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        walletBalanceAdddedError,
+    required TResult Function() rateLoading,
+    required TResult Function() rateSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateError,
+    required TResult Function() sendComplainLoading,
+    required TResult Function() sendComplainSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        sendComplainError,
+    required TResult Function() rateUsLoading,
+    required TResult Function() rateUsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions) rateUsError,
+  }) {
+    return rateUsError(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? walletInfoLoading,
+    TResult? Function(WalletInfo data)? walletInfoSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult? Function()? walletBlanceAddedLoading,
+    TResult? Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult? Function()? rateLoading,
+    TResult? Function()? rateSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateError,
+    TResult? Function()? sendComplainLoading,
+    TResult? Function()? sendComplainSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult? Function()? rateUsLoading,
+    TResult? Function()? rateUsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? rateUsError,
+  }) {
+    return rateUsError?.call(networkExceptions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? walletInfoLoading,
+    TResult Function(WalletInfo data)? walletInfoSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? walletInfoError,
+    TResult Function()? walletBlanceAddedLoading,
+    TResult Function(AddBalance data)? walletBalanceAddedSuccedded,
+    TResult Function(DioExceptionType networkExceptions)?
+        walletBalanceAdddedError,
+    TResult Function()? rateLoading,
+    TResult Function()? rateSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateError,
+    TResult Function()? sendComplainLoading,
+    TResult Function()? sendComplainSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? sendComplainError,
+    TResult Function()? rateUsLoading,
+    TResult Function()? rateUsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsError != null) {
+      return rateUsError(networkExceptions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(WalletInfoLoading<T> value) walletInfoLoading,
+    required TResult Function(WalletInfoSuccedded<T> value) walletInfoSuccedded,
+    required TResult Function(WalletInfoError<T> value) walletInfoError,
+    required TResult Function(WalletBlanceAddedLoading<T> value)
+        walletBlanceAddedLoading,
+    required TResult Function(WalletBalanceAddedSuccedded<T> value)
+        walletBalanceAddedSuccedded,
+    required TResult Function(WalletBalanceAdddedError<T> value)
+        walletBalanceAdddedError,
+    required TResult Function(RateLoading<T> value) rateLoading,
+    required TResult Function(RateSuccedded<T> value) rateSuccedded,
+    required TResult Function(RateError<T> value) rateError,
+    required TResult Function(SendComplainLoading<T> value) sendComplainLoading,
+    required TResult Function(SendComplainSuccedded<T> value)
+        sendComplainSuccedded,
+    required TResult Function(SendComplainError<T> value) sendComplainError,
+    required TResult Function(RateUsLoading<T> value) rateUsLoading,
+    required TResult Function(RateUsSuccedded<T> value) rateUsSuccedded,
+    required TResult Function(RateUsError<T> value) rateUsError,
+  }) {
+    return rateUsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult? Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult? Function(WalletInfoError<T> value)? walletInfoError,
+    TResult? Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult? Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult? Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult? Function(RateLoading<T> value)? rateLoading,
+    TResult? Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult? Function(RateError<T> value)? rateError,
+    TResult? Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult? Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult? Function(SendComplainError<T> value)? sendComplainError,
+    TResult? Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult? Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult? Function(RateUsError<T> value)? rateUsError,
+  }) {
+    return rateUsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(WalletInfoLoading<T> value)? walletInfoLoading,
+    TResult Function(WalletInfoSuccedded<T> value)? walletInfoSuccedded,
+    TResult Function(WalletInfoError<T> value)? walletInfoError,
+    TResult Function(WalletBlanceAddedLoading<T> value)?
+        walletBlanceAddedLoading,
+    TResult Function(WalletBalanceAddedSuccedded<T> value)?
+        walletBalanceAddedSuccedded,
+    TResult Function(WalletBalanceAdddedError<T> value)?
+        walletBalanceAdddedError,
+    TResult Function(RateLoading<T> value)? rateLoading,
+    TResult Function(RateSuccedded<T> value)? rateSuccedded,
+    TResult Function(RateError<T> value)? rateError,
+    TResult Function(SendComplainLoading<T> value)? sendComplainLoading,
+    TResult Function(SendComplainSuccedded<T> value)? sendComplainSuccedded,
+    TResult Function(SendComplainError<T> value)? sendComplainError,
+    TResult Function(RateUsLoading<T> value)? rateUsLoading,
+    TResult Function(RateUsSuccedded<T> value)? rateUsSuccedded,
+    TResult Function(RateUsError<T> value)? rateUsError,
+    required TResult orElse(),
+  }) {
+    if (rateUsError != null) {
+      return rateUsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RateUsError<T> implements MenuState<T> {
+  const factory RateUsError(final DioExceptionType networkExceptions) =
+      _$RateUsError<T>;
+
+  DioExceptionType get networkExceptions;
+  @JsonKey(ignore: true)
+  _$$RateUsErrorCopyWith<T, _$RateUsError<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

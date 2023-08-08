@@ -30,6 +30,7 @@ class MenuRepository {
       return ApiResult.failure(DioExceptionType.getDioException(error));
     }
   }
+
 // rate  using id and stars and comment and future deals stars and time stars and experience stars and quality stars and communication stars and professional stars
 
   Future<ApiResult<ErrorModel>> rate(
@@ -38,22 +39,31 @@ class MenuRepository {
       String communicationStars,
       String qualityStars,
       String experienceStars,
-
       String comment) async {
     try {
-      var response = await webServices.rateDeal(
-          dealId,
-          profissionalStars,
-          communicationStars,
-          qualityStars,
-          experienceStars,
-     
-          comment);
+      var response = await webServices.rateDeal(dealId, profissionalStars,
+          communicationStars, qualityStars, experienceStars, comment);
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(DioExceptionType.getDioException(error));
     }
   }
+
+  Future<ApiResult<ErrorModel>> rateUs(
+      String profissionalStars,
+      String communicationStars,
+      String qualityStars,
+      String experienceStars,
+      String comment) async {
+    try {
+      var response = await webServices.rateUs("0", profissionalStars,
+          communicationStars, qualityStars, experienceStars, comment);
+      return ApiResult.success(response);
+    } catch (error) {
+      return ApiResult.failure(DioExceptionType.getDioException(error));
+    }
+  }
+
   //get app settings
 
   Future<ApiResult<List<SettingsModel>>> getAllSettings() async {
@@ -64,10 +74,10 @@ class MenuRepository {
       return ApiResult.failure(DioExceptionType.getDioException(error));
     }
   }
+
 //send complain by phone and notes
 
-  Future<ApiResult<ErrorModel>> sendComplain(
-      String phone, String notes) async {
+  Future<ApiResult<ErrorModel>> sendComplain(String phone, String notes) async {
     try {
       var response = await webServices.sendComplain(phone, notes);
       return ApiResult.success(response);

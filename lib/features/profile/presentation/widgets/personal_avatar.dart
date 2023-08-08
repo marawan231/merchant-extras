@@ -36,49 +36,43 @@ class _PersonalAvatarState extends State<PersonalAvatar> {
       clipBehavior: Clip.hardEdge,
       decoration: const BoxDecoration(shape: BoxShape.circle),
       child: profileCubit.avatarFile == null
-          ? CustomNetworkCachedImage(url: userImage, fit: BoxFit.fill)
-          : Image.file(profileCubit.avatarFile!, fit: BoxFit.fill),
-    );
-  }
-
-  _buildDarkShadow() {
-    return Container(
-      width: 100.w,
-      height: 100.h,
-      decoration: BoxDecoration(
-        color: ColorManager.black.withOpacity(.50),
-        shape: BoxShape.circle,
-      ),
+          ? CustomNetworkCachedImage(url: userImage, fit: BoxFit.cover)
+          : Image.file(profileCubit.avatarFile!, fit: BoxFit.cover),
     );
   }
 
   _buildEditIcon() {
-    return InkWell(
-        onTap: getImage,
-        child: Padding(
-          padding: EdgeInsets.only(top: 38.h, right: 37.w),
+    return Positioned(
+      right: 0,
+      bottom: 0,
+      child: InkWell(
+          onTap: getImage,
           child: BlocBuilder<ProfileCubit, ProfileState>(
             buildWhen: (previous, current) => current is UpdateProfileSuccess,
             builder: (context, state) {
               return Image.asset(
                 profileCubit.avatarFile == null
-                    ? ImageAssets.pencil
+                    ? ImageAssets.pencilCircle
                     : ImageAssets.close,
-                width: 25.w,
-                height: 25.h,
+                width: 31.w,
+                height: 31.h,
               );
             },
-          ),
-        ));
+          )),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        _buildImage(context),
-        _buildDarkShadow(),
-        _buildEditIcon(),
+        Stack(
+          children: [
+            _buildImage(context),
+            _buildEditIcon(),
+          ],
+        ),
       ],
     );
   }
