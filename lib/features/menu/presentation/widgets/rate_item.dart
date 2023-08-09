@@ -11,9 +11,10 @@ import '../../../../core/resources/style_manager.dart';
 import 'rating_bar.dart';
 
 class RateItem extends StatefulWidget {
-  const RateItem({super.key, required this.index});
+  const RateItem({super.key, required this.index, this.isDealRate});
 
   final int index;
+  final bool? isDealRate;
 
   @override
   State<RateItem> createState() => _RateItemState();
@@ -46,7 +47,10 @@ class _RateItemState extends State<RateItem> {
   }
 
   _buildHeadline(BuildContext context) {
-    return Text(rateTitles[widget.index],
+    return Text(
+        widget.isDealRate ?? false
+            ? rateTitlesInProductRate[widget.index]
+            : rateTitles[widget.index],
         style: getRegularStyle(
           color: ColorManager.black,
           fontSize: 15.sp,

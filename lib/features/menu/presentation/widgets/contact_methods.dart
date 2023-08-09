@@ -13,7 +13,7 @@ import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_textfield.dart';
 import '../../../../core/widgets/default_button.dart';
-import '../../../auth/presentation/widgets/phone_auth_textfiield.dart';
+
 import 'contact_item.dart';
 
 class ContactMethods extends StatefulWidget {

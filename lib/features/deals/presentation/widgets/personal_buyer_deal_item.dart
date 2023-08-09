@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/utils.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 import '../../data/model/deal_model.dart';
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -116,14 +115,14 @@ class PersonalBuyerDealItem extends StatelessWidget {
     );
   }
 
-  _buildKiloIcon() {
-    return Image.asset(
-      ImageAssets.weight,
-      color: ColorManager.primary,
-      width: 10.w,
-      height: 10.h,
-    );
-  }
+  // _buildKiloIcon() {
+  //   return Image.asset(
+  //     ImageAssets.weight,
+  //     color: ColorManager.primary,
+  //     width: 10.w,
+  //     height: 10.h,
+  //   );
+  // }
 
   _buildTotalAmount() {
     return Text(
@@ -132,13 +131,13 @@ class PersonalBuyerDealItem extends StatelessWidget {
     );
   }
 
-  _buildPriceTagIcon() {
-    return Image.asset(
-      ImageAssets.priceTag,
-      width: 10.w,
-      height: 10.h,
-    );
-  }
+  // _buildPriceTagIcon() {
+  //   return Image.asset(
+  //     ImageAssets.priceTag,
+  //     width: 10.w,
+  //     height: 10.h,
+  //   );
+  // }
 
   _buildPriceForUnit() {
     return Text(

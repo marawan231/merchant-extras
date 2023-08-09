@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/style_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 
 class CustomDealDetailContainer extends StatelessWidget {
@@ -29,7 +30,8 @@ class CustomDealDetailContainer extends StatelessWidget {
   _buildTitle(BuildContext context) {
     return Text(
       title,
-      style: titleTextStyle ?? Theme.of(context).textTheme.headlineSmall,
+      style: titleTextStyle ??
+          getBoldStyle(fontSize: 17.sp, color: ColorManager.black),
     );
   }
 
@@ -37,44 +39,34 @@ class CustomDealDetailContainer extends StatelessWidget {
     return value;
   }
 
-  _buildIcon() {
-    return Padding(
-      padding: EdgeInsets.only(top: 4.h),
-      child: Image.asset(
-        icon,
-        width: iconWidth ?? 15.w,
-        height: iconHeight ?? 15.h,
-      ),
-    );
-  }
+  // _buildIcon() {
+  //   return Padding(
+  //     padding: EdgeInsets.only(top: 4.h),
+  //     child: Image.asset(
+  //       icon,
+  //       width: iconWidth ?? 15.w,
+  //       height: iconHeight ?? 15.h,
+  //     ),
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width ?? double.infinity,
-      height: height ?? 79.h,
-      decoration: BoxDecoration(
-          color: color ?? ColorManager.lightWhite,
-          borderRadius: BorderRadius.all(Radius.circular(5.r))),
-      child: Padding(
-        padding:
-            EdgeInsets.only(top: 12.h, bottom: 10.h, left: 15.w, right: 15.w),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buildTitle(context),
-                _buildValue(context),
-              ],
-            ),
-            _buildIcon(),
-          ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _buildTitle(context),
+        14.verticalSpace,
+        Container(
+          width: width ?? double.infinity,
+          height: height ?? 54.h,
+          decoration: BoxDecoration(
+              color: color ?? ColorManager.lightWhite,
+              border: Border.all(color: ColorManager.borderInInputTextFiefld),
+              borderRadius: BorderRadius.all(Radius.circular(10.r))),
+          child: _buildValue(context),
         ),
-      ),
+      ],
     );
   }
 }

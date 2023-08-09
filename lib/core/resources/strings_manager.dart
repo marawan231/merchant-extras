@@ -5,7 +5,14 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String productQualtiy = 'جودة المنتج';
+  static const String fastDelivery = 'سرعة التسليم';
+  static const String serviceQuality = 'جودة الخدمة';
+  static const String productPrice = 'السعر';
+  static const String productPriceHint = 'مصداقية الشركة';
+
   static const String piece = 'قطعة';
+  static const String piecePrice = 'سعر القطعة';
   static const String categories = 'التصنيفات';
   static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
   static const String enterPhoneNumber = 'ادخل رقم الجوال';
@@ -154,6 +161,7 @@ class AppStrings {
   static const String totla = 'المجموع :';
   static const String thousand = '1000';
   static const String paymentMethod = 'وسائل الدفع :';
+  static const String payMethod = 'طريقة الدفع';
   static const String paypal = 'PayPal';
   static const String shipFrom = 'الشحن من';
   static const String shipTo = 'الشحن الى';

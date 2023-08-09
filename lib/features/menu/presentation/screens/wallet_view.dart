@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/resources/assets_manager.dart';
 import 'package:merchant_extras/core/widgets/empty_lottie.dart';
-import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../../business_logic/cubit/menu_cubit.dart';
 import '../../business_logic/cubit/menu_state.dart';

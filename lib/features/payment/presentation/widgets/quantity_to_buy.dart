@@ -25,7 +25,7 @@ class _QuantityToBuyState extends State<QuantityToBuy> {
     ChoiceModel(id: 2, title: AppStrings.buySelectedQuantity),
   ];
   ChoiceModel? selectedChoice;
-  TextEditingController _quantityController = TextEditingController();
+  final TextEditingController _quantityController = TextEditingController();
 
   @override
   void initState() {

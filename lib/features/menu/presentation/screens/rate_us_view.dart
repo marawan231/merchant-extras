@@ -74,6 +74,7 @@ class _RateUsViewState extends State<RateUsView> {
         itemBuilder: (context, index) {
           return RateItem(
             index: index,
+            isDealRate: widget.isDealRate,
           );
         },
         separatorBuilder: (context, index) {

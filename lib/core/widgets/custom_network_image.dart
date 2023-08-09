@@ -26,7 +26,7 @@ class CustomNetworkCachedImage extends StatelessWidget {
             width: width,
             height: height,
             color: color,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
             ))
         : CachedNetworkImage(

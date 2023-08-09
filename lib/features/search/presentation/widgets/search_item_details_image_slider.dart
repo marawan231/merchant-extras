@@ -17,7 +17,7 @@ class SearchItemDetailsImageSlider extends StatefulWidget {
 
 class _SearchItemDetailsImageSliderState
     extends State<SearchItemDetailsImageSlider> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   Widget _buildCompanyFeatures() {
     return SizedBox(
       height: 200.h,

@@ -12,8 +12,8 @@ class KiloPriceAndPayment extends StatelessWidget {
   final String? paymentMethod;
   _buildKiloPrice(BuildContext context) {
     return CustomDealDetailContainer(
-      width: 165.w,
-      height: 79.h,
+      // width: 165.w,
+      // height: 79.h,
       title: AppStrings.requiredKiloPrice.replaceAll(':', ''),
       // titleTextStyle:
       //     getBoldStyle(fontSize: 12.sp, color: ColorManager.darkGrey),
@@ -34,8 +34,8 @@ class KiloPriceAndPayment extends StatelessWidget {
 
   _buildPaymentMethod(BuildContext context) {
     return CustomDealDetailContainer(
-      width: 165.w,
-      height: 79.h,
+      // width: 165.w,
+      // height: 79.h,
       title: 'طريقة الدفع',
       icon: ImageAssets.mastercard,
       value: Text(

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/widgets/default_button.dart';
 import '../../../../core/resources/utils.dart';
 import '../../data/model/deal_model.dart';
 import '../../../../core/resources/route_manager.dart';
-
 import '../../../../core/resources/strings_manager.dart';
-import '../../../../core/widgets/floating_container.dart';
 import '../widgets/deal_details_card.dart';
-import '../widgets/kilo_price_payment.dart';
 import '../widgets/quantity.dart';
 import '../widgets/shipping.dart';
 import '../widgets/total.dart';
@@ -43,36 +41,44 @@ class DealDetailsView extends StatelessWidget {
   }
 
   Widget _buildDealDetailsViewBody() {
-    return Padding(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
-      child: Column(
-        children: [
-          DealDetailsCard(
-            deal: deal,
-          ),
-          SizedBox(height: 30.h),
-          Total(
-            total:
-                (deal.buyInformation!.price! * deal.currentUserOrder!.amount!)
-                    .toString(),
-          ),
-          SizedBox(height: 12.h),
-          KiloPriceAndPayment(
-            kiloPrice: deal.buyInformation!.price.toString(),
-            paymentMethod: 'المحفظة',
-          ),
-          SizedBox(height: 12.h),
-          Quantity(
+    return Column(
+      children: [
+        DealDetailsCard(deal: deal),
+        23.verticalSpace,
+        Quantity(
             amount: deal.currentUserOrder!.amount!.toString(),
-          ),
-          SizedBox(height: 12.h),
-          Shipping(
-            cityName: deal.currentUserOrder!.country!.name ?? '',
-          ),
-          // SizedBox(height: 12.h),
-          // const Buyer(),
-        ],
-      ),
+            piecePrice: deal.buyInformation!.price.toString()),
+        23.verticalSpace,
+        Shipping(
+          cityName: deal.currentUserOrder!.country!.name ?? '',
+          paymentMethod: 'المحفظة',
+        ),
+        23.verticalSpace,
+
+        Total(
+          total: (deal.buyInformation!.price! * deal.currentUserOrder!.amount!)
+              .toString(),
+        ),
+
+        // SizedBox(height: 12.h),
+        // const Buyer(),
+      ],
+    );
+  }
+
+  _buildStatus(BuildContext context) {
+    return DefaultButton(
+      text: deal.status == 'complete'
+          ? '${getTitle(deal.status!)}   ${'( قيم الصفقة )'}'
+          : getTitle(deal.status!),
+      onTap: () {
+        deal.status == 'complete'
+            ? Navigator.pushNamed(context, Routes.rateUsRoute, arguments: {
+                'isDealRate': true,
+                'dealId': deal.id.toString(),
+              })
+            : null;
+      },
     );
   }
 
@@ -80,32 +86,17 @@ class DealDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildDealDetailsViewAppBar(context),
-      body: Stack(
-        children: [
-          _buildDealDetailsViewBody(),
-          Padding(
-            padding: EdgeInsets.only(bottom: 30.h),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: FloatingContainer(
-                width: 178.w,
-                height: 36.h,
-                title: deal.status == 'complete'
-                    ? '${getTitle(deal.status!)}   ${'( قيم الصفقة )'}'
-                    : getTitle(deal.status!),
-                ontap: () {
-                  deal.status == 'complete'
-                      ? Navigator.pushNamed(context, Routes.rateUsRoute,
-                          arguments: {
-                              'isDealRate': true,
-                              'dealId': deal.id.toString(),
-                            })
-                      : null;
-                },
-              ),
-            ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
+          child: Column(
+            children: [
+              _buildDealDetailsViewBody(),
+              23.verticalSpace,
+              _buildStatus(context),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
