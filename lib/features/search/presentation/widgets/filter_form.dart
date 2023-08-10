@@ -6,7 +6,6 @@ import '../../../../core/resources/commons.dart';
 import '../../business_logic/cubit/search_cubit.dart';
 import '../../business_logic/cubit/search_state.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';
@@ -93,19 +92,19 @@ class _FilterFormState extends State<FilterForm> {
     );
   }
 
-  _buildReassignButton() {
-    return TextButton(
-        onPressed: () {
-          _searchCubit.resetFilter();
-          // setState(() {});
-          // Navigator.pop(context);
-        },
-        child: Text(
-          AppStrings.reAssign,
-          style: getRegularStyle(
-              color: Theme.of(context).primaryColor, fontSize: 15.sp),
-        ));
-  }
+  // _buildReassignButton() {
+  //   return TextButton(
+  //       onPressed: () {
+  //         _searchCubit.resetFilter();
+  //         // setState(() {});
+  //         // Navigator.pop(context);
+  //       },
+  //       child: Text(
+  //         AppStrings.reAssign,
+  //         style: getRegularStyle(
+  //             color: Theme.of(context).primaryColor, fontSize: 15.sp),
+  //       ));
+  // }
 
   // _buildPriceRange() {
   //   return Container();

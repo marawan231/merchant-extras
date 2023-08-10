@@ -19,16 +19,16 @@ class NotificationItem extends StatelessWidget {
       // alignment: Alignment.,
       width: 55.w,
       height: 55.w,
-      decoration: const BoxDecoration(
-        // color: Theme.of(context).primaryColor,
+      decoration: BoxDecoration(
+        color: ColorManager.lightPrimary,
         shape: BoxShape.circle,
       ),
       child: Center(
         child: Image.asset(
           ImageAssets.bell,
           color: ColorManager.primary,
-          height: 22.w,
-          width: 22.w,
+          height: 18.w,
+          width: 18.w,
           fit: BoxFit.cover,
         ),
       ),

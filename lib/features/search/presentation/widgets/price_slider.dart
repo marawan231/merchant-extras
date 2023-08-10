@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:flutter_xlider/flutter_xlider.dart';
 
 import '../../../../core/resources/color_manager.dart';
-import '../../../../core/resources/route_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../business_logic/cubit/search_cubit.dart';

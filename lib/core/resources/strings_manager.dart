@@ -6,6 +6,8 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String noNotifications = 'لا يوجد اشعارات';
+  static const String noDealsImmediately = 'لا يوجد صفقات حاليا';
 
   // static const String thereIsNoDataCurrently = 'لا يوجد يانات حاليا';
   static const String thereAreNoSearchResults = 'لا يوجد نتائج بحث';

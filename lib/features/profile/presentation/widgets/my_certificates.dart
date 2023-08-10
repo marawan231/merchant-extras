@@ -11,7 +11,6 @@ import 'certificate_item.dart';
 class MyCertificates extends StatelessWidget {
   const MyCertificates({super.key});
 
-  //TODO refactor headline to seperate Widget
   _buildHeadline() {
     return Row(
       children: [
@@ -38,9 +37,8 @@ class MyCertificates extends StatelessWidget {
       children: [
         const AddButton(),
         SizedBox(width: 15.w),
-       const CertificateItem(),
+        const CertificateItem(),
         SizedBox(width: 8.w),
-
         const CertificateItem(),
       ],
     );

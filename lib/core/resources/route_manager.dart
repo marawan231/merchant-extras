@@ -206,7 +206,9 @@ class RouteGenerator {
         BlocProvider.value(value: homeCubit),
         BlocProvider.value(value: searchCubit),
       ],
-      child: const AllDealsView(),
+      child: const AllDealsView(
+
+      ),
     ),
   ];
 
@@ -298,7 +300,9 @@ class RouteGenerator {
                     BlocProvider.value(value: homeCubit),
                     BlocProvider.value(value: searchCubit),
                   ],
-                  child: const AllDealsView(),
+                  child: const AllDealsView(
+                    
+                  ),
                 ));
       case Routes.searchResultViewRoute:
         return MaterialPageRoute(

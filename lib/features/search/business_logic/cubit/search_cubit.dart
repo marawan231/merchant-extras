@@ -12,6 +12,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this.searchRepository) : super(const Idle());
   String title = AppStrings.world;
   int searchViewDefaultindex = 0;
+  int? defaultCategoryIndex;
   int patternInFilterFormCategoreisIndex = 0;
   int worldViewCategoriesDefaultIndex = 0;
   int arrangmentInFilterFormCategoreisIndex = 0;

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/business_logic/cubit/global_cubit.dart';
+import 'package:merchant_extras/core/resources/route_manager.dart';
 import 'package:merchant_extras/core/resources/style_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
@@ -101,20 +102,27 @@ class _AllCategoriesViewState extends State<AllCategoriesView> {
         mainAxisSpacing: 18.h,
       ),
       itemBuilder: (context, index) {
-        return Container(
-            decoration: BoxDecoration(
-                color: ColorManager.lightPrimary,
-                borderRadius: BorderRadius.all(Radius.circular(10.r))),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildImage(index),
-                  4.verticalSpace,
-                  _buildTitle(index),
-                ],
-              ),
-            ));
+        return InkWell(
+          onTap: () {
+            // Navigator.pushNamed(context, Routes.allDealsRoute);
+            BlocProvider.of<GlobalCubit>(context).changeSelectedIndex(1);
+            BlocProvider.of<SearchCubit>(context).resetFilter();
+          },
+          child: Container(
+              decoration: BoxDecoration(
+                  color: ColorManager.lightPrimary,
+                  borderRadius: BorderRadius.all(Radius.circular(10.r))),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildImage(index),
+                    4.verticalSpace,
+                    _buildTitle(index),
+                  ],
+                ),
+              )),
+        );
       },
     );
   }

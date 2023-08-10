@@ -31,6 +31,10 @@ class HomeCategories extends StatelessWidget {
   _buildCategoresList() {
     return BlocConsumer<SearchCubit, SearchState>(
       listener: (context, state) {},
+      buildWhen: (previous, current) =>
+          current is GetCatogoriesLoading ||
+          current is GetCatogoriesError ||
+          current is GetCatogoriesSuccedded,
       builder: (context, state) {
         return state.maybeWhen(
             orElse: () => _buildList(context),
@@ -90,21 +94,29 @@ class HomeCategories extends StatelessWidget {
 
   _buildItem(BuildContext context, int index) {
     // log('imageUrl ${BlocProvider.of<SearchCubit>(context).categories[index].imageUrl}');
-    return Container(
-        // width: 61.w,
-        // height: 61.w,
-        decoration: BoxDecoration(
-            color: ColorManager.lightPrimary,
-            borderRadius: BorderRadius.all(Radius.circular(10.r))),
-        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 19.h),
-        child: CustomNetworkCachedImage(
-          width: 22.w,
-          height: 22.w,
-          color: ColorManager.primary,
-          url:
-              BlocProvider.of<SearchCubit>(context).categories[index].imageUrl!,
-          fit: BoxFit.scaleDown,
-        ));
+    return InkWell(
+      onTap: () {
+        BlocProvider.of<GlobalCubit>(context).changeSelectedIndex(1);
+        BlocProvider.of<SearchCubit>(context).resetFilter();
+        // BlocProvider.of<SearchCubit>(context).search();
+      },
+      child: Container(
+          // width: 61.w,
+          // height: 61.w,
+          decoration: BoxDecoration(
+              color: ColorManager.lightPrimary,
+              borderRadius: BorderRadius.all(Radius.circular(10.r))),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 19.h),
+          child: CustomNetworkCachedImage(
+            width: 22.w,
+            height: 22.w,
+            color: ColorManager.primary,
+            url: BlocProvider.of<SearchCubit>(context)
+                .categories[index]
+                .imageUrl!,
+            fit: BoxFit.scaleDown,
+          )),
+    );
   }
 
   _buildTitle(BuildContext context) {

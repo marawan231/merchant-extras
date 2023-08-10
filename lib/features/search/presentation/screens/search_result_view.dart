@@ -3,10 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/widgets/loading_indicator.dart';
 import '../../../../core/resources/commons.dart';
 
-import '../../../deals/data/model/deal_model.dart';
 import '../../business_logic/cubit/search_state.dart';
 import '../../business_logic/cubit/search_cubit.dart';
 import '../widgets/search_categories.dart';
@@ -43,6 +41,7 @@ class _SearchResultViewState extends State<SearchResultView> {
   void dispose() {
     super.dispose();
     _searchCubit.searchedList = [];
+    _searchCubit.defaultCategoryIndex = null;
     _searchCubit.resetFilter();
   }
 

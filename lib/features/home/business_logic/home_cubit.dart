@@ -10,10 +10,10 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepository) : super(const Idle());
 
   final HomeRepository homeRepository;
-  List<SliderModel> ?sliders ;
+  List<SliderModel>? sliders;
 
-  List<DealModel> ?localDeals ;
-  List<DealModel> ?internationalDeals ;
+  List<DealModel>? localDeals;
+  List<DealModel> internationalDeals = [];
   int defaultChoiceIndex = 0;
   int defaultOrderCategories = 0;
   bool showTitle = true;

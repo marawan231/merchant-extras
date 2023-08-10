@@ -178,7 +178,6 @@ class _SearchResultItemState extends State<SearchResultItem> {
     );
   }
 
-// //TODO country name
 //   _buildLocationIcon() {
 //     return Image.asset(
 //       ImageAssets.location,

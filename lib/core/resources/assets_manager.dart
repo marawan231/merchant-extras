@@ -5,6 +5,9 @@ const String lottiePath = "assets/lottie";
 class ImageAssets {
   static const String splashLogo = "$imagePath/Group 24376.png";
   static const String emptySearchAnimation = "$lottiePath/search_empty.json";
+  static const String notificationAnimation =
+      "$lottiePath/notification_animation.json";
+  static const String boxAnimation = "$lottiePath/box_animation_1.json";
 
   static const String mainAuthLogo = "$imagePath/Privacy policy-rafiki.png";
   static const String google = "$imagePath/google.png";

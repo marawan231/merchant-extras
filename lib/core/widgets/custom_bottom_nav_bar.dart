@@ -25,12 +25,20 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border(
-          top: BorderSide(
-            color: Theme.of(context).primaryColor,
-            width: .5,
-          ),
-        ),
+        //elevstion
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(.2),
+            blurRadius: 10,
+            offset: const Offset(0, -1),
+          )
+        ],
+        // border: Border(
+        //   top: BorderSide(
+        //     color: Theme.of(context).primaryColor,
+        //     width: .5,
+        //   ),
+        // ),
       ),
       child: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,
