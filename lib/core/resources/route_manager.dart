@@ -68,8 +68,6 @@ class Routes {
   static const String localSearchViewRoute = "/localSearchViewRoute";
   static const String successPayViewRoute = "/successPayViewRoute";
 
-
-
   static const String searchResultViewRoute = "/searchResultViewRoute";
   static const String tamweelT4arkySearchViewRoute =
       "/tamweelT4arkySearchViewRoute";
@@ -152,7 +150,10 @@ class RouteGenerator {
 
   static List screens = <Widget>[
     const HomeView(),
-    const PickDealTypeToSearchInView(),
+    BlocProvider.value(
+      value: searchCubit,
+      child: const SearchResultView(),
+    ),
     BlocProvider.value(
       value: notificationCubit,
       child: const NotificationView(),
@@ -399,10 +400,8 @@ class RouteGenerator {
       case Routes.accountVerficationViewRoute:
         return MaterialPageRoute(
             builder: (_) => const AccountVerficationView());
-            case Routes.successPayViewRoute:
-        return MaterialPageRoute(
-            builder: (_) => const SuccessPay());
-            
+      case Routes.successPayViewRoute:
+        return MaterialPageRoute(builder: (_) => const SuccessPay());
 
       case Routes.payViewRoute:
         return MaterialPageRoute(builder: (_) => const PayView());

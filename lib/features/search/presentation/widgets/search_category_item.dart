@@ -18,12 +18,10 @@ class SearchCategoryItem extends StatelessWidget {
   final String id;
   _buildSearchCategoryImage() {
     return SizedBox(
-      width: 60.w,
-      height: 60.h,
-      child: ClipOval(
-        child: CustomNetworkCachedImage(
-          url: image,
-        ),
+      height: 14.h,
+      width: 14.w,
+      child: CustomNetworkCachedImage(
+        url: image,
       ),
     );
   }
@@ -37,18 +35,27 @@ class SearchCategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        log('asdasd');
-        Commons.showLoadingDialog(context);
+        // log('asdasd');
+        // Commons.showLoadingDialog(context);
         BlocProvider.of<SearchCubit>(context).productId = id;
-        BlocProvider.of<SearchCubit>(context).filter();  
+        BlocProvider.of<SearchCubit>(context).filter();
       },
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildSearchCategoryImage(),
-          SizedBox(height: 12.h),
-          _buildTitle(),
-        ],
+      child: Container(
+        // height: 31.h,
+        // width: 30,
+        padding: EdgeInsets.symmetric(horizontal: 12.w),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.r),
+          color: ColorManager.lightPrimary,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildSearchCategoryImage(),
+            8.horizontalSpace,
+            _buildTitle(),
+          ],
+        ),
       ),
     );
   }

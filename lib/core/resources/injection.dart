@@ -126,7 +126,7 @@ Dio createAndSetupDio() {
       //   print(object);
       // },
       requestBody: true,
-      error: true,
+      // error: true,
       requestHeader: true,
       responseHeader: true,
       responseBody: true,

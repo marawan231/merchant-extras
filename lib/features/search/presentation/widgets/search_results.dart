@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/features/search/business_logic/cubit/search_state.dart';
+import '../../../../core/resources/assets_manager.dart';
+import '../../../../core/widgets/empty_lottie.dart';
+import '../../../../core/widgets/loading_indicator.dart';
+import '../../../home/presentation/widgets/world_deals_item.dart';
 import '../../business_logic/cubit/search_cubit.dart';
 import '../../../../core/resources/strings_manager.dart';
-import 'search_result_item.dart';
 
 class SearchResults extends StatefulWidget {
   const SearchResults({super.key});
@@ -21,44 +25,69 @@ class _SearchResultsState extends State<SearchResults> {
     _searchCubit = BlocProvider.of<SearchCubit>(context);
   }
 
-  _buildTitle(BuildContext context) {
-    return Text(
-      AppStrings.searchResults,
-      style: Theme.of(context).textTheme.headlineSmall,
+  _buildSearchResults() {
+    return BlocConsumer<SearchCubit, SearchState>(
+      listener: (context, state) {},
+      buildWhen: (previous, current) =>
+          current is FilterSucceded ||
+          current is FilterLoading ||
+          current is SearchSucceded,
+      builder: (context, state) {
+        return state.maybeWhen(
+          filterLoading: () => const Center(child: LoadingIndicator()),
+          orElse: () => _buildList(),
+        );
+      },
     );
   }
 
-  _buildSearchResults() {
-    return Expanded(
-      child: ListView.separated(
-        // shrinkWrap: true,
-        itemCount: _searchCubit.deals.length,
-        itemBuilder: (context, index) {
-          return  SearchResultItem(
-            index: index,
-            
+  _buildList() {
+    return _searchCubit.deals.isEmpty
+        ? const EmptyLottie(
+            icon: ImageAssets.emptySearchAnimation,
+            message: AppStrings.thereAreNoSearchResults)
+        : Expanded(
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: .8.sp,
+                  crossAxisSpacing: 23.w,
+                  mainAxisSpacing: 20.h),
+              shrinkWrap: true,
+              itemCount: _searchCubit.searchedList.isEmpty
+                  ? _searchCubit.deals.length
+                  : _searchCubit.searchedList.length,
+              itemBuilder: (context, index) {
+                // if searched list empty return all deals
+
+                return WorldDealsItem(
+                  deals: _searchCubit.searchedList.isEmpty
+                      ? _searchCubit.deals
+                      : _searchCubit.searchedList,
+                  index: index,
+                  // image: cubit.products[index].imageUrl!,
+                  // title: cubit.products[index].name!,
+                  // id: cubit.products[index].id!.toString(),
+                );
+              },
+              // separatorBuilder: (context, index) {
+              //   return SizedBox(height: 12.h);
+              // },
+            ),
           );
-        },
-        separatorBuilder: (context, index) {
-          return SizedBox(height: 12.h);
-        },
-      ),
-    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Padding(
-        padding: EdgeInsets.only(top: 27.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildTitle(context),
-            SizedBox(height: 20.h),
-            _buildSearchResults(),
-          ],
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // _buildTitle(context),
+          // SizedBox(height: 20.h),
+          _buildSearchResults(),
+        ],
       ),
     );
   }

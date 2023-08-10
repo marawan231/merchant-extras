@@ -44,9 +44,11 @@ mixin _$SearchState<T> {
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,9 +75,11 @@ mixin _$SearchState<T> {
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,9 +106,11 @@ mixin _$SearchState<T> {
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,6 +149,8 @@ mixin _$SearchState<T> {
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -173,6 +181,8 @@ mixin _$SearchState<T> {
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -203,6 +213,8 @@ mixin _$SearchState<T> {
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -294,9 +306,11 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return idle();
   }
@@ -326,9 +340,11 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return idle?.call();
   }
@@ -358,9 +374,11 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -405,6 +423,8 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return idle(this);
   }
@@ -438,6 +458,8 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return idle?.call(this);
   }
@@ -471,6 +493,8 @@ class _$Idle<T> with DiagnosticableTreeMixin implements Idle<T> {
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -561,9 +585,11 @@ class _$SelectedSearchCategoryResultView<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return selectedSearchCategoryResultView();
   }
@@ -593,9 +619,11 @@ class _$SelectedSearchCategoryResultView<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return selectedSearchCategoryResultView?.call();
   }
@@ -625,9 +653,11 @@ class _$SelectedSearchCategoryResultView<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (selectedSearchCategoryResultView != null) {
@@ -672,6 +702,8 @@ class _$SelectedSearchCategoryResultView<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return selectedSearchCategoryResultView(this);
   }
@@ -705,6 +737,8 @@ class _$SelectedSearchCategoryResultView<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return selectedSearchCategoryResultView?.call(this);
   }
@@ -738,6 +772,8 @@ class _$SelectedSearchCategoryResultView<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (selectedSearchCategoryResultView != null) {
@@ -826,9 +862,11 @@ class _$SearchCategoriesView<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return searchCategoriesView();
   }
@@ -858,9 +896,11 @@ class _$SearchCategoriesView<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return searchCategoriesView?.call();
   }
@@ -890,9 +930,11 @@ class _$SearchCategoriesView<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (searchCategoriesView != null) {
@@ -937,6 +979,8 @@ class _$SearchCategoriesView<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return searchCategoriesView(this);
   }
@@ -970,6 +1014,8 @@ class _$SearchCategoriesView<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return searchCategoriesView?.call(this);
   }
@@ -1003,6 +1049,8 @@ class _$SearchCategoriesView<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (searchCategoriesView != null) {
@@ -1090,9 +1138,11 @@ class _$FreshPatternSelected<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return freshPatternSelected();
   }
@@ -1122,9 +1172,11 @@ class _$FreshPatternSelected<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return freshPatternSelected?.call();
   }
@@ -1154,9 +1206,11 @@ class _$FreshPatternSelected<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (freshPatternSelected != null) {
@@ -1201,6 +1255,8 @@ class _$FreshPatternSelected<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return freshPatternSelected(this);
   }
@@ -1234,6 +1290,8 @@ class _$FreshPatternSelected<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return freshPatternSelected?.call(this);
   }
@@ -1267,6 +1325,8 @@ class _$FreshPatternSelected<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (freshPatternSelected != null) {
@@ -1353,9 +1413,11 @@ class _$DryPatternSelected<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return dryPatternSelected();
   }
@@ -1385,9 +1447,11 @@ class _$DryPatternSelected<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return dryPatternSelected?.call();
   }
@@ -1417,9 +1481,11 @@ class _$DryPatternSelected<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (dryPatternSelected != null) {
@@ -1464,6 +1530,8 @@ class _$DryPatternSelected<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return dryPatternSelected(this);
   }
@@ -1497,6 +1565,8 @@ class _$DryPatternSelected<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return dryPatternSelected?.call(this);
   }
@@ -1530,6 +1600,8 @@ class _$DryPatternSelected<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (dryPatternSelected != null) {
@@ -1617,9 +1689,11 @@ class _$FrozenPatternSelected<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return frozenPatternSelected();
   }
@@ -1649,9 +1723,11 @@ class _$FrozenPatternSelected<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return frozenPatternSelected?.call();
   }
@@ -1681,9 +1757,11 @@ class _$FrozenPatternSelected<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (frozenPatternSelected != null) {
@@ -1728,6 +1806,8 @@ class _$FrozenPatternSelected<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return frozenPatternSelected(this);
   }
@@ -1761,6 +1841,8 @@ class _$FrozenPatternSelected<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return frozenPatternSelected?.call(this);
   }
@@ -1794,6 +1876,8 @@ class _$FrozenPatternSelected<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (frozenPatternSelected != null) {
@@ -1880,9 +1964,11 @@ class _$WorldSearchView<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return worldSearchView();
   }
@@ -1912,9 +1998,11 @@ class _$WorldSearchView<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return worldSearchView?.call();
   }
@@ -1944,9 +2032,11 @@ class _$WorldSearchView<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (worldSearchView != null) {
@@ -1991,6 +2081,8 @@ class _$WorldSearchView<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return worldSearchView(this);
   }
@@ -2024,6 +2116,8 @@ class _$WorldSearchView<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return worldSearchView?.call(this);
   }
@@ -2057,6 +2151,8 @@ class _$WorldSearchView<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (worldSearchView != null) {
@@ -2143,9 +2239,11 @@ class _$LocalSearchView<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return localSearchView();
   }
@@ -2175,9 +2273,11 @@ class _$LocalSearchView<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return localSearchView?.call();
   }
@@ -2207,9 +2307,11 @@ class _$LocalSearchView<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (localSearchView != null) {
@@ -2254,6 +2356,8 @@ class _$LocalSearchView<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return localSearchView(this);
   }
@@ -2287,6 +2391,8 @@ class _$LocalSearchView<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return localSearchView?.call(this);
   }
@@ -2320,6 +2426,8 @@ class _$LocalSearchView<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (localSearchView != null) {
@@ -2406,9 +2514,11 @@ class _$TamweelSearchView<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return tamweelSearchView();
   }
@@ -2438,9 +2548,11 @@ class _$TamweelSearchView<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return tamweelSearchView?.call();
   }
@@ -2470,9 +2582,11 @@ class _$TamweelSearchView<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (tamweelSearchView != null) {
@@ -2517,6 +2631,8 @@ class _$TamweelSearchView<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return tamweelSearchView(this);
   }
@@ -2550,6 +2666,8 @@ class _$TamweelSearchView<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return tamweelSearchView?.call(this);
   }
@@ -2583,6 +2701,8 @@ class _$TamweelSearchView<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (tamweelSearchView != null) {
@@ -2668,9 +2788,11 @@ class _$FarmProducts<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return farmProducts();
   }
@@ -2700,9 +2822,11 @@ class _$FarmProducts<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return farmProducts?.call();
   }
@@ -2732,9 +2856,11 @@ class _$FarmProducts<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (farmProducts != null) {
@@ -2779,6 +2905,8 @@ class _$FarmProducts<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return farmProducts(this);
   }
@@ -2812,6 +2940,8 @@ class _$FarmProducts<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return farmProducts?.call(this);
   }
@@ -2845,6 +2975,8 @@ class _$FarmProducts<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (farmProducts != null) {
@@ -2931,9 +3063,11 @@ class _$AnimalProducts<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return animalProducts();
   }
@@ -2963,9 +3097,11 @@ class _$AnimalProducts<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return animalProducts?.call();
   }
@@ -2995,9 +3131,11 @@ class _$AnimalProducts<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (animalProducts != null) {
@@ -3042,6 +3180,8 @@ class _$AnimalProducts<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return animalProducts(this);
   }
@@ -3075,6 +3215,8 @@ class _$AnimalProducts<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return animalProducts?.call(this);
   }
@@ -3108,6 +3250,8 @@ class _$AnimalProducts<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (animalProducts != null) {
@@ -3194,9 +3338,11 @@ class _$FarmEquipments<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return farmEquipments();
   }
@@ -3226,9 +3372,11 @@ class _$FarmEquipments<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return farmEquipments?.call();
   }
@@ -3258,9 +3406,11 @@ class _$FarmEquipments<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (farmEquipments != null) {
@@ -3305,6 +3455,8 @@ class _$FarmEquipments<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return farmEquipments(this);
   }
@@ -3338,6 +3490,8 @@ class _$FarmEquipments<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return farmEquipments?.call(this);
   }
@@ -3371,6 +3525,8 @@ class _$FarmEquipments<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (farmEquipments != null) {
@@ -3457,9 +3613,11 @@ class _$AnimalEquipments<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return animalEquipments();
   }
@@ -3489,9 +3647,11 @@ class _$AnimalEquipments<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return animalEquipments?.call();
   }
@@ -3521,9 +3681,11 @@ class _$AnimalEquipments<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (animalEquipments != null) {
@@ -3568,6 +3730,8 @@ class _$AnimalEquipments<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return animalEquipments(this);
   }
@@ -3601,6 +3765,8 @@ class _$AnimalEquipments<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return animalEquipments?.call(this);
   }
@@ -3634,6 +3800,8 @@ class _$AnimalEquipments<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (animalEquipments != null) {
@@ -3721,9 +3889,11 @@ class _$FromCheabestSelected<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return fromCheabestSelected();
   }
@@ -3753,9 +3923,11 @@ class _$FromCheabestSelected<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return fromCheabestSelected?.call();
   }
@@ -3785,9 +3957,11 @@ class _$FromCheabestSelected<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (fromCheabestSelected != null) {
@@ -3832,6 +4006,8 @@ class _$FromCheabestSelected<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return fromCheabestSelected(this);
   }
@@ -3865,6 +4041,8 @@ class _$FromCheabestSelected<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return fromCheabestSelected?.call(this);
   }
@@ -3898,6 +4076,8 @@ class _$FromCheabestSelected<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (fromCheabestSelected != null) {
@@ -3984,9 +4164,11 @@ class _$FromHighestSelected<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return fromHighestSelected();
   }
@@ -4016,9 +4198,11 @@ class _$FromHighestSelected<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return fromHighestSelected?.call();
   }
@@ -4048,9 +4232,11 @@ class _$FromHighestSelected<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (fromHighestSelected != null) {
@@ -4095,6 +4281,8 @@ class _$FromHighestSelected<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return fromHighestSelected(this);
   }
@@ -4128,6 +4316,8 @@ class _$FromHighestSelected<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return fromHighestSelected?.call(this);
   }
@@ -4161,6 +4351,8 @@ class _$FromHighestSelected<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (fromHighestSelected != null) {
@@ -4248,9 +4440,11 @@ class _$GetCatogoriesLoading<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getCatogoriesLoading();
   }
@@ -4280,9 +4474,11 @@ class _$GetCatogoriesLoading<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getCatogoriesLoading?.call();
   }
@@ -4312,9 +4508,11 @@ class _$GetCatogoriesLoading<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesLoading != null) {
@@ -4359,6 +4557,8 @@ class _$GetCatogoriesLoading<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getCatogoriesLoading(this);
   }
@@ -4392,6 +4592,8 @@ class _$GetCatogoriesLoading<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getCatogoriesLoading?.call(this);
   }
@@ -4425,6 +4627,8 @@ class _$GetCatogoriesLoading<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesLoading != null) {
@@ -4548,9 +4752,11 @@ class _$GetCatogoriesSuccedded<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getCatogoriesSuccedded(categories);
   }
@@ -4580,9 +4786,11 @@ class _$GetCatogoriesSuccedded<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getCatogoriesSuccedded?.call(categories);
   }
@@ -4612,9 +4820,11 @@ class _$GetCatogoriesSuccedded<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesSuccedded != null) {
@@ -4659,6 +4869,8 @@ class _$GetCatogoriesSuccedded<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getCatogoriesSuccedded(this);
   }
@@ -4692,6 +4904,8 @@ class _$GetCatogoriesSuccedded<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getCatogoriesSuccedded?.call(this);
   }
@@ -4725,6 +4939,8 @@ class _$GetCatogoriesSuccedded<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesSuccedded != null) {
@@ -4856,9 +5072,11 @@ class _$GetCatogoriesError<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getCatogoriesError(networkExceptions);
   }
@@ -4888,9 +5106,11 @@ class _$GetCatogoriesError<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getCatogoriesError?.call(networkExceptions);
   }
@@ -4920,9 +5140,11 @@ class _$GetCatogoriesError<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesError != null) {
@@ -4967,6 +5189,8 @@ class _$GetCatogoriesError<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getCatogoriesError(this);
   }
@@ -5000,6 +5224,8 @@ class _$GetCatogoriesError<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getCatogoriesError?.call(this);
   }
@@ -5033,6 +5259,8 @@ class _$GetCatogoriesError<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getCatogoriesError != null) {
@@ -5125,9 +5353,11 @@ class _$GetProductsLoading<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getProductsLoading();
   }
@@ -5157,9 +5387,11 @@ class _$GetProductsLoading<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getProductsLoading?.call();
   }
@@ -5189,9 +5421,11 @@ class _$GetProductsLoading<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -5236,6 +5470,8 @@ class _$GetProductsLoading<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getProductsLoading(this);
   }
@@ -5269,6 +5505,8 @@ class _$GetProductsLoading<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getProductsLoading?.call(this);
   }
@@ -5302,6 +5540,8 @@ class _$GetProductsLoading<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsLoading != null) {
@@ -5424,9 +5664,11 @@ class _$GetProductsSuccedded<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getProductsSuccedded(categories);
   }
@@ -5456,9 +5698,11 @@ class _$GetProductsSuccedded<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getProductsSuccedded?.call(categories);
   }
@@ -5488,9 +5732,11 @@ class _$GetProductsSuccedded<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsSuccedded != null) {
@@ -5535,6 +5781,8 @@ class _$GetProductsSuccedded<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getProductsSuccedded(this);
   }
@@ -5568,6 +5816,8 @@ class _$GetProductsSuccedded<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getProductsSuccedded?.call(this);
   }
@@ -5601,6 +5851,8 @@ class _$GetProductsSuccedded<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsSuccedded != null) {
@@ -5732,9 +5984,11 @@ class _$GetProductsError<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return getProductsError(networkExceptions);
   }
@@ -5764,9 +6018,11 @@ class _$GetProductsError<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return getProductsError?.call(networkExceptions);
   }
@@ -5796,9 +6052,11 @@ class _$GetProductsError<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsError != null) {
@@ -5843,6 +6101,8 @@ class _$GetProductsError<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return getProductsError(this);
   }
@@ -5876,6 +6136,8 @@ class _$GetProductsError<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return getProductsError?.call(this);
   }
@@ -5909,6 +6171,8 @@ class _$GetProductsError<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (getProductsError != null) {
@@ -6001,9 +6265,11 @@ class _$FilterLoading<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return filterLoading();
   }
@@ -6033,9 +6299,11 @@ class _$FilterLoading<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return filterLoading?.call();
   }
@@ -6065,9 +6333,11 @@ class _$FilterLoading<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterLoading != null) {
@@ -6112,6 +6382,8 @@ class _$FilterLoading<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return filterLoading(this);
   }
@@ -6145,6 +6417,8 @@ class _$FilterLoading<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return filterLoading?.call(this);
   }
@@ -6178,6 +6452,8 @@ class _$FilterLoading<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterLoading != null) {
@@ -6197,7 +6473,7 @@ abstract class _$$FilterSuccededCopyWith<T, $Res> {
           _$FilterSucceded<T> value, $Res Function(_$FilterSucceded<T>) then) =
       __$$FilterSuccededCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({List<DealModel> categories});
+  $Res call({List<DealModel> deals});
 }
 
 /// @nodoc
@@ -6211,12 +6487,12 @@ class __$$FilterSuccededCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = null,
+    Object? deals = null,
   }) {
     return _then(_$FilterSucceded<T>(
-      null == categories
-          ? _value._categories
-          : categories // ignore: cast_nullable_to_non_nullable
+      null == deals
+          ? _value._deals
+          : deals // ignore: cast_nullable_to_non_nullable
               as List<DealModel>,
     ));
   }
@@ -6227,20 +6503,19 @@ class __$$FilterSuccededCopyWithImpl<T, $Res>
 class _$FilterSucceded<T>
     with DiagnosticableTreeMixin
     implements FilterSucceded<T> {
-  const _$FilterSucceded(final List<DealModel> categories)
-      : _categories = categories;
+  const _$FilterSucceded(final List<DealModel> deals) : _deals = deals;
 
-  final List<DealModel> _categories;
+  final List<DealModel> _deals;
   @override
-  List<DealModel> get categories {
-    if (_categories is EqualUnmodifiableListView) return _categories;
+  List<DealModel> get deals {
+    if (_deals is EqualUnmodifiableListView) return _deals;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categories);
+    return EqualUnmodifiableListView(_deals);
   }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SearchState<$T>.filterSucceded(categories: $categories)';
+    return 'SearchState<$T>.filterSucceded(deals: $deals)';
   }
 
   @override
@@ -6248,7 +6523,7 @@ class _$FilterSucceded<T>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SearchState<$T>.filterSucceded'))
-      ..add(DiagnosticsProperty('categories', categories));
+      ..add(DiagnosticsProperty('deals', deals));
   }
 
   @override
@@ -6256,13 +6531,12 @@ class _$FilterSucceded<T>
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FilterSucceded<T> &&
-            const DeepCollectionEquality()
-                .equals(other._categories, _categories));
+            const DeepCollectionEquality().equals(other._deals, _deals));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_categories));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_deals));
 
   @JsonKey(ignore: true)
   @override
@@ -6299,11 +6573,13 @@ class _$FilterSucceded<T>
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
-    return filterSucceded(categories);
+    return filterSucceded(deals);
   }
 
   @override
@@ -6331,11 +6607,13 @@ class _$FilterSucceded<T>
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
-    return filterSucceded?.call(categories);
+    return filterSucceded?.call(deals);
   }
 
   @override
@@ -6363,13 +6641,15 @@ class _$FilterSucceded<T>
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterSucceded != null) {
-      return filterSucceded(categories);
+      return filterSucceded(deals);
     }
     return orElse();
   }
@@ -6410,6 +6690,8 @@ class _$FilterSucceded<T>
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return filterSucceded(this);
   }
@@ -6443,6 +6725,8 @@ class _$FilterSucceded<T>
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return filterSucceded?.call(this);
   }
@@ -6476,6 +6760,8 @@ class _$FilterSucceded<T>
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterSucceded != null) {
@@ -6486,10 +6772,10 @@ class _$FilterSucceded<T>
 }
 
 abstract class FilterSucceded<T> implements SearchState<T> {
-  const factory FilterSucceded(final List<DealModel> categories) =
+  const factory FilterSucceded(final List<DealModel> deals) =
       _$FilterSucceded<T>;
 
-  List<DealModel> get categories;
+  List<DealModel> get deals;
   @JsonKey(ignore: true)
   _$$FilterSuccededCopyWith<T, _$FilterSucceded<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -6604,9 +6890,11 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return filterError(networkExceptions);
   }
@@ -6636,9 +6924,11 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return filterError?.call(networkExceptions);
   }
@@ -6668,9 +6958,11 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterError != null) {
@@ -6715,6 +7007,8 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return filterError(this);
   }
@@ -6748,6 +7042,8 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return filterError?.call(this);
   }
@@ -6781,6 +7077,8 @@ class _$filterError<T> with DiagnosticableTreeMixin implements filterError<T> {
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (filterError != null) {
@@ -6870,9 +7168,11 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     required TResult Function(DioExceptionType networkExceptions)
         getProductsError,
     required TResult Function() filterLoading,
-    required TResult Function(List<DealModel> categories) filterSucceded,
+    required TResult Function(List<DealModel> deals) filterSucceded,
     required TResult Function(DioExceptionType networkExceptions) filterError,
     required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
   }) {
     return resetFilter();
   }
@@ -6902,9 +7202,11 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult? Function(DioExceptionType networkExceptions)? getProductsError,
     TResult? Function()? filterLoading,
-    TResult? Function(List<DealModel> categories)? filterSucceded,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
     TResult? Function(DioExceptionType networkExceptions)? filterError,
     TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
   }) {
     return resetFilter?.call();
   }
@@ -6934,9 +7236,11 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
     TResult Function(DioExceptionType networkExceptions)? getProductsError,
     TResult Function()? filterLoading,
-    TResult Function(List<DealModel> categories)? filterSucceded,
+    TResult Function(List<DealModel> deals)? filterSucceded,
     TResult Function(DioExceptionType networkExceptions)? filterError,
     TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -6981,6 +7285,8 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     required TResult Function(FilterSucceded<T> value) filterSucceded,
     required TResult Function(filterError<T> value) filterError,
     required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
   }) {
     return resetFilter(this);
   }
@@ -7014,6 +7320,8 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     TResult? Function(FilterSucceded<T> value)? filterSucceded,
     TResult? Function(filterError<T> value)? filterError,
     TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
   }) {
     return resetFilter?.call(this);
   }
@@ -7047,6 +7355,8 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
     TResult Function(FilterSucceded<T> value)? filterSucceded,
     TResult Function(filterError<T> value)? filterError,
     TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
     required TResult orElse(),
   }) {
     if (resetFilter != null) {
@@ -7058,4 +7368,554 @@ class _$ResetFilter<T> with DiagnosticableTreeMixin implements ResetFilter<T> {
 
 abstract class ResetFilter<T> implements SearchState<T> {
   const factory ResetFilter() = _$ResetFilter<T>;
+}
+
+/// @nodoc
+abstract class _$$SearchLoadingCopyWith<T, $Res> {
+  factory _$$SearchLoadingCopyWith(
+          _$SearchLoading<T> value, $Res Function(_$SearchLoading<T>) then) =
+      __$$SearchLoadingCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SearchLoadingCopyWithImpl<T, $Res>
+    extends _$SearchStateCopyWithImpl<T, $Res, _$SearchLoading<T>>
+    implements _$$SearchLoadingCopyWith<T, $Res> {
+  __$$SearchLoadingCopyWithImpl(
+      _$SearchLoading<T> _value, $Res Function(_$SearchLoading<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SearchLoading<T>
+    with DiagnosticableTreeMixin
+    implements SearchLoading<T> {
+  const _$SearchLoading();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SearchState<$T>.searchLoading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'SearchState<$T>.searchLoading'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SearchLoading<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() selectedSearchCategoryResultView,
+    required TResult Function() searchCategoriesView,
+    required TResult Function() freshPatternSelected,
+    required TResult Function() dryPatternSelected,
+    required TResult Function() frozenPatternSelected,
+    required TResult Function() worldSearchView,
+    required TResult Function() localSearchView,
+    required TResult Function() tamweelSearchView,
+    required TResult Function() farmProducts,
+    required TResult Function() animalProducts,
+    required TResult Function() farmEquipments,
+    required TResult Function() animalEquipments,
+    required TResult Function() fromCheabestSelected,
+    required TResult Function() fromHighestSelected,
+    required TResult Function() getCatogoriesLoading,
+    required TResult Function(List<CategoryModel> categories)
+        getCatogoriesSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        getCatogoriesError,
+    required TResult Function() getProductsLoading,
+    required TResult Function(List<ProductsModel> categories)
+        getProductsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        getProductsError,
+    required TResult Function() filterLoading,
+    required TResult Function(List<DealModel> deals) filterSucceded,
+    required TResult Function(DioExceptionType networkExceptions) filterError,
+    required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
+  }) {
+    return searchLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? selectedSearchCategoryResultView,
+    TResult? Function()? searchCategoriesView,
+    TResult? Function()? freshPatternSelected,
+    TResult? Function()? dryPatternSelected,
+    TResult? Function()? frozenPatternSelected,
+    TResult? Function()? worldSearchView,
+    TResult? Function()? localSearchView,
+    TResult? Function()? tamweelSearchView,
+    TResult? Function()? farmProducts,
+    TResult? Function()? animalProducts,
+    TResult? Function()? farmEquipments,
+    TResult? Function()? animalEquipments,
+    TResult? Function()? fromCheabestSelected,
+    TResult? Function()? fromHighestSelected,
+    TResult? Function()? getCatogoriesLoading,
+    TResult? Function(List<CategoryModel> categories)? getCatogoriesSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? getCatogoriesError,
+    TResult? Function()? getProductsLoading,
+    TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? getProductsError,
+    TResult? Function()? filterLoading,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
+    TResult? Function(DioExceptionType networkExceptions)? filterError,
+    TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
+  }) {
+    return searchLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? selectedSearchCategoryResultView,
+    TResult Function()? searchCategoriesView,
+    TResult Function()? freshPatternSelected,
+    TResult Function()? dryPatternSelected,
+    TResult Function()? frozenPatternSelected,
+    TResult Function()? worldSearchView,
+    TResult Function()? localSearchView,
+    TResult Function()? tamweelSearchView,
+    TResult Function()? farmProducts,
+    TResult Function()? animalProducts,
+    TResult Function()? farmEquipments,
+    TResult Function()? animalEquipments,
+    TResult Function()? fromCheabestSelected,
+    TResult Function()? fromHighestSelected,
+    TResult Function()? getCatogoriesLoading,
+    TResult Function(List<CategoryModel> categories)? getCatogoriesSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? getCatogoriesError,
+    TResult Function()? getProductsLoading,
+    TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? getProductsError,
+    TResult Function()? filterLoading,
+    TResult Function(List<DealModel> deals)? filterSucceded,
+    TResult Function(DioExceptionType networkExceptions)? filterError,
+    TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
+    required TResult orElse(),
+  }) {
+    if (searchLoading != null) {
+      return searchLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SelectedSearchCategoryResultView<T> value)
+        selectedSearchCategoryResultView,
+    required TResult Function(SearchCategoriesView<T> value)
+        searchCategoriesView,
+    required TResult Function(FreshPatternSelected<T> value)
+        freshPatternSelected,
+    required TResult Function(DryPatternSelected<T> value) dryPatternSelected,
+    required TResult Function(FrozenPatternSelected<T> value)
+        frozenPatternSelected,
+    required TResult Function(WorldSearchView<T> value) worldSearchView,
+    required TResult Function(LocalSearchView<T> value) localSearchView,
+    required TResult Function(TamweelSearchView<T> value) tamweelSearchView,
+    required TResult Function(FarmProducts<T> value) farmProducts,
+    required TResult Function(AnimalProducts<T> value) animalProducts,
+    required TResult Function(FarmEquipments<T> value) farmEquipments,
+    required TResult Function(AnimalEquipments<T> value) animalEquipments,
+    required TResult Function(FromCheabestSelected<T> value)
+        fromCheabestSelected,
+    required TResult Function(FromHighestSelected<T> value) fromHighestSelected,
+    required TResult Function(GetCatogoriesLoading<T> value)
+        getCatogoriesLoading,
+    required TResult Function(GetCatogoriesSuccedded<T> value)
+        getCatogoriesSuccedded,
+    required TResult Function(GetCatogoriesError<T> value) getCatogoriesError,
+    required TResult Function(GetProductsLoading<T> value) getProductsLoading,
+    required TResult Function(GetProductsSuccedded<T> value)
+        getProductsSuccedded,
+    required TResult Function(GetProductsError<T> value) getProductsError,
+    required TResult Function(FilterLoading<T> value) filterLoading,
+    required TResult Function(FilterSucceded<T> value) filterSucceded,
+    required TResult Function(filterError<T> value) filterError,
+    required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
+  }) {
+    return searchLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SelectedSearchCategoryResultView<T> value)?
+        selectedSearchCategoryResultView,
+    TResult? Function(SearchCategoriesView<T> value)? searchCategoriesView,
+    TResult? Function(FreshPatternSelected<T> value)? freshPatternSelected,
+    TResult? Function(DryPatternSelected<T> value)? dryPatternSelected,
+    TResult? Function(FrozenPatternSelected<T> value)? frozenPatternSelected,
+    TResult? Function(WorldSearchView<T> value)? worldSearchView,
+    TResult? Function(LocalSearchView<T> value)? localSearchView,
+    TResult? Function(TamweelSearchView<T> value)? tamweelSearchView,
+    TResult? Function(FarmProducts<T> value)? farmProducts,
+    TResult? Function(AnimalProducts<T> value)? animalProducts,
+    TResult? Function(FarmEquipments<T> value)? farmEquipments,
+    TResult? Function(AnimalEquipments<T> value)? animalEquipments,
+    TResult? Function(FromCheabestSelected<T> value)? fromCheabestSelected,
+    TResult? Function(FromHighestSelected<T> value)? fromHighestSelected,
+    TResult? Function(GetCatogoriesLoading<T> value)? getCatogoriesLoading,
+    TResult? Function(GetCatogoriesSuccedded<T> value)? getCatogoriesSuccedded,
+    TResult? Function(GetCatogoriesError<T> value)? getCatogoriesError,
+    TResult? Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult? Function(GetProductsSuccedded<T> value)? getProductsSuccedded,
+    TResult? Function(GetProductsError<T> value)? getProductsError,
+    TResult? Function(FilterLoading<T> value)? filterLoading,
+    TResult? Function(FilterSucceded<T> value)? filterSucceded,
+    TResult? Function(filterError<T> value)? filterError,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
+  }) {
+    return searchLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SelectedSearchCategoryResultView<T> value)?
+        selectedSearchCategoryResultView,
+    TResult Function(SearchCategoriesView<T> value)? searchCategoriesView,
+    TResult Function(FreshPatternSelected<T> value)? freshPatternSelected,
+    TResult Function(DryPatternSelected<T> value)? dryPatternSelected,
+    TResult Function(FrozenPatternSelected<T> value)? frozenPatternSelected,
+    TResult Function(WorldSearchView<T> value)? worldSearchView,
+    TResult Function(LocalSearchView<T> value)? localSearchView,
+    TResult Function(TamweelSearchView<T> value)? tamweelSearchView,
+    TResult Function(FarmProducts<T> value)? farmProducts,
+    TResult Function(AnimalProducts<T> value)? animalProducts,
+    TResult Function(FarmEquipments<T> value)? farmEquipments,
+    TResult Function(AnimalEquipments<T> value)? animalEquipments,
+    TResult Function(FromCheabestSelected<T> value)? fromCheabestSelected,
+    TResult Function(FromHighestSelected<T> value)? fromHighestSelected,
+    TResult Function(GetCatogoriesLoading<T> value)? getCatogoriesLoading,
+    TResult Function(GetCatogoriesSuccedded<T> value)? getCatogoriesSuccedded,
+    TResult Function(GetCatogoriesError<T> value)? getCatogoriesError,
+    TResult Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult Function(GetProductsSuccedded<T> value)? getProductsSuccedded,
+    TResult Function(GetProductsError<T> value)? getProductsError,
+    TResult Function(FilterLoading<T> value)? filterLoading,
+    TResult Function(FilterSucceded<T> value)? filterSucceded,
+    TResult Function(filterError<T> value)? filterError,
+    TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
+    required TResult orElse(),
+  }) {
+    if (searchLoading != null) {
+      return searchLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchLoading<T> implements SearchState<T> {
+  const factory SearchLoading() = _$SearchLoading<T>;
+}
+
+/// @nodoc
+abstract class _$$SearchSuccededCopyWith<T, $Res> {
+  factory _$$SearchSuccededCopyWith(
+          _$SearchSucceded<T> value, $Res Function(_$SearchSucceded<T>) then) =
+      __$$SearchSuccededCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SearchSuccededCopyWithImpl<T, $Res>
+    extends _$SearchStateCopyWithImpl<T, $Res, _$SearchSucceded<T>>
+    implements _$$SearchSuccededCopyWith<T, $Res> {
+  __$$SearchSuccededCopyWithImpl(
+      _$SearchSucceded<T> _value, $Res Function(_$SearchSucceded<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SearchSucceded<T>
+    with DiagnosticableTreeMixin
+    implements SearchSucceded<T> {
+  const _$SearchSucceded();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SearchState<$T>.searchSucceded()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+        .add(DiagnosticsProperty('type', 'SearchState<$T>.searchSucceded'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SearchSucceded<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() selectedSearchCategoryResultView,
+    required TResult Function() searchCategoriesView,
+    required TResult Function() freshPatternSelected,
+    required TResult Function() dryPatternSelected,
+    required TResult Function() frozenPatternSelected,
+    required TResult Function() worldSearchView,
+    required TResult Function() localSearchView,
+    required TResult Function() tamweelSearchView,
+    required TResult Function() farmProducts,
+    required TResult Function() animalProducts,
+    required TResult Function() farmEquipments,
+    required TResult Function() animalEquipments,
+    required TResult Function() fromCheabestSelected,
+    required TResult Function() fromHighestSelected,
+    required TResult Function() getCatogoriesLoading,
+    required TResult Function(List<CategoryModel> categories)
+        getCatogoriesSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        getCatogoriesError,
+    required TResult Function() getProductsLoading,
+    required TResult Function(List<ProductsModel> categories)
+        getProductsSuccedded,
+    required TResult Function(DioExceptionType networkExceptions)
+        getProductsError,
+    required TResult Function() filterLoading,
+    required TResult Function(List<DealModel> deals) filterSucceded,
+    required TResult Function(DioExceptionType networkExceptions) filterError,
+    required TResult Function() resetFilter,
+    required TResult Function() searchLoading,
+    required TResult Function() searchSucceded,
+  }) {
+    return searchSucceded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? selectedSearchCategoryResultView,
+    TResult? Function()? searchCategoriesView,
+    TResult? Function()? freshPatternSelected,
+    TResult? Function()? dryPatternSelected,
+    TResult? Function()? frozenPatternSelected,
+    TResult? Function()? worldSearchView,
+    TResult? Function()? localSearchView,
+    TResult? Function()? tamweelSearchView,
+    TResult? Function()? farmProducts,
+    TResult? Function()? animalProducts,
+    TResult? Function()? farmEquipments,
+    TResult? Function()? animalEquipments,
+    TResult? Function()? fromCheabestSelected,
+    TResult? Function()? fromHighestSelected,
+    TResult? Function()? getCatogoriesLoading,
+    TResult? Function(List<CategoryModel> categories)? getCatogoriesSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? getCatogoriesError,
+    TResult? Function()? getProductsLoading,
+    TResult? Function(List<ProductsModel> categories)? getProductsSuccedded,
+    TResult? Function(DioExceptionType networkExceptions)? getProductsError,
+    TResult? Function()? filterLoading,
+    TResult? Function(List<DealModel> deals)? filterSucceded,
+    TResult? Function(DioExceptionType networkExceptions)? filterError,
+    TResult? Function()? resetFilter,
+    TResult? Function()? searchLoading,
+    TResult? Function()? searchSucceded,
+  }) {
+    return searchSucceded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? selectedSearchCategoryResultView,
+    TResult Function()? searchCategoriesView,
+    TResult Function()? freshPatternSelected,
+    TResult Function()? dryPatternSelected,
+    TResult Function()? frozenPatternSelected,
+    TResult Function()? worldSearchView,
+    TResult Function()? localSearchView,
+    TResult Function()? tamweelSearchView,
+    TResult Function()? farmProducts,
+    TResult Function()? animalProducts,
+    TResult Function()? farmEquipments,
+    TResult Function()? animalEquipments,
+    TResult Function()? fromCheabestSelected,
+    TResult Function()? fromHighestSelected,
+    TResult Function()? getCatogoriesLoading,
+    TResult Function(List<CategoryModel> categories)? getCatogoriesSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? getCatogoriesError,
+    TResult Function()? getProductsLoading,
+    TResult Function(List<ProductsModel> categories)? getProductsSuccedded,
+    TResult Function(DioExceptionType networkExceptions)? getProductsError,
+    TResult Function()? filterLoading,
+    TResult Function(List<DealModel> deals)? filterSucceded,
+    TResult Function(DioExceptionType networkExceptions)? filterError,
+    TResult Function()? resetFilter,
+    TResult Function()? searchLoading,
+    TResult Function()? searchSucceded,
+    required TResult orElse(),
+  }) {
+    if (searchSucceded != null) {
+      return searchSucceded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Idle<T> value) idle,
+    required TResult Function(SelectedSearchCategoryResultView<T> value)
+        selectedSearchCategoryResultView,
+    required TResult Function(SearchCategoriesView<T> value)
+        searchCategoriesView,
+    required TResult Function(FreshPatternSelected<T> value)
+        freshPatternSelected,
+    required TResult Function(DryPatternSelected<T> value) dryPatternSelected,
+    required TResult Function(FrozenPatternSelected<T> value)
+        frozenPatternSelected,
+    required TResult Function(WorldSearchView<T> value) worldSearchView,
+    required TResult Function(LocalSearchView<T> value) localSearchView,
+    required TResult Function(TamweelSearchView<T> value) tamweelSearchView,
+    required TResult Function(FarmProducts<T> value) farmProducts,
+    required TResult Function(AnimalProducts<T> value) animalProducts,
+    required TResult Function(FarmEquipments<T> value) farmEquipments,
+    required TResult Function(AnimalEquipments<T> value) animalEquipments,
+    required TResult Function(FromCheabestSelected<T> value)
+        fromCheabestSelected,
+    required TResult Function(FromHighestSelected<T> value) fromHighestSelected,
+    required TResult Function(GetCatogoriesLoading<T> value)
+        getCatogoriesLoading,
+    required TResult Function(GetCatogoriesSuccedded<T> value)
+        getCatogoriesSuccedded,
+    required TResult Function(GetCatogoriesError<T> value) getCatogoriesError,
+    required TResult Function(GetProductsLoading<T> value) getProductsLoading,
+    required TResult Function(GetProductsSuccedded<T> value)
+        getProductsSuccedded,
+    required TResult Function(GetProductsError<T> value) getProductsError,
+    required TResult Function(FilterLoading<T> value) filterLoading,
+    required TResult Function(FilterSucceded<T> value) filterSucceded,
+    required TResult Function(filterError<T> value) filterError,
+    required TResult Function(ResetFilter<T> value) resetFilter,
+    required TResult Function(SearchLoading<T> value) searchLoading,
+    required TResult Function(SearchSucceded<T> value) searchSucceded,
+  }) {
+    return searchSucceded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Idle<T> value)? idle,
+    TResult? Function(SelectedSearchCategoryResultView<T> value)?
+        selectedSearchCategoryResultView,
+    TResult? Function(SearchCategoriesView<T> value)? searchCategoriesView,
+    TResult? Function(FreshPatternSelected<T> value)? freshPatternSelected,
+    TResult? Function(DryPatternSelected<T> value)? dryPatternSelected,
+    TResult? Function(FrozenPatternSelected<T> value)? frozenPatternSelected,
+    TResult? Function(WorldSearchView<T> value)? worldSearchView,
+    TResult? Function(LocalSearchView<T> value)? localSearchView,
+    TResult? Function(TamweelSearchView<T> value)? tamweelSearchView,
+    TResult? Function(FarmProducts<T> value)? farmProducts,
+    TResult? Function(AnimalProducts<T> value)? animalProducts,
+    TResult? Function(FarmEquipments<T> value)? farmEquipments,
+    TResult? Function(AnimalEquipments<T> value)? animalEquipments,
+    TResult? Function(FromCheabestSelected<T> value)? fromCheabestSelected,
+    TResult? Function(FromHighestSelected<T> value)? fromHighestSelected,
+    TResult? Function(GetCatogoriesLoading<T> value)? getCatogoriesLoading,
+    TResult? Function(GetCatogoriesSuccedded<T> value)? getCatogoriesSuccedded,
+    TResult? Function(GetCatogoriesError<T> value)? getCatogoriesError,
+    TResult? Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult? Function(GetProductsSuccedded<T> value)? getProductsSuccedded,
+    TResult? Function(GetProductsError<T> value)? getProductsError,
+    TResult? Function(FilterLoading<T> value)? filterLoading,
+    TResult? Function(FilterSucceded<T> value)? filterSucceded,
+    TResult? Function(filterError<T> value)? filterError,
+    TResult? Function(ResetFilter<T> value)? resetFilter,
+    TResult? Function(SearchLoading<T> value)? searchLoading,
+    TResult? Function(SearchSucceded<T> value)? searchSucceded,
+  }) {
+    return searchSucceded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Idle<T> value)? idle,
+    TResult Function(SelectedSearchCategoryResultView<T> value)?
+        selectedSearchCategoryResultView,
+    TResult Function(SearchCategoriesView<T> value)? searchCategoriesView,
+    TResult Function(FreshPatternSelected<T> value)? freshPatternSelected,
+    TResult Function(DryPatternSelected<T> value)? dryPatternSelected,
+    TResult Function(FrozenPatternSelected<T> value)? frozenPatternSelected,
+    TResult Function(WorldSearchView<T> value)? worldSearchView,
+    TResult Function(LocalSearchView<T> value)? localSearchView,
+    TResult Function(TamweelSearchView<T> value)? tamweelSearchView,
+    TResult Function(FarmProducts<T> value)? farmProducts,
+    TResult Function(AnimalProducts<T> value)? animalProducts,
+    TResult Function(FarmEquipments<T> value)? farmEquipments,
+    TResult Function(AnimalEquipments<T> value)? animalEquipments,
+    TResult Function(FromCheabestSelected<T> value)? fromCheabestSelected,
+    TResult Function(FromHighestSelected<T> value)? fromHighestSelected,
+    TResult Function(GetCatogoriesLoading<T> value)? getCatogoriesLoading,
+    TResult Function(GetCatogoriesSuccedded<T> value)? getCatogoriesSuccedded,
+    TResult Function(GetCatogoriesError<T> value)? getCatogoriesError,
+    TResult Function(GetProductsLoading<T> value)? getProductsLoading,
+    TResult Function(GetProductsSuccedded<T> value)? getProductsSuccedded,
+    TResult Function(GetProductsError<T> value)? getProductsError,
+    TResult Function(FilterLoading<T> value)? filterLoading,
+    TResult Function(FilterSucceded<T> value)? filterSucceded,
+    TResult Function(filterError<T> value)? filterError,
+    TResult Function(ResetFilter<T> value)? resetFilter,
+    TResult Function(SearchLoading<T> value)? searchLoading,
+    TResult Function(SearchSucceded<T> value)? searchSucceded,
+    required TResult orElse(),
+  }) {
+    if (searchSucceded != null) {
+      return searchSucceded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchSucceded<T> implements SearchState<T> {
+  const factory SearchSucceded() = _$SearchSucceded<T>;
 }

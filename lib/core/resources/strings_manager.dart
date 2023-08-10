@@ -1,10 +1,14 @@
 class AppStrings {
   static const noRouteFound = "noRouteFound";
   static const String locale = 'locale';
+  static const String requiredPrice = 'السعر';
   static const String topDeals = 'أفضل الصفقات';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+
+  // static const String thereIsNoDataCurrently = 'لا يوجد يانات حاليا';
+  static const String thereAreNoSearchResults = 'لا يوجد نتائج بحث';
   static const String productQualtiy = 'جودة المنتج';
   static const String fastDelivery = 'سرعة التسليم';
   static const String serviceQuality = 'جودة الخدمة';

@@ -44,8 +44,7 @@ class WorldDealsItem extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         _buildImage(),
-        4.verticalSpace,
-
+        8.verticalSpace,
         Padding(
           padding: EdgeInsetsDirectional.only(start: 11.w, end: 4.w),
           child: Column(
@@ -53,7 +52,7 @@ class WorldDealsItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildDetails(),
-              4.verticalSpace,
+              8.verticalSpace,
               _buildPrice(),
               // 4.verticalSpace,
             ],
