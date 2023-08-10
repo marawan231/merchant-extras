@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
+import '../../../../core/widgets/empty_lottie.dart';
 import '../../business_logic/cubit/notification_cubit.dart';
 import '../../business_logic/cubit/notification_state.dart';
 import '../../../../core/web_services/network_exceptions.dart';
-import '../../../../core/widgets/empty_screen.dart';
+// import '../../../../core/widgets/empty_screen.dart';
 import '../../../../core/widgets/error_screen.dart';
 import '../../../../core/widgets/loading_indicator.dart';
 import '../widgets/notification_item.dart';
@@ -43,11 +44,11 @@ class _NotificationViewState extends State<NotificationView> {
   }
 
   _buildView() {
+    // notificationCubit.notifications = [];
     return notificationCubit.notifications.isEmpty
-        ? const EmptyScreen(
-            message: AppStrings.notificationEmptyMessage,
-            image: ImageAssets.noNotification,
-          )
+        ? const EmptyLottie(
+            icon: ImageAssets.notificationAnimation,
+            message: AppStrings.noNotifications)
         : Padding(
             padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 30.h),
             child: ListView.separated(

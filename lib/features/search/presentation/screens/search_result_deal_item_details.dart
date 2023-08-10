@@ -9,15 +9,12 @@ import '../../../deals/business_logic/cubit/deals_state.dart';
 import '../../../../core/resources/route_manager.dart';
 import '../../../../core/widgets/default_button.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/resources/style_manager.dart';
 import '../../../../core/widgets/rating_stars.dart';
 import '../../../deals/data/model/deal_model.dart';
-import '../../../deals/presentation/widgets/custom_deal_detail_container.dart.dart';
-import '../../../deals/presentation/widgets/small_button.dart';
-import '../../../notification/presentation/widgets/clock_date.dart';
+
 import '../widgets/details_custom_container.dart';
 import '../widgets/search_item_details_image_slider.dart';
 
@@ -189,29 +186,29 @@ class _SearchResultItemDealDetailsState
     );
   }
 
-  _buildKiloPrice(BuildContext context) {
-    return Expanded(
-      child: CustomDealDetailContainer(
-        width: 165.w,
-        height: 79.h,
-        title: AppStrings.availbaleKilosPrice,
-        titleTextStyle:
-            getBoldStyle(color: ColorManager.darkGrey, fontSize: 13.sp),
-        icon: ImageAssets.priceTag,
-        value: RichText(
-            text: TextSpan(children: [
-          TextSpan(
-              text: widget.deal?.price.toString(),
-              style: getBoldStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 20.sp)),
-          TextSpan(
-              text: '  \$',
-              style: getBoldStyle(
-                  color: Theme.of(context).primaryColor, fontSize: 12.sp))
-        ])),
-      ),
-    );
-  }
+  // _buildKiloPrice(BuildContext context) {
+  //   return Expanded(
+  //     child: CustomDealDetailContainer(
+  //       width: 165.w,
+  //       height: 79.h,
+  //       title: AppStrings.availbaleKilosPrice,
+  //       titleTextStyle:
+  //           getBoldStyle(color: ColorManager.darkGrey, fontSize: 13.sp),
+  //       icon: ImageAssets.priceTag,
+  //       value: RichText(
+  //           text: TextSpan(children: [
+  //         TextSpan(
+  //             text: widget.deal?.price.toString(),
+  //             style: getBoldStyle(
+  //                 color: Theme.of(context).primaryColor, fontSize: 20.sp)),
+  //         TextSpan(
+  //             text: '  \$',
+  //             style: getBoldStyle(
+  //                 color: Theme.of(context).primaryColor, fontSize: 12.sp))
+  //       ])),
+  //     ),
+  //   );
+  // }
 
   _buildRemainingQuantity(BuildContext context) {
     return DetailsCustomContainer(
@@ -253,17 +250,17 @@ class _SearchResultItemDealDetailsState
     );
   }
 
-  _buildSubtitle(BuildContext context) {
-    return _buildStatus(context);
-  }
+  // _buildSubtitle(BuildContext context) {
+  //   return _buildStatus(context);
+  // }
 
-  _buildStatus(BuildContext context) {
-    return Text(
-      widget.deal?.shape ?? '',
-      style:
-          getBoldStyle(color: Theme.of(context).primaryColor, fontSize: 17.sp),
-    );
-  }
+  // _buildStatus(BuildContext context) {
+  //   return Text(
+  //     widget.deal?.shape ?? '',
+  //     style:
+  //         getBoldStyle(color: Theme.of(context).primaryColor, fontSize: 17.sp),
+  //   );
+  // }
 
   _buildDetailsText() {
     return Text(

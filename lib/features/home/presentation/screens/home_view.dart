@@ -36,9 +36,8 @@ class _HomeViewState extends State<HomeView> {
     // BlocProvider.of<HomeCubit>(context).localDeals != null
     //     ? null
     //     : BlocProvider.of<HomeCubit>(context).getLocalTopDeals();
-    BlocProvider.of<HomeCubit>(context).internationalDeals != null
-        ? null
-        : BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
+
+    BlocProvider.of<HomeCubit>(context).getInternationalTopDeals();
     BlocProvider.of<HomeCubit>(context).sliders != null
         ? null
         : BlocProvider.of<HomeCubit>(context).getAllSliders();
@@ -56,6 +55,7 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           children: [
             CompanyFeatures(),
+            // 10.verticalSpace,
             HomeCategories(),
             WorldDeals(),
             // LocalDeals(),

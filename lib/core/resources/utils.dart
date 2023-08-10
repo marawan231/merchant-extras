@@ -145,7 +145,11 @@ buildEmptyDeals() {
           baseColor: Colors.grey[300]!,
           highlightColor: Colors.grey[100]!,
           child: Container(
-            color: Colors.white,
+            // color: Colors.white,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.r),
+              color: Colors.white,
+            ),
           ),
         ),
       ),

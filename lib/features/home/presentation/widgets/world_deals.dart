@@ -1,10 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/business_logic/cubit/global_cubit.dart';
+import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/style_manager.dart';
-import '../../../../core/widgets/empty_screen.dart';
+import '../../../../core/widgets/empty_lottie.dart';
 import '../../../../core/resources/utils.dart';
 import '../../business_logic/home_cubit.dart';
 import '../../business_logic/home_state.dart';
@@ -17,7 +20,7 @@ class WorldDeals extends StatelessWidget {
 
   _buildWorldDeals(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 24.w, left: 24.w, top: 10.h),
+      padding: EdgeInsets.only(right: 24.w, left: 24.w, top: 22.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -67,6 +70,7 @@ class WorldDeals extends StatelessWidget {
             homeSlidersLoading: () => buildEmptyDeals(),
             homeTopInternationalDealsLoading: () => buildEmptyDeals(),
             homeTopInternationalDealsSuccess: (deals) {
+              log('deals.length ${deals.length}');
               return _buildDealsView(context);
             },
             homeTopInternationalDealsError: (networkExceptions) {
@@ -80,15 +84,21 @@ class WorldDeals extends StatelessWidget {
   }
 
   _buildDealsView(BuildContext context) {
-    return BlocProvider.of<HomeCubit>(context).internationalDeals! == []
+    //test empty
+    // BlocProvider.of<HomeCubit>(context).internationalDeals = [];
+    return BlocProvider.of<HomeCubit>(context).internationalDeals.isEmpty
         ? const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              EmptyScreen(),
+              EmptyLottie(
+                icon: ImageAssets.boxAnimation,
+                message: AppStrings.noDealsImmediately,
+                height: 150,
+              )
             ],
           )
         : AspectRatio(
-            aspectRatio: 1.6.h,
+            aspectRatio: 1.7.h,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,

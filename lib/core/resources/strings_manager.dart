@@ -1,11 +1,24 @@
 class AppStrings {
   static const noRouteFound = "noRouteFound";
   static const String locale = 'locale';
+  static const String requiredPrice = 'السعر';
   static const String topDeals = 'أفضل الصفقات';
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String add = 'اضافة';
+  static const String noNotifications = 'لا يوجد اشعارات';
+  static const String noDealsImmediately = 'لا يوجد صفقات حاليا';
+
+  // static const String thereIsNoDataCurrently = 'لا يوجد يانات حاليا';
+  static const String thereAreNoSearchResults = 'لا يوجد نتائج بحث';
+  static const String productQualtiy = 'جودة المنتج';
+  static const String fastDelivery = 'سرعة التسليم';
+  static const String serviceQuality = 'جودة الخدمة';
+  static const String productPrice = 'السعر';
+  static const String productPriceHint = 'مصداقية الشركة';
+
   static const String piece = 'قطعة';
+  static const String piecePrice = 'سعر القطعة';
   static const String categories = 'التصنيفات';
   static const String resendCodeHint = 'لم يتم ارسال الكود ؟';
   static const String enterPhoneNumber = 'ادخل رقم الجوال';
@@ -36,7 +49,7 @@ class AppStrings {
   static const String notificationEmptyMessage = 'لا يوجد اشعارات';
   static const String login = 'تسجيل الدخول';
   static const String agreeTo = 'أوافق على';
-  static const String termsAndConditions = 'سياسة الخصوصية';
+  static const String termsAndConditions = ' الشروط والأحكام وسياسة الخصوصية';
   static const String zeros = '0000000000';
   static const String phoneNumber = 'رقم الجوال :';
   static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';
@@ -154,6 +167,7 @@ class AppStrings {
   static const String totla = 'المجموع :';
   static const String thousand = '1000';
   static const String paymentMethod = 'وسائل الدفع :';
+  static const String payMethod = 'طريقة الدفع';
   static const String paypal = 'PayPal';
   static const String shipFrom = 'الشحن من';
   static const String shipTo = 'الشحن الى';

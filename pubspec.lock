@@ -525,6 +525,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_xlider:
+    dependency: "direct main"
+    description:
+      name: flutter_xlider
+      sha256: b83da229b8a2153adeefc5d9e08e0060689c8dc2187b30e3502cf67c1a6495be
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.5.0"
   fluttertoast:
     dependency: "direct main"
     description:
@@ -1250,6 +1258,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  syncfusion_flutter_core:
+    dependency: transitive
+    description:
+      name: syncfusion_flutter_core
+      sha256: "33a2e8a86ac013c7929ed2cffa83c44f45ff256e38122de97f3154cb04324a74"
+      url: "https://pub.dev"
+    source: hosted
+    version: "22.2.8"
+  syncfusion_flutter_sliders:
+    dependency: "direct main"
+    description:
+      name: syncfusion_flutter_sliders
+      sha256: "59e677363cb9fafcbd716a3f1bd4ca25f9ff5b7554110b2efa264e4a0e99e3db"
+      url: "https://pub.dev"
+    source: hosted
+    version: "22.2.8"
   synchronized:
     dependency: transitive
     description:

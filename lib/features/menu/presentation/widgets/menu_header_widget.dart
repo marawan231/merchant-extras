@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/assets_manager.dart';
 import 'package:merchant_extras/core/resources/color_manager.dart';
 import 'package:merchant_extras/core/resources/constants.dart';
 import 'package:merchant_extras/core/resources/route_manager.dart';
@@ -29,9 +28,9 @@ class MenuHeaderWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildUserName(),
-              4.heightSpace(),
+              6.heightSpace(),
               _buildPhoneText(),
-              4.heightSpace(),
+              8.heightSpace(),
               _buildEditBtn(context),
             ],
           ),
@@ -63,7 +62,7 @@ class MenuHeaderWidget extends StatelessWidget {
 
   Widget _buildUserName() {
     return Text(
-      userName ?? AppStrings.username,
+      userName,
       style: getBoldStyle(fontSize: 18.sp, color: ColorManager.black),
     );
   }

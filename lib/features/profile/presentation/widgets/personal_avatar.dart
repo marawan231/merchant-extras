@@ -10,7 +10,6 @@ import '../../../../core/resources/constants.dart';
 import '../../../../core/widgets/custom_network_image.dart';
 
 import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/color_manager.dart';
 
 class PersonalAvatar extends StatefulWidget {
   const PersonalAvatar({super.key});

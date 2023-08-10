@@ -12,6 +12,7 @@ class SearchCubit extends Cubit<SearchState> {
   SearchCubit(this.searchRepository) : super(const Idle());
   String title = AppStrings.world;
   int searchViewDefaultindex = 0;
+  int? defaultCategoryIndex;
   int patternInFilterFormCategoreisIndex = 0;
   int worldViewCategoriesDefaultIndex = 0;
   int arrangmentInFilterFormCategoreisIndex = 0;
@@ -19,17 +20,26 @@ class SearchCubit extends Cubit<SearchState> {
   List<CategoryModel> categories = [];
   List<ProductsModel> products = [];
   List<DealModel> deals = [];
+  List<DealModel> searchedList = [];
+  // List<DealModel> deals1 = [];
+
   String? selectedCategoryId;
 
   String? geography;
   String? categoryId;
   String? productId;
   // String ? currencyId;
-  String? priceFrom;
-  String? priceTo;
+  double? priceFrom = 0;
+  double? priceTo = 10000;
   String? amount;
   String? shape;
   String? orderBy;
+
+  void search() {
+    emit(const SearchState.searchLoading());
+    // searchedList != [] ? deals = searchedList : deals = deals;
+    emit(const SearchState.searchSucceded());
+  }
 
   void getAllCategories() async {
     emit(const SearchState.getCatogoriesLoading());
@@ -84,6 +94,8 @@ class SearchCubit extends Cubit<SearchState> {
   }
 
   void filter() async {
+    priceFrom ??= 0;
+    priceTo ??= 10000;
     emit(const SearchState.filterLoading());
 
     var result = await searchRepository.filterProducts(
@@ -91,11 +103,11 @@ class SearchCubit extends Cubit<SearchState> {
       categoryId: categoryId,
       productId: productId,
       // currencyId: currencyId,
-      priceFrom: priceFrom,
-      priceTo: priceTo,
+      priceFrom: priceFrom.toString(),
+      priceTo: priceTo.toString(),
       amount: amount,
       shape: shape,
-      orderBy: orderBy ?? 'recent',
+      orderBy: orderBy ?? 'oldest',
     );
     result.when(
       success: (List<DealModel> deals) {

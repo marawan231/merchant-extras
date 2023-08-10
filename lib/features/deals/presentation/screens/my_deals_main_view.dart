@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widgets/personal_deals.dart';
 
-import '../../../../core/resources/strings_manager.dart';
 
 import '../widgets/my_deals_categories.dart';
 

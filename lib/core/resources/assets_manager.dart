@@ -4,6 +4,11 @@ const String lottiePath = "assets/lottie";
 
 class ImageAssets {
   static const String splashLogo = "$imagePath/Group 24376.png";
+  static const String emptySearchAnimation = "$lottiePath/search_empty.json";
+  static const String notificationAnimation =
+      "$lottiePath/notification_animation.json";
+  static const String boxAnimation = "$lottiePath/box_animation_1.json";
+
   static const String mainAuthLogo = "$imagePath/Privacy policy-rafiki.png";
   static const String google = "$imagePath/google.png";
   static const String phoneCall = "$imagePath/phone_call.png";
@@ -98,7 +103,7 @@ class ImageAssets {
   static var onlineReviewCuate = "$imagePath/Online Review-cuate.png";
   static var doneIcon = "$imagePath/done-icon.png";
 
-  static var walletAnimation  = "$lottiePath/wallet_animation.json";
+  static var walletAnimation = "$lottiePath/wallet_animation.json";
 // static const String clock = "$imagePath/clock.svg";
 // static const String personName = "$imagePath/person_name.svg";
 // static const String phone = "$imagePath/phone.svg";

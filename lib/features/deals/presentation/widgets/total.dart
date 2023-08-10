@@ -11,27 +11,30 @@ class Total extends StatelessWidget {
   final String? total;
   _buildTotalAmount(BuildContext context) {
     return CustomDealDetailContainer(
-      title: AppStrings.totla,
+      title: AppStrings.totla.replaceAll(':', ''),
       icon: ImageAssets.priceTag,
       // value: Text(
       //   '$total ${'\$'}',
       //   style: getBoldStyle(
       //       color: Theme.of(context).primaryColor, fontSize: 20.sp),
       // ),
-      value: RichText(
-          text: TextSpan(children: [
-        TextSpan(
-            text: total ?? '',
-            style: getBoldStyle(
-                color: Theme.of(context).primaryColor, fontSize: 20.sp)),
-        WidgetSpan(
-          child: SizedBox(width: 5.w),
-        ),  
-        TextSpan(
-            text: '\$',
-            style: getBoldStyle(
-                color: Theme.of(context).primaryColor, fontSize: 12.sp)),
-      ])),
+      value: Padding(
+        padding: EdgeInsets.only(top: 20.h, right: 22.w),
+        child: RichText(
+            text: TextSpan(children: [
+          TextSpan(
+              text: total ?? '',
+              style: getMediumStyle(
+                  color: Theme.of(context).primaryColor, fontSize: 15.sp)),
+          WidgetSpan(
+            child: SizedBox(width: 5.w),
+          ),
+          TextSpan(
+              text: '\$',
+              style: getMediumStyle(
+                  color: Theme.of(context).primaryColor, fontSize: 15.sp)),
+        ])),
+      ),
     );
   }
 

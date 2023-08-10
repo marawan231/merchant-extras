@@ -6,7 +6,7 @@ class TokenIntereceptor extends Interceptor {
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
     if (token != null) {
-      options.headers['authorization'] = 'Bearer 123';
+      options.headers['authorization'] = 'Bearer $token';
     }
     // TODO: implement onRequest
     super.onRequest(options, handler);

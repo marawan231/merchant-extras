@@ -66,13 +66,17 @@ class SearchState<T> with _$SearchState<T> {
 
   const factory SearchState.filterLoading() = FilterLoading<T>;
 
-  const factory SearchState.filterSucceded(List<DealModel> categories) =
+  const factory SearchState.filterSucceded(List<DealModel> deals) =
       FilterSucceded<T>;
 
   const factory SearchState.filterError(DioExceptionType networkExceptions) =
       filterError<T>;
-      // reset filter
+  // reset filter
 
   const factory SearchState.resetFilter() = ResetFilter<T>;
-  
+  //search
+
+  const factory SearchState.searchLoading() = SearchLoading<T>;
+
+  const factory SearchState.searchSucceded() = SearchSucceded<T>;
 }

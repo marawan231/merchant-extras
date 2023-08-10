@@ -10,7 +10,6 @@ import '../../../auth/data/models/auth_model.dart';
 import '../../business_logic/cubit/profile_cubit.dart';
 import '../../business_logic/cubit/profile_state.dart';
 
-import '../../../../core/resources/assets_manager.dart';
 import '../../../../core/resources/constants.dart';
 import '../../../../core/resources/strings_manager.dart';
 import '../../../../core/widgets/custom_textfield.dart';
@@ -59,6 +58,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                 message: AppStrings.theDataHasBeenModifiedSuccessfully,
                 color: ColorManager.green);
             profileCubit.getUserInfo();
+            setState(() {});
           },
           updateProfileError: (networkExceptions) {
             loading = false;
@@ -84,7 +84,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             shrinkWrap: true,
             children: [
               SizedBox(height: 40.h),
-              PersonalAvatar(),
+              const PersonalAvatar(),
               40.widthSpace(),
               _buildNameTextField(),
               SizedBox(height: 35.h),

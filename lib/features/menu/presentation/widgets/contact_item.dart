@@ -25,12 +25,12 @@ class ContactItem extends StatelessWidget {
     );
   }
 
-  _buildTitle() {
-    return Text(
-      title,
-      style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp),
-    );
-  }
+  // _buildTitle() {
+  //   return Text(
+  //     title,
+  //     style: getBoldStyle(color: ColorManager.darkGrey, fontSize: 15.sp),
+  //   );
+  // }
 
   _buildSubTitle(BuildContext context) {
     return Text(

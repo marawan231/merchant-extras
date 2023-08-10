@@ -15,7 +15,7 @@ class CustomSearchBar extends StatefulWidget {
       {super.key, required this.filterVisible, this.hintText, this.onChanged});
   final bool filterVisible;
   final String? hintText;
-  final Function(String)? onChanged;
+  final void Function(String)? onChanged;
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
@@ -24,14 +24,14 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   _buildSearchField(BuildContext context) {
     return Expanded(
         child: TextFormField(
-      onChanged:widget. onChanged,
+      onChanged: widget.onChanged,
       style: Theme.of(context).textTheme.displaySmall,
       cursorColor: Theme.of(context).primaryColor,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.zero,
         prefixIcon: Image.asset(
           ImageAssets.search,
-          // fit: BoxFit.scaleDown,
+          fit: BoxFit.scaleDown,
           width: 20.w,
           height: 20.h,
         ),
@@ -52,8 +52,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             isScrollControlled: true,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10.r),
-                    topRight: Radius.circular(10.r))),
+                    topLeft: Radius.circular(30.r),
+                    topRight: Radius.circular(30.r))),
             context: context,
             constraints: BoxConstraints(
               maxWidth: 600.h,
@@ -65,11 +65,11 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           );
         },
         child: Container(
-          width: 55.w,
-          height: 45.h,
+          width: 48.w,
+          height: 47.h,
           decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.all(Radius.circular(5.r))),
+              borderRadius: BorderRadius.all(Radius.circular(10.r))),
           child: Image.asset(
             ImageAssets.filter,
             width: 20.w,
@@ -84,10 +84,10 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     return BlocProvider.value(
       value: RouteGenerator.homeCubit,
       child: SizedBox(
-        height: 725.h,
+        height: 600.h,
         child: Padding(
           padding:
-              EdgeInsets.only(right: 20.w, left: 20.w, top: 52.h, bottom: 30.h),
+              EdgeInsets.only(right: 24.w, left: 24.w, top: 28.h, bottom: 30.h),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -120,11 +120,11 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 50.h,
+      height: 46.h,
       child: Row(
         children: [
           _buildSearchField(context),
-          SizedBox(width: 10.w),
+          SizedBox(width: 6.w),
           _buildFilter(context),
         ],
       ),

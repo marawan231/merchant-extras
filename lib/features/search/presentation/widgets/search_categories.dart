@@ -27,25 +27,24 @@ class SearchProducts extends StatelessWidget {
 
   Widget _buildGrid(BuildContext context) {
     final cubit = BlocProvider.of<SearchCubit>(context);
-    return GridView.builder(
-      padding: EdgeInsets.only(right: 4.w, left: 4.w, top: 40.h),
-      physics: const ScrollPhysics(),
-      // dragStartBehavior: DragStartBehavior.down,
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 160.w,
-        childAspectRatio: .8.sp,
-        crossAxisSpacing: 0.w,
-        mainAxisSpacing: 16.h,
+    return SizedBox(
+      height: 33.h,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        // padding: EdgeInsets.only(right: 4.w, left: 4.w, top: 40.h),
+        physics: const ScrollPhysics(),
+        // shrinkWrap: true,
+        itemCount: cubit.products.length,
+        itemBuilder: (context, index) {
+          return SearchCategoryItem(
+            index: index,
+            image: cubit.products[index].imageUrl!,
+            title: cubit.products[index].name!,
+            id: cubit.products[index].id!,
+          );
+        },
+        separatorBuilder: (context, index) => 10.horizontalSpace,
       ),
-      shrinkWrap: true,
-      itemCount: cubit.products.length,
-      itemBuilder: (context, index) {
-        return SearchCategoryItem(
-          image: cubit.products[index].imageUrl!,
-          title: cubit.products[index].name!,
-          id: cubit.products[index].id!.toString(),
-        );
-      },
     );
   }
 

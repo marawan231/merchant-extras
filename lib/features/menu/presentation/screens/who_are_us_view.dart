@@ -18,7 +18,7 @@ class WhoAreUsView extends StatefulWidget {
 class _WhoAreUsViewState extends State<WhoAreUsView> {
   _buildWhoAreUsViewBody() {
     return Padding(
-      padding: EdgeInsets.only(top: 50.h, left: 20.w, right: 20.w),
+      padding: EdgeInsets.only(top: 44.h, left: 20.w, right: 20.w),
       child: ListView(
         shrinkWrap: true,
         // crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,8 +35,8 @@ class _WhoAreUsViewState extends State<WhoAreUsView> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildHeadline(),
-        SizedBox(height: 15.h),
+        // _buildHeadline(),
+        SizedBox(height: 35.h),
         _buildContent(),
       ],
     );
@@ -52,13 +52,13 @@ class _WhoAreUsViewState extends State<WhoAreUsView> {
     );
   }
 
-  _buildHeadline() {
-    return Text('من نحن :',
-        style: getBoldStyle(
-          fontSize: 18.sp,
-          color: ColorManager.primary,
-        ));
-  }
+  // _buildHeadline() {
+  //   return Text('من نحن :',
+  //       style: getBoldStyle(
+  //         fontSize: 18.sp,
+  //         color: ColorManager.primary,
+  //       ));
+  // }
 
   _buildLogo() {
     return Image.asset(

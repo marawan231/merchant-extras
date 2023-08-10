@@ -42,7 +42,7 @@ class CompanyFeatures extends StatelessWidget {
 
   _buildCrausoal(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.only(right: 20.w, left: 20.w, bottom: 12.w),
       child: SizedBox(
         height: 140.h,
         // width: 327.w,
@@ -131,14 +131,17 @@ class CompanyFeatures extends StatelessWidget {
   }
 
   _buildLoadingAds() {
-    return SizedBox(
-      height: 200.h,
-      width: 300.w,
+    return Container(
+      height: 128.h,
+      width: 327.w,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300]!,
         highlightColor: Colors.grey[100]!,
         child: Container(
-          color: Colors.white,
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
         ),
       ),
     );

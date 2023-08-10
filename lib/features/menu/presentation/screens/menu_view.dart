@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchant_extras/core/resources/style_manager.dart';
 import 'package:merchant_extras/core/resources/utils.dart';
 import 'package:merchant_extras/features/menu/presentation/widgets/menu_header_widget.dart';
 import 'package:merchant_extras/features/profile/business_logic/cubit/profile_cubit.dart';
 import 'package:merchant_extras/features/profile/business_logic/cubit/profile_state.dart';
 
-import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/constants.dart';
-import '../../../../core/resources/strings_manager.dart';
 import '../widgets/menu_view_item.dart';
 
 class MenuView extends StatefulWidget {
@@ -74,13 +71,13 @@ class _MenuViewState extends State<MenuView> {
     );
   }
 
-  _buildAppBar() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Text(AppStrings.menu,
-            style: getBoldStyle(fontSize: 20.sp, color: ColorManager.white)),
-      ]),
-    );
-  }
+  // _buildAppBar() {
+  //   return Padding(
+  //     padding: EdgeInsets.symmetric(horizontal: 20.w),
+  //     child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+  //       Text(AppStrings.menu,
+  //           style: getBoldStyle(fontSize: 20.sp, color: ColorManager.white)),
+  //     ]),
+  //   );
+  // }
 }

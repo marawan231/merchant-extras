@@ -26,6 +26,14 @@ List<String> rateTitles = [
   AppStrings.updates,
   AppStrings.overall,
 ];
+
+List<String> rateTitlesInProductRate = [
+  AppStrings.productQualtiy,
+  AppStrings.fastDelivery,
+  AppStrings.serviceQuality,
+  AppStrings.productPrice,
+  AppStrings.productPriceHint,
+];
 String defaultUId = '0';
 String userName = 'اسم المستخدم';
 String? token = '123';
