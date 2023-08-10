@@ -1,0 +1,195 @@
+{
+  "project_info": {
+    "project_number": "1007790894009",
+    "firebase_url": "https://merchant-1a982-default-rtdb.firebaseio.com",
+    "project_id": "merchant-1a982",
+    "storage_bucket": "merchant-1a982.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007790894009:android:f3764b9d1d9aa268a32468",
+        "android_client_info": {
+          "package_name": "com.example.merchant_electronics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007790894009-6s3gt5gu5sifrad5hid1u6kq5jrp5d2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.merchant_electronics",
+            "certificate_hash": "70633d1247cf2d462b6a2c15fc64ee130671eb66"
+          }
+        },
+        {
+          "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYwf3xSwc_SLJ4EOP2X0WY_K71e_DLAoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007790894009-01o9gqeig79dlmnl1244o4g610g0fe6q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tech-go.merchant-fashion"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007790894009:android:b152b7af687ab575a32468",
+        "android_client_info": {
+          "package_name": "com.example.merchant_extras"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYwf3xSwc_SLJ4EOP2X0WY_K71e_DLAoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007790894009-01o9gqeig79dlmnl1244o4g610g0fe6q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tech-go.merchant-fashion"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007790894009:android:0e48816dc7f8c292a32468",
+        "android_client_info": {
+          "package_name": "com.merchant.group"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007790894009-2b85u3le9jm3jjq5dghpn3b94h7snhbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merchant.group",
+            "certificate_hash": "94457079907d92a8a52fab43bd92ecae7967f9f8"
+          }
+        },
+        {
+          "client_id": "1007790894009-aero6efravjccg826bmjcmrcovu6dqgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merchant.group",
+            "certificate_hash": "79dd701a1088c3fc382865a48b01e9c62fe5e5a3"
+          }
+        },
+        {
+          "client_id": "1007790894009-pcuqh1pe7ikt0l4k0sjgg39k1hbd9ggp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merchant.group",
+            "certificate_hash": "84fa8eed88942de789e8e479a4b1dffb9765a3db"
+          }
+        },
+        {
+          "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYwf3xSwc_SLJ4EOP2X0WY_K71e_DLAoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007790894009-01o9gqeig79dlmnl1244o4g610g0fe6q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tech-go.merchant-fashion"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1007790894009:android:44c1d6bb0d12d8b0a32468",
+        "android_client_info": {
+          "package_name": "com.tech.go.merchant_fashion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1007790894009-6gaj9rhn8dfakbk53j8aknhjbgq49ogq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tech.go.merchant_fashion",
+            "certificate_hash": "70633d1247cf2d462b6a2c15fc64ee130671eb66"
+          }
+        },
+        {
+          "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYwf3xSwc_SLJ4EOP2X0WY_K71e_DLAoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1007790894009-01o9gqeig79dlmnl1244o4g610g0fe6q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tech-go.merchant-fashion"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

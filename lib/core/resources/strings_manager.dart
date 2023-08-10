@@ -49,7 +49,7 @@ class AppStrings {
   static const String notificationEmptyMessage = 'لا يوجد اشعارات';
   static const String login = 'تسجيل الدخول';
   static const String agreeTo = 'أوافق على';
-  static const String termsAndConditions = 'سياسة الخصوصية';
+  static const String termsAndConditions = ' الشروط والأحكام وسياسة الخصوصية';
   static const String zeros = '0000000000';
   static const String phoneNumber = 'رقم الجوال :';
   static const String confirmPhoneNumber = 'تأكيد رقم الهاتف';

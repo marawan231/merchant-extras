@@ -75,7 +75,6 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
         emit(AuthResultState.loginSuccess(userData));
       },
       failure: (DioExceptionType networkExceptions) {
-        
         emit(AuthResultState.loginError(networkExceptions));
       },
     );
@@ -123,7 +122,7 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
       print('gooooooogle ${googleUser.displayName!}');
       userImage = googleUser.photoUrl!;
     } catch (e) {
-      print('catchhhhhhh errorrrr');
+      log('error in google sign in ${e.toString()}', name: 'google sign in');
       emit(AuthResultState.firebaseGoogleLoginError(
           DioExceptionType.getDioException(e)));
     }

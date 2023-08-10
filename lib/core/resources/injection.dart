@@ -96,7 +96,7 @@ Dio createAndSetupDio() {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'accept-language': 'ar',
-      'Authorization': 'Bearer 123',
+      'Authorization': 'Bearer $token',
     };
   // dio.options.headers.update('accept-language', (value) => defaultLang);
 
@@ -115,9 +115,7 @@ Dio createAndSetupDio() {
       ],
     ),
   );
-  // dio.interceptors.add(
-  //   TokenIntereceptor(),
-  // );
+
 
   dio.interceptors.add(TokenIntereceptor());
   dio.interceptors.add(
