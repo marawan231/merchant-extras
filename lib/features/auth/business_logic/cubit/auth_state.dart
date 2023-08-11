@@ -27,8 +27,6 @@ class AuthResultState<T> with _$AuthResultState<T> {
   const factory AuthResultState.registerError(
       DioExceptionType networkExceptions) = RegisterError<T>;
 
- 
-
   const factory AuthResultState.firebaseGoogleLoginSuccess(String data) =
       FirebaseGoogleLoginSuccess<T>;
 
@@ -62,6 +60,13 @@ class AuthResultState<T> with _$AuthResultState<T> {
 
   const factory AuthResultState.facIdAuthError(
       DioExceptionType networkExceptions) = FacIdAuthError<T>;
+
+  const factory AuthResultState.firebaseAnonymousLoginSuccess(String data) =
+      FirebaseAnonymousLoginSuccess<T>;
+  const factory AuthResultState.firebaseAnonymousLoginLoading() =
+      FirebaseAnonymousLoginLoading<T>;
+  const factory AuthResultState.firebaseAnonymousLoginError(
+      DioExceptionType networkExceptions) = FirebaseAnonymousLoginError<T>;
 }
 /*
 

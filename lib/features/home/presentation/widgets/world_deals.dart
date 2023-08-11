@@ -98,7 +98,7 @@ class WorldDeals extends StatelessWidget {
             ],
           )
         : AspectRatio(
-            aspectRatio: 1.7.h,
+            aspectRatio: 1.9.h,
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,

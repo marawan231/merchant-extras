@@ -26,7 +26,7 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
       email: json['email'] as String?,
       phone: json['phone'] as String?,
       imageUrl: json['image_url'] as String?,
-      countryId: json['country_id'] as int?,
+      countryId: json['country_id'],
       currency: json['currency'] as String?,
       token: json['token'] as String?,
       status: json['status'] as String?,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:merchant_extras/core/resources/utils.dart';
 
 import '../../business_logic/cubit/menu_cubit.dart';
 
@@ -23,16 +24,19 @@ class _ChargeWalletButtonState extends State<ChargeWalletButton> {
       padding: EdgeInsets.only(right: 180.w, top: 20.h),
       child: InkWell(
         onTap: () {
-          BlocProvider.of<MenuCubit>(context).showWalletAddAmountDialog(
-            context,
-            _formKey,
-            onTap: () {
-              _formKey.currentState!.save();
-              if (_formKey.currentState!.validate()) {
-                BlocProvider.of<MenuCubit>(context).addAmountToWallet();
-              }
-            },
-          );
+          if (checkAnonymus()) {
+          } else {
+            BlocProvider.of<MenuCubit>(context).showWalletAddAmountDialog(
+              context,
+              _formKey,
+              onTap: () {
+                _formKey.currentState!.save();
+                if (_formKey.currentState!.validate()) {
+                  BlocProvider.of<MenuCubit>(context).addAmountToWallet();
+                }
+              },
+            );
+          }
         },
         child: Container(
           width: 135.w,

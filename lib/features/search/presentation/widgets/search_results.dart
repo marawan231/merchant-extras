@@ -51,7 +51,7 @@ class _SearchResultsState extends State<SearchResults> {
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: .8.sp,
+                  childAspectRatio: .9.sp,
                   crossAxisSpacing: 23.w,
                   mainAxisSpacing: 20.h),
               shrinkWrap: true,

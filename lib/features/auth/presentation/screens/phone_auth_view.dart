@@ -42,30 +42,31 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
       child: SingleChildScrollView(
         child: Padding(
           padding:
-              EdgeInsets.only(top: 20.h, left: 24.w, right: 24.w, bottom: 30.h),
+              EdgeInsets.only(top: 30.h, left: 24.w, right: 24.w, bottom: 30.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             // shrinkWrap: true,
             children: [
               Center(
                   child: AuthLogo(image: ImageAssets.phoneAuth, height: 274.h)),
-              SizedBox(height: 42.h),
+              SizedBox(height: 49.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 4.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildPhoneAuthTitle(context),
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 10.h),
                     _buildPhoneAuthSubTitle(context),
                   ],
                 ),
               ),
               SizedBox(height: 19.h),
               _buildPhoneTextField(),
-              SizedBox(height: 12.h),
+              SizedBox(height: 25.h),
               const TermsAndConditions(),
-              SizedBox(height: 15.h),
+              SizedBox(height: 20.h),
+              // Spacer(),
               _buildBottomButton(context),
               _buildPhoneNumberSubmitedBloc(),
             ],
@@ -90,7 +91,8 @@ class _PhoneAuthViewState extends State<PhoneAuthView> {
       child: Text(
           // textAlign: TextAlign.center,
           AppStrings.phoneAuthSubtitle,
-          style: Theme.of(context).textTheme.bodySmall),
+          style:
+              Theme.of(context).textTheme.bodySmall!.copyWith(height: 1.5.h)),
     );
   }
 

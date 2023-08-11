@@ -18,8 +18,11 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   Timer? _timer;
 
-  void _startDelay() {
+  void _startDelay() async {
     _timer = Timer(const Duration(seconds: AppConstants.splashDelay), _goNext);
+    token = await CacheHelper.getData(key: 'token');
+
+    isAnonymous = await CacheHelper.getData(key: 'isAnonymous');
   }
 
   void _goNext() {

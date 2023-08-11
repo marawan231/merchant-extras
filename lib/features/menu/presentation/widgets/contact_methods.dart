@@ -153,7 +153,7 @@ class _ContactMethodsState extends State<ContactMethods> {
         state.whenOrNull(
           sendComplainSuccedded: () {
             Navigator.pushNamed(context, Routes.messageViewRoute, arguments: {
-              'image': ImageAssets.doneIcon,
+              'image': ImageAssets.contactSuccessNew,
               'title': AppStrings.thanksForContactingUs,
               'description': AppStrings.willContactYouSoon,
             });

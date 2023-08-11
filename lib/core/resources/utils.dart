@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/core/resources/color_manager.dart';
+import 'commons.dart';
 import 'strings_manager.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -22,6 +23,19 @@ import 'package:intl/intl.dart';
 // Future<List<BiometricType>> getAvailableBiometrics() async {
 //   return await localAuthentication.getAvailableBiometrics();
 // }
+bool checkAnonymus() {
+  if (isAnonymous == true) {
+    Commons.showToast(
+      message:
+          AppStrings.youAreNotAllowedFromTheGuestAccountPleaseRegisterFirst,
+      color: ColorManager.red,
+    );
+    return true;
+  } else {
+    return false;
+  }
+}
+
 String convertDateFormat(String iso8601Date) {
   DateTime dateTime = DateTime.parse(iso8601Date);
 

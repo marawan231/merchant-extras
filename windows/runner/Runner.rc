@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "merchant_extras" "\0"
+            VALUE "FileDescription", "Merchant" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "merchant_extras" "\0"
+            VALUE "InternalName", "Merchant" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "merchant_extras.exe" "\0"
-            VALUE "ProductName", "merchant_extras" "\0"
+            VALUE "ProductName", "Merchant" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

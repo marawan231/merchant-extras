@@ -12,7 +12,7 @@ class AuthLogo extends StatelessWidget {
     return Image.asset(
       image ?? ImageAssets.mainAuthLogo,
       height: height ?? 293.h,
-      fit: BoxFit.contain,
+      fit: BoxFit.cover,
     );
   }
 

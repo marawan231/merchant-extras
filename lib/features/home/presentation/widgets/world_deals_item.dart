@@ -57,7 +57,7 @@ class WorldDealsItem extends StatelessWidget {
               // 4.verticalSpace,
             ],
           ),
-        )
+        ),
         // _buildButton(context, 10.h),
       ],
     );
@@ -65,15 +65,16 @@ class WorldDealsItem extends StatelessWidget {
 
   _buildPrice() {
     return Row(
-      // mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           '${deals[index].price!} ${'\$'}',
           style: getMediumStyle(fontSize: 12.sp, color: ColorManager.primary),
         ),
+        18.horizontalSpace,
         Padding(
-          padding: EdgeInsetsDirectional.only(end: 20.w),
+          padding: EdgeInsetsDirectional.only(end: 020.w),
           child: Text(
             '${AppStrings.theQuantity} : ${deals[index].amount!}',
             style:
@@ -109,7 +110,7 @@ class WorldDealsItem extends StatelessWidget {
         });
       },
       child: Container(
-        width: 125.w,
+        // width: 125.w,
         // padding: EdgeInsets.only(bottom: 10.h, right: 8.w, left: 6.w),
         decoration: BoxDecoration(
           color: ColorManager.backGrey,

@@ -26,6 +26,7 @@ List<String> rateTitles = [
   AppStrings.updates,
   AppStrings.overall,
 ];
+bool? isAnonymous = false;
 
 List<String> rateTitlesInProductRate = [
   AppStrings.productQualtiy,

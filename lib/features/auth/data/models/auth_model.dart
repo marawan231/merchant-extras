@@ -23,7 +23,7 @@ class User {
   @JsonKey(name: 'image_url')
   String? imageUrl;
   @JsonKey(name: 'country_id')
-  int? countryId;
+  dynamic? countryId;
 
   String? currency;
   String? token;
