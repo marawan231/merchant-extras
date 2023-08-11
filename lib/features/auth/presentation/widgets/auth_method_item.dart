@@ -66,7 +66,7 @@ class AuthMethodItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 54.h,
+      height: height ?? 54.w,
       child: ListTile(
         horizontalTitleGap: 0,
         // contentPadding: EdgeInsets.only(right: 20.w, bottom: 30.w),

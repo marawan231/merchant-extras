@@ -52,7 +52,7 @@ class _AllDealsViewState extends State<AllDealsView> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: .8.sp,
+                childAspectRatio: .87.sp,
                 crossAxisSpacing: 23.w,
                 mainAxisSpacing: 20.h),
             itemBuilder: (context, index) {

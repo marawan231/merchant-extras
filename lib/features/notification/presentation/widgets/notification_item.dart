@@ -58,7 +58,7 @@ class NotificationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: ColorManager.cfGrey)),
+        border: Border(bottom: BorderSide(color: ColorManager.lightGrey4)),
       ),
       child: ListTile(
         tileColor:

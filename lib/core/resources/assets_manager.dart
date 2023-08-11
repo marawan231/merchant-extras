@@ -14,6 +14,7 @@ class ImageAssets {
   static const String phoneCall = "$imagePath/phone_call.png";
   static const String faceId = "$imagePath/face-id (1).png";
   static const String viber = "$imagePath/viber.png";
+  static const String contactSuccessNew = "$imagePath/contact_success.png";
   static const String phoneAuth = "$imagePath/Enter OTP-bro.png";
   static const String success = "$imagePath/success.png";
   static const String time = "$imagePath/time.png";

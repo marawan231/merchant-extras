@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchant_extras/features/home/business_logic/home_cubit.dart';
 import '../../../../core/resources/color_manager.dart';
 import '../../../../core/resources/commons.dart';
+import '../../../../core/resources/constants.dart';
 import '../../../deals/business_logic/cubit/deals_cubit.dart';
 import '../../../menu/business_logic/cubit/menu_cubit.dart';
 import '../../../search/business_logic/cubit/search_cubit.dart';
@@ -103,6 +104,14 @@ class _BuySelectedQuantityViewState extends State<BuySelectedQuantityView> {
             PaymentMethods(
               totalToPay: widget.totalToPay,
               onPayTap: () {
+                 if (isAnonymous == true) {
+      Commons.showToast(
+        message:
+            AppStrings.youAreNotAllowedFromTheGuestAccountPleaseRegisterFirst,
+        color: ColorManager.red,
+      );
+      return;
+    }
                 log('choosenCountryId: ${BlocProvider.of<GlobalCubit>(context).choosenCountryId ?? ''}');
 
                 if (widget.totalToPay != '0') {

@@ -57,7 +57,23 @@ class AuthCubit extends Cubit<AuthResultState<dynamic>> {
     //   },
     // );
   }
+  void signInAnonymously() async {
+    emit(const AuthResultState.firebaseAnonymousLoginLoading());
 
+    final FirebaseAuth auth = FirebaseAuth.instance;
+
+    try {
+      final UserCredential result = await auth.signInAnonymously();
+      final user = result.user;
+      uid = user!.uid;
+      isAnonymous = true;
+      CacheHelper.saveData(key: 'isAnonymous', value: true);
+      emit(AuthResultState.firebaseAnonymousLoginSuccess(user.uid));
+    } catch (e) {
+      emit(AuthResultState.firebaseAnonymousLoginError(
+          DioExceptionType.getDioException(e)));
+    }
+  }
   void login({
     required String uid,
   }) async {

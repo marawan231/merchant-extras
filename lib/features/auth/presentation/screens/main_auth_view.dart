@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,13 +25,15 @@ class MainAuthView extends StatefulWidget {
 }
 
 class _MainAuthViewState extends State<MainAuthView> {
+  bool loading = false;
+
   List<Widget> _buildAppBarAction(BuildContext context) {
     return [
       Padding(
         padding: EdgeInsets.only(left: 20.w),
         child: InkWell(
           onTap: () {
-            Navigator.pushReplacementNamed(context, Routes.mainhomeviewRoute);
+            BlocProvider.of<AuthCubit>(context).signInAnonymously();
           },
           child: Text(AppStrings.skip,
               style: getBoldStyle(
@@ -40,14 +45,15 @@ class _MainAuthViewState extends State<MainAuthView> {
 
   Widget _builMainAuthBody(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 0.h, bottom: 42.h),
+      padding:
+          EdgeInsets.only(left: 20.w, right: 20.w, top: 24.h, bottom: 42.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const AuthLogo(),
-          SizedBox(height: 35.h),
+          SizedBox(height: 41.h),
           _buildMainAuthTitle(context),
-          SizedBox(height: 6.h),
+          SizedBox(height: 14.h),
           _buildMainAuthSubTitle(context),
           SizedBox(height: 41.h),
           _buildAuthMethods(),
@@ -129,6 +135,30 @@ class _MainAuthViewState extends State<MainAuthView> {
               message: DioExceptionType.getErrorMessage(networkExceptions),
             );
           },
+          firebaseAnonymousLoginError: (networkExceptions) {
+            setState(() => loading = false);
+
+            Commons.showToast(
+              color: ColorManager.error,
+              message: DioExceptionType.getErrorMessage(networkExceptions),
+            );
+          },
+          firebaseAnonymousLoginLoading: () {
+            setState(() => loading = true);
+          },
+          firebaseAnonymousLoginSuccess: (data) {
+            setState(() => loading = false);
+
+            BlocProvider.of<AuthCubit>(context).register(
+                uid: data,
+                name: 'ضيف',
+                email: '',
+                phone: '000000000',
+                imageUrl:
+                    'https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png',
+                countryId: '1',
+                currencyId: '1');
+          },
         );
       },
       builder: (context, state) {
@@ -168,7 +198,8 @@ class _MainAuthViewState extends State<MainAuthView> {
         ? Padding(
             padding: EdgeInsets.only(top: 8.h, bottom: 8.h),
             child: Divider(
-              color: ColorManager.dividerColorLight,
+              color: ColorManager.dividerColor,
+              thickness: 1.sp,
             ),
           )
         : SizedBox(height: 16.h);

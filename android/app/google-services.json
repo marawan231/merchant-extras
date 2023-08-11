@@ -59,6 +59,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "1007790894009-4ibjs0ruuqh9kqchhu46p59jjin9btv5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.merchant_extras",
+            "certificate_hash": "70633d1247cf2d462b6a2c15fc64ee130671eb66"
+          }
+        },
+        {
+          "client_id": "1007790894009-v4ka3pq6a4jm1v58paunn8iv9knnshlg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.merchant_extras",
+            "certificate_hash": "79dd701a1088c3fc382865a48b01e9c62fe5e5a3"
+          }
+        },
+        {
           "client_id": "1007790894009-7tunf22fi8gnkctf7ii5nt9baji2j6ti.apps.googleusercontent.com",
           "client_type": 3
         }

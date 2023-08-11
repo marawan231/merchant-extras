@@ -28,7 +28,7 @@ class MenuViewItem extends StatelessWidget {
     return Center(
       child: Image.asset(
         model.icon,
-        color: ColorManager.primary,
+        color: index == 6 ? ColorManager.red : ColorManager.primary,
         height: 20.w,
         width: 24.w,
         fit: BoxFit.contain,

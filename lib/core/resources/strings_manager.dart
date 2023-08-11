@@ -8,6 +8,8 @@ class AppStrings {
   static const String add = 'اضافة';
   static const String noNotifications = 'لا يوجد اشعارات';
   static const String noDealsImmediately = 'لا يوجد صفقات حاليا';
+  static const String youAreNotAllowedFromTheGuestAccountPleaseRegisterFirst =
+      'انت غير مسموح لك بالدخول من حساب الضيف . من فضلك سجل اولا';
 
   // static const String thereIsNoDataCurrently = 'لا يوجد يانات حاليا';
   static const String thereAreNoSearchResults = 'لا يوجد نتائج بحث';
@@ -77,7 +79,7 @@ class AppStrings {
   static const String resultTitle = 'تفاح أحمر فرز اول';
   static const String resultOwner = 'فيصل العتيبي';
   static const String resultQuantity = '1000 كيلو';
-  static const String filter = 'فلترة';
+  static const String filter = 'فلتر';
   static const String quantity = 'الكمية المطلوبة :';
   static const String kilo = 'كيلو';
   static const String kForTotalAmount = 'ك الكمية الكلية';
